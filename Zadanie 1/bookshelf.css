@@ -7,11 +7,19 @@ bookshelf{
   font-family: Consolas;
   
 }
+author_nations,
+book_authors_list {
+    display: none;
+}
 
-description{
-  font-weight:bold;
-  font-size:30px;
-  display: block;
+book_author::after {
+    content: attr(author_id);
+}
+
+description {
+    font-weight: bold;
+    font-size: 30px;
+    display: block;
 }
 
 information {
@@ -123,6 +131,10 @@ book > binding::after{
 
 book > dimensions::before{
 	content: "Wymiary: ";
+}
+
+book > dimensions::after {
+    content: attr(id_dimension);
 }
 book > price::before{
 	content: "Cena: ";
