@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookshelf [
+<!-- Gengeral -->
+<!ELEMENT bookshelf (information, books)>
+
+<!-- Information -->
+<!ELEMENT information (description, authors, modification_date)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT modification_date (#PCDATA)>
+<!ELEMENT authors (author+)>
+<!ELEMENT author (name, indeks)>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT indeks (#PCDATA)>
+
+<!-- Books -->
+<!ELEMENT books (book+)>
+
+<!-- Book -->
+<!ELEMENT book (title, book_authors?, languages, realise_day, number_of_pages, binding, dimensions, price+, printing, age_category, type)>
+<!ATTLIST book ISBN ID #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+
+<!-- Book author/s -->
+<!ELEMENT book_authors (book_author+)>
+
+<!ELEMENT book_author (author_name, nationality+)>
+<!ELEMENT author_name (#PCDATA)>
+<!ELEMENT nationality (#PCDATA)>
+<!ATTLIST nationality id_nation (pl|eng|us) #REQUIRED>
+
+
+<!ELEMENT languages (language+)>
+<!ELEMENT language (#PCDATA)>
+<!ATTLIST language id_language (pl|eng|us) #REQUIRED>
+
+<!ELEMENT realise_day (#PCDATA)>
+<!ELEMENT number_of_pages (#PCDATA)>
+<!ELEMENT binding (#PCDATA)>
+
+<!ATTLIST binding id_binding (miekka|twarda) #REQUIRED>
+
+<!ELEMENT dimensions (width, height)>
+<!ELEMENT width (#PCDATA)>
+<!ELEMENT height (#PCDATA)>
+
+<!ATTLIST dimensions id_dimension (mm|cm) #REQUIRED>
+
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price id_currency (PLN|EUR) #REQUIRED>
+
+<!ELEMENT age_category (#PCDATA)>
+<!ATTLIST age_category id_age_category (5|10|13|16|18) #REQUIRED>
+
+<!ELEMENT type (#PCDATA)>
+<!ATTLIST type id_type (1|2|3|4|5|6|7) #REQUIRED>
+
+<!ELEMENT printing (#PCDATA)>
+<!ATTLIST printing id_printing_type (color|black_white) #REQUIRED>
+]>
+
+<?xml-stylesheet href="bookshelf.css" type="text/css" ?>
+<bookshelf>
+	<information>
+		<description>Zbiór książek w sklepie.</description>
+		<authors>
+			<author>
+				<name>Adrian Granosik</name>
+				<indeks>210194</indeks>
+			</author>
+			<author>
+				<name>Izabela Sobczyk</name>
+				<indeks>210319</indeks>
+			</author>
+		</authors>
+		<modification_date>2019-03-14</modification_date>
+	</information>
+	<books>
+		<book ISBN="ID11112345678">
+			<title>Gra Anioła</title>
+			<book_authors>
+				<book_author>
+					<author_name>Kinga Wojciechowska</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+			</languages>
+			<realise_day>2000-07-13</realise_day>
+			<number_of_pages>144</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="cm">
+				<width> 16 </width>
+				<height> 25 </height>
+			</dimensions>
+			<price id_currency="PLN">39.99</price>
+			<printing id_printing_type="black_white"/>
+			<age_category id_age_category="13"/>
+			<type id_type="1"/>
+		</book>
+		<book ISBN="ID11112345679">
+			<title>Gra Anioła 2</title>
+			<book_authors>
+				<book_author>
+					<author_name>Kinga Wojciechowska</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+			</languages>
+			<realise_day>2010-12-12</realise_day>
+			<number_of_pages>225</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 167 </width>
+				<height> 255 </height>
+			</dimensions>
+			<price id_currency="PLN">42.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="13"/>
+			<type id_type="1"/>
+		</book>
+		<book ISBN="ID11112345680">
+			<title>Gra Anioła 3</title>
+			<book_authors>
+				<book_author>
+					<author_name>Kinga Wojciechowska</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+			</languages>
+			<realise_day>2019-12-24</realise_day>
+			<number_of_pages>369</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 167 </width>
+				<height> 155 </height>
+			</dimensions>
+			<price id_currency="PLN">59.99</price>
+			<printing id_printing_type="black_white"/>
+			<age_category id_age_category="13"/>
+			<type id_type="1"/>
+		</book>
+		<book ISBN="ID11112345681">
+			<title>Skarb Herkulesa</title>
+			<book_authors>
+				<book_author>
+					<author_name>Mikołaj Brzeziński</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+				<book_author>
+					<author_name>John Button</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2010-12-12</realise_day>
+			<number_of_pages>450</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="cm">
+				<width> 10 </width>
+				<height> 30 </height>
+			</dimensions>
+			<price id_currency="EUR">19.99</price>
+			<printing id_printing_type="black_white"/>
+			<age_category id_age_category="5"/>
+			<type id_type="7"/>
+		</book>		
+		<book ISBN="ID11112345682">
+			<title>Skarb Czyngis-Chana</title>
+			<book_authors>
+				<book_author>
+					<author_name>Mikołaj Brzeziński</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Inga Adamczyk</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2005-12-12</realise_day>
+			<number_of_pages>644</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 200 </width>
+				<height> 600 </height>
+			</dimensions>
+			<price id_currency="PLN">69.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="5"/>
+			<type id_type="5"/>
+		</book>
+		<book ISBN="ID11112345683">
+			<title>Skarb Czyngis-Chana 2</title>
+			<book_authors>
+				<book_author>
+					<author_name>Mikołaj Brzeziński</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Inga Adamczyk</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2010-12-19</realise_day>
+			<number_of_pages>355</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 200 </width>
+				<height> 600 </height>
+			</dimensions>
+			<price id_currency="PLN">69.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="5"/>
+			<type id_type="1"/>
+		</book>		
+		<book ISBN="ID11112345684">
+			<title>Niewiadoma Elvisa</title>
+			<book_authors>
+				<book_author>
+					<author_name>Daniel Piasecki</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Peter Brown</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>1995-10-15</realise_day>
+			<number_of_pages>99</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 167 </width>
+				<height> 259 </height>
+			</dimensions>
+			<price id_currency="PLN">29.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="16"/>
+			<type id_type="4"/>
+		</book>
+		<book ISBN="ID11112345685">
+			<title>Niewiadoma Elvisa 2</title>
+			<book_authors>
+				<book_author>
+					<author_name>Daniel Piasecki</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Peter Brown</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2010-12-12</realise_day>
+			<number_of_pages>187</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 167 </width>
+				<height> 259 </height>
+			</dimensions>
+			<price id_currency="PLN">45.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="16"/>
+			<type id_type="6"/>
+		</book>		
+		<book ISBN="ID11112345686">
+			<title>Niewiadoma Elvisa 3</title>
+			<book_authors>
+				<book_author>
+					<author_name>Daniel Piasecki</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Peter Brown</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2015-12-12</realise_day>
+			<number_of_pages>198</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 167 </width>
+				<height> 259 </height>
+			</dimensions>
+			<price id_currency="PLN">55.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="16"/>
+			<type id_type="2"/>
+		</book>
+		<book ISBN="ID11112345687">
+			<title>First year</title>
+			<book_authors>
+				<book_author>
+					<author_name>Zayn Lesson</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2010-12-12</realise_day>
+			<number_of_pages>568</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 170 </width>
+				<height> 250 </height>
+			</dimensions>
+			<price id_currency="EUR">17.99</price>
+			<printing id_printing_type="black_white"/>
+			<age_category id_age_category="18"/>
+			<type id_type="2"/>
+		</book>
+		<book ISBN="ID11112345688">
+			<title>Second year</title>
+			<book_authors>
+				<book_author>
+					<author_name>Zayn Lesson</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2012-12-12</realise_day>
+			<number_of_pages>459</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 170 </width>
+				<height> 250 </height>
+			</dimensions>
+			<price id_currency="EUR">14.99</price>
+			<printing id_printing_type="black_white"/>
+			<age_category id_age_category="18"/>
+			<type id_type="4"/>
+		</book>		
+		<book ISBN="ID11112345689">
+			<title>Konflikt sióstr</title>
+			<book_authors>
+				<book_author>
+					<author_name>Marta Piotrowska</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Żaneta Piotrowska</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+			</languages>
+			<realise_day>2009-11-06</realise_day>
+			<number_of_pages>250</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 180 </width>
+				<height> 305 </height>
+			</dimensions>
+			<price id_currency="PLN">39.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="10"/>
+			<type id_type="3"/>
+		</book>		
+		<book ISBN="ID11112345690">
+			<title>Konflikt matek</title>
+			<book_authors>
+				<book_author>
+					<author_name>Marta Piotrowska</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Żaneta Piotrowska</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+			</languages>
+			<realise_day>2012-10-29</realise_day>
+			<number_of_pages>290</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 180 </width>
+				<height> 305 </height>
+			</dimensions>
+			<price id_currency="PLN">39.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="10"/>
+			<type id_type="1"/>
+		</book>		
+		<book ISBN="ID11112345691">
+			<title>Konflikt matek 2</title>
+			<book_authors>
+				<book_author>
+					<author_name>Marta Piotrowska</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Żaneta Piotrowska</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+			</languages>
+			<realise_day>2015-02-15</realise_day>
+			<number_of_pages>255</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 180 </width>
+				<height> 305 </height>
+			</dimensions>
+			<price id_currency="PLN">39.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="10"/>
+			<type id_type="1"/>
+		</book>
+		<book ISBN="ID11112345692">
+			<title>Cała Prawda</title>
+			<book_authors>
+				<book_author>
+					<author_name>Maria Kaczmarek</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Sylwia Kaczmarek</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2007-08-11</realise_day>
+			<number_of_pages>231</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 105 </width>
+				<height> 313 </height>
+			</dimensions>
+			<price id_currency="PLN">53.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="5"/>
+			<type id_type="7"/>
+		</book>	
+		<book ISBN="ID11112345693">
+			<title>Jak Kupić Dom Natychmiastowo?</title>
+			<book_authors>
+				<book_author>
+					<author_name>Wiktor Malarczyk</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+			</languages>
+			<realise_day>2010-03-15</realise_day>
+			<number_of_pages>125</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 150 </width>
+				<height> 350 </height>
+			</dimensions>
+			<price id_currency="PLN">99.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="13"/>
+			<type id_type="7"/>
+		</book>	
+		<book ISBN="ID11112345694">
+			<title>Tajemnica Disneya</title>
+			<book_authors>
+				<book_author>
+					<author_name>Michael Depp</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2011-11-12</realise_day>
+			<number_of_pages>259</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 90 </width>
+				<height> 220 </height>
+			</dimensions>
+			<price id_currency="PLN">39.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="5"/>
+			<type id_type="5"/>
+		</book>	
+		<book ISBN="ID11112345695">
+			<title>Poranna kawa</title>
+			<book_authors>
+				<book_author>
+					<author_name>Angelika Mras</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+			</languages>
+			<realise_day>2011-09-12</realise_day>
+			<number_of_pages>112</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 180 </width>
+				<height> 250 </height>
+			</dimensions>
+			<price id_currency="PLN">59.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="16"/>
+			<type id_type="6"/>
+		</book>	
+		<book ISBN="ID11112345696">
+			<title>Historia USA</title>
+			<book_authors>
+				<book_author>
+					<author_name>Carla McCartney</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2018-12-13</realise_day>
+			<number_of_pages>455</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 100 </width>
+				<height> 305 </height>
+			</dimensions>
+			<price id_currency="PLN">119.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="5"/>
+			<type id_type="2"/>
+		</book>	
+		<book ISBN="ID11112345697">
+			<title>Święty Mikołaj istnieje</title>
+			<book_authors>
+				<book_author>
+					<author_name>Mikołaj Marusiński</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+			</languages>
+			<realise_day>2005-12-24</realise_day>
+			<number_of_pages>155</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 90 </width>
+				<height> 290 </height>
+			</dimensions>
+			<price id_currency="PLN">39.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="5"/>
+			<type id_type="7"/>
+		</book>	
+		<book ISBN="ID11112345698">
+			<title>Święty Mikołaj istnieje 2</title>
+			<book_authors>
+				<book_author>
+					<author_name>Mikołaj Marusiński</author_name>
+					<nationality id_nation="pl">Polska</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="pl">Polski</language>
+			</languages>
+			<realise_day>2007-12-24</realise_day>
+			<number_of_pages>159</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 90 </width>
+				<height> 290 </height>
+			</dimensions>
+			<price id_currency="PLN">49.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="5"/>
+			<type id_type="2"/>
+		</book>	
+		<book ISBN="ID11112345699">
+			<title>Złamane serce</title>
+			<book_authors>
+				<book_author>
+					<author_name>Rebecca Marley</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Eric Stanley</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>1999-12-10</realise_day>
+			<number_of_pages>203</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 115 </width>
+				<height> 280 </height>
+			</dimensions>
+			<price id_currency="PLN">65.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="16"/>
+			<type id_type="7"/>
+		</book>	
+		<book ISBN="ID11112345700">
+			<title>Brak nadziei</title>
+			<book_authors>
+				<book_author>
+					<author_name>Rebecca Marley</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+				<book_author>
+					<author_name>Eric Stanley</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2003-01-19</realise_day>
+			<number_of_pages>203</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 115 </width>
+				<height> 280 </height>
+			</dimensions>
+			<price id_currency="PLN">75.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="13"/>
+			<type id_type="4"/>
+		</book>		
+		<book ISBN="ID11112345701">
+			<title>Zaginiona rodzina</title>
+			<book_authors>
+				<book_author>
+					<author_name>Victoria Monroe</author_name>
+					<nationality id_nation="us">USA</nationality>
+				</book_author>
+			</book_authors>
+			<languages>
+				<language id_language="eng">Angielski</language>
+			</languages>
+			<realise_day>2015-11-17</realise_day>
+			<number_of_pages>132</number_of_pages>
+			<binding id_binding="miekka"/>
+			
+			<dimensions id_dimension="mm">
+				<width> 105 </width>
+				<height> 255 </height>
+			</dimensions>
+			<price id_currency="PLN">35.99</price>
+			<printing id_printing_type="color"/>
+			<age_category id_age_category="18"/>
+			<type id_type="1"/>
+		</book>	
+	</books>
+</bookshelf>

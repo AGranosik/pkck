@@ -1,0 +1,33 @@
+<!-- General -->
+<!ELEMENT bookshelf(information, books)>
+
+<!-- parameter entity -->
+<!ENTITY % id_nation="(pl|en|us)">
+<!ENTITY % id_language="(pl|en|us)">
+<!ENTITY % id_binding="(miękka|twarda)">
+<!ENTITY % id_dimension=(mm|cm)">
+<!ENTITY % id_currency="(PLN|USD|EUR)"
+<!ENTITY % id_printing_type="(color|black_white)">
+<!ENTITY % id_age_category="(5|10|13|16|18)">
+<!ENTITY % id_type="(1|2|3|4|5|6|7)">
+
+<!-- Information -->
+<!ELEMENT information (description?, authors, modification_date)>
+<!ELEMENT authors (author+)>
+
+<!-- Books -->
+<!ELEMENT books (book+)
+
+<!-- Book -->
+<!ELEMENT book (title, book_authors?, languages, realise_day, number_of_pages, binding, dimensions, price+, age_category, type)>
+<!ATTLIST book ISBN ID #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+
+<!-- Book author/s -->
+<!ELEMENT book_authors (book_author+)>
+
+<!ELEMENT realise_day (#PCDATA)>
+<!ELEMENT number_of_pages (#PCDATA)>
+<!ELEMENT height (#PCDATA)>
+<!ELEMENT width (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
