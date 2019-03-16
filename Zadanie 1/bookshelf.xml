@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookshelf [
 <!-- Gengeral -->
-<!ELEMENT bookshelf (book_authors_list, information, books)>
+<!ELEMENT bookshelf (author_nations, book_authors_list, information, books)>
 
 <!-- Information -->
 <!ELEMENT information (description, authors, modification_date)>
@@ -25,12 +25,12 @@
 <!ELEMENT book_authors (book_author+)>
 <!ELEMENT book_author EMPTY>
   
-  <!ATTLIST book_author author_id IDREFS #REQUIRED>
+ <!ATTLIST book_author author_id IDREFS #REQUIRED>
 
   
 <!ELEMENT author_name (#PCDATA)>
-<!ELEMENT nationality (#PCDATA)>
-<!ATTLIST nationality id_nation (pl|eng|us) #REQUIRED>
+<!ELEMENT author_nationality (#PCDATA)>
+<!ATTLIST author_nationality id_author_nation (pl|eng|us) #REQUIRED>
 
 
 <!ELEMENT languages (language+)>
@@ -59,105 +59,114 @@
 <!ATTLIST printing id_printing_type (color|black_white) #REQUIRED>
 
 <!ELEMENT book_authors_list (book_author_info*)>
-<!ELEMENT book_author_info (name, surname, nation)>
+<!ELEMENT book_author_info (name, surname, author_nation)>
   <!ATTLIST book_author_info author_id ID #REQUIRED>
 <!ELEMENT surname (#PCDATA)>
-<!ELEMENT nation (#PCDATA)>
-<!ATTLIST nation id_nation CDATA #REQUIRED>
+<!ELEMENT author_nation (#PCDATA)>
+<!ATTLIST author_nation id_author_nation IDREFS #REQUIRED>
+
+  <!ELEMENT author_nations (nation*)>
+  <!ELEMENT nation (#PCDATA)>
+  <!ATTLIST nation id_author_nation ID #REQUIRED>
 ]>
 
 <?xml-stylesheet href="bookshelf.css" type="text/css" ?>
 <bookshelf>
+  <author_nations>
+    <nation id_author_nation="pl">Polska></nation>
+    <nation id_author_nation="us">USA></nation>
+    <nation id_author_nation="eng">Wielka Brytania></nation>
+  </author_nations>
   <book_authors_list>
     <book_author_info author_id="ID1">
       <name>Kinga</name>
       <surname>Wojciechowska</surname>
-      <nation id_nation="pl"></nation>
+      <author_nation id_author_nation="pl"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID2">
       <name>Mikołaj</name>
       <surname>Brzeziński</surname>
-      <nation id_nation="pl"></nation>
+      <author_nation id_author_nation="pl"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID3">
       <name>John</name>
       <surname>Button</surname>
-      <nation id_nation="us"></nation>
+      <author_nation id_author_nation="us"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID4">
       <name>Inga</name>
       <surname>Adamczyk</surname>
-      <nation id_nation="pl"></nation>
+      <author_nation id_author_nation="pl"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID5">
       <name>Daniel</name>
       <surname>Piasecki</surname>
-      <nation id_nation="pl"></nation>
+      <author_nation id_author_nation="pl"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID6">
       <name>Peter</name>
       <surname>Brown</surname>
-      <nation id_nation="us"></nation>
+      <author_nation id_author_nation="us"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID7">
       <name>Zayn</name>
       <surname>Lesson</surname>
-      <nation id_nation="us"></nation>
+      <author_nation id_author_nation="us"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID8">
       <name>Marta</name>
       <surname>Piotrowska</surname>
-      <nation id_nation="pl"></nation>
+      <author_nation id_author_nation="pl"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID9">
       <name>Żaneta</name>
       <surname>Piotrowska</surname>
-      <nation id_nation="pl"></nation>
+      <author_nation id_author_nation="pl"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID10">
       <name>Maria</name>
       <surname>Kaczmarek</surname>
-      <nation id_nation="pl"></nation>
+      <author_nation id_author_nation="pl"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID11">
       <name>Sylwia</name>
       <surname>Kaczmarek</surname>
-      <nation id_nation="us"></nation>
+      <author_nation id_author_nation="us"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID12">
       <name>Wiktor</name>
       <surname>Malarczyk</surname>
-      <nation id_nation="pl"></nation>
+      <author_nation id_author_nation="pl"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID13">
       <name>Angelika</name>
       <surname>Mras</surname>
-      <nation id_nation="pl"></nation>
+      <author_nation id_author_nation="pl"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID14">
       <name>Carla</name>
       <surname>McCartney</surname>
-      <nation id_nation="us"></nation>
+      <author_nation id_author_nation="us"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID15">
       <name>Mikołaj</name>
       <surname>Marusiński</surname>
-      <nation id_nation="pl"></nation>
+      <author_nation id_author_nation="pl"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID16">
       <name>Rebecca</name>
       <surname>Marley</surname>
-      <nation id_nation="us"></nation>
+      <author_nation id_author_nation="us"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID17">
       <name>Eric</name>
       <surname>Stanley</surname>
-      <nation id_nation="us"></nation>
+      <author_nation id_author_nation="us"></author_nation>
     </book_author_info>
     <book_author_info author_id="ID18">
       <name>Victoria</name>
       <surname>Monroe</surname>
-      <nation id_nation="us"></nation>
+      <author_nation id_author_nation="us"></author_nation>
     </book_author_info>
   </book_authors_list>
 	<information>
