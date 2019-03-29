@@ -95,7 +95,7 @@
         <book_author author_id="ID1"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
+				<language id_language="pl"></language>
 			</languages>
 			<realise_day>2000-07-13</realise_day>
 			<number_of_pages>144</number_of_pages>
@@ -115,7 +115,7 @@
 				<book_author author_id="ID1"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
+				<language id_language="pl"></language>
 			</languages>
 			<realise_day>2010-12-12</realise_day>
 			<number_of_pages>225</number_of_pages>
@@ -135,7 +135,7 @@
 				<book_author author_id="ID1"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
+				<language id_language="pl"></language>
 			</languages>
 			<realise_day>2019-12-24</realise_day>
 			<number_of_pages>369</number_of_pages>
@@ -155,8 +155,8 @@
 				<book_author author_id="ID3"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
-				<language id_language="eng">Angielski</language>
+				<language id_language="pl"></language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2010-12-12</realise_day>
 			<number_of_pages>450</number_of_pages>
@@ -176,8 +176,8 @@
         <book_author author_id="ID4"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
-				<language id_language="eng">Angielski</language>
+				<language id_language="pl"></language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2005-12-12</realise_day>
 			<number_of_pages>644</number_of_pages>
@@ -196,8 +196,8 @@
         <book_author author_id="ID2"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
-				<language id_language="eng">Angielski</language>
+				<language id_language="pl"></language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2010-12-19</realise_day>
 			<number_of_pages>355</number_of_pages>
@@ -217,7 +217,7 @@
         <book_author author_id="ID6"/>
 			</book_authors>
 			<languages>
-				<language id_language="eng">Angielski</language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>1995-10-15</realise_day>
 			<number_of_pages>99</number_of_pages>
@@ -237,7 +237,7 @@
         <book_author author_id="ID6"/>
 			</book_authors>
 			<languages>
-				<language id_language="eng">Angielski</language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2010-12-12</realise_day>
 			<number_of_pages>187</number_of_pages>
@@ -258,7 +258,7 @@
         <book_author author_id="ID6"/>
 			</book_authors>
 			<languages>
-				<language id_language="eng">Angielski</language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2015-12-12</realise_day>
 			<number_of_pages>198</number_of_pages>
@@ -277,7 +277,7 @@
         <book_author author_id="ID7"/>
 			</book_authors>
 			<languages>
-				<language id_language="eng">Angielski</language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2010-12-12</realise_day>
 			<number_of_pages>568</number_of_pages>
@@ -296,7 +296,7 @@
         <book_author author_id="ID7"/>
 			</book_authors>
 			<languages>
-				<language id_language="eng">Angielski</language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2012-12-12</realise_day>
 			<number_of_pages>459</number_of_pages>
@@ -316,7 +316,7 @@
         <book_author author_id="ID9"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
+				<language id_language="pl"></language>
 			</languages>
 			<realise_day>2009-11-06</realise_day>
 			<number_of_pages>250</number_of_pages>
@@ -336,7 +336,7 @@
         <book_author author_id="ID9"/>
       </book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
+				<language id_language="pl"></language>
 			</languages>
 			<realise_day>2012-10-29</realise_day>
 			<number_of_pages>290</number_of_pages>
@@ -356,7 +356,7 @@
         <book_author author_id="ID9"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
+				<language id_language="pl"></language>
 			</languages>
 			<realise_day>2015-02-15</realise_day>
 			<number_of_pages>255</number_of_pages>
@@ -376,8 +376,8 @@
         <book_author author_id="ID11"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
-				<language id_language="eng">Angielski</language>
+				<language id_language="pl"></language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2007-08-11</realise_day>
 			<number_of_pages>231</number_of_pages>
@@ -396,7 +396,7 @@
         <book_author author_id="ID12"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
+				<language id_language="pl"></language>
 			</languages>
 			<realise_day>2010-03-15</realise_day>
 			<number_of_pages>125</number_of_pages>
@@ -415,7 +415,7 @@
         <book_author author_id="ID9"/>
       </book_authors>
 			<languages>
-				<language id_language="eng">Angielski</language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2011-11-12</realise_day>
 			<number_of_pages>259</number_of_pages>
@@ -434,7 +434,7 @@
         <book_author author_id="ID13"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
+				<language id_language="pl"></language>
 			</languages>
 			<realise_day>2011-09-12</realise_day>
 			<number_of_pages>112</number_of_pages>
@@ -453,7 +453,7 @@
         <book_author author_id="ID14"/>
 			</book_authors>
 			<languages>
-				<language id_language="eng">Angielski</language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2018-12-13</realise_day>
 			<number_of_pages>455</number_of_pages>
@@ -472,7 +472,7 @@
         <book_author author_id="ID15"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
+				<language id_language="pl"></language>
 			</languages>
 			<realise_day>2005-12-24</realise_day>
 			<number_of_pages>155</number_of_pages>
@@ -491,7 +491,7 @@
         <book_author author_id="ID15"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl">Polski</language>
+				<language id_language="pl"></language>
 			</languages>
 			<realise_day>2007-12-24</realise_day>
 			<number_of_pages>159</number_of_pages>
@@ -511,7 +511,7 @@
         <book_author author_id="ID17"/>
 			</book_authors>
 			<languages>
-				<language id_language="eng">Angielski</language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>1999-12-10</realise_day>
 			<number_of_pages>203</number_of_pages>
@@ -531,7 +531,7 @@
         <book_author author_id="ID17"/>
 			</book_authors>
 			<languages>
-				<language id_language="eng">Angielski</language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2003-01-19</realise_day>
 			<number_of_pages>203</number_of_pages>
@@ -550,7 +550,7 @@
         <book_author author_id="ID18"/>
 			</book_authors>
 			<languages>
-				<language id_language="eng">Angielski</language>
+				<language id_language="eng"></language>
 			</languages>
 			<realise_day>2015-11-17</realise_day>
 			<number_of_pages>132</number_of_pages>

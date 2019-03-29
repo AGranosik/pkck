@@ -34,6 +34,27 @@ modification_date{
 	font-weight: bold;
 }
 
+languages{
+    display:grid;
+}
+
+language{
+    position: relative;
+    left: 10px;
+}
+
+language[id_language="pl"]:after{
+    content: "Polski";
+}
+
+language[id_language="eng"]:after {
+    content: "Wielka Brytania";
+}
+
+language[id_language="us"]:after {
+    content: "USA";
+}
+
 modification_date::before{
 	content:"Ostatnia modyfikacja:";
 }
@@ -98,7 +119,12 @@ book > book_authors::before{
 }
 book_authors,
 book_author{
-	display: contents;
+	display: grid;
+}
+
+book_author {
+    position: relative;
+    left: 10px;
 }
 	author_name,
 	nationality{		
