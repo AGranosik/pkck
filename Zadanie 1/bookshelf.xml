@@ -1,79 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bookshelf [
-<!-- Gengeral -->
-<!ELEMENT bookshelf (information, books, book_authors_list)>
 
-<!-- Information -->
-<!ELEMENT information (description, authors, modification_date)>
-<!ELEMENT description (#PCDATA)>
-<!ELEMENT modification_date (#PCDATA)>
-<!ELEMENT authors (author+)>
-<!ELEMENT author (name, surname, indeks)>
-
-<!ELEMENT name (#PCDATA)>
-<!ELEMENT indeks (#PCDATA)>
-
-<!-- Books -->
-<!ELEMENT books (book+)>
-
-<!-- Book -->
-<!ELEMENT book (title, book_authors?, languages, realise_day, number_of_pages, binding, dimensions, price+, printing, age_category)>
-<!ATTLIST book ISBN ID #REQUIRED>
-<!ELEMENT title (#PCDATA)>
-
-<!-- Book author/s -->
-<!ELEMENT book_authors (book_author+)>
-<!ELEMENT book_author EMPTY>
-  
- <!ATTLIST book_author author_id IDREFS #REQUIRED>
-
-<!ELEMENT languages (language+)>
-<!ELEMENT language (#PCDATA)>
-<!ATTLIST language id_language (pl|eng|us) #REQUIRED>
-
-<!ELEMENT realise_day (#PCDATA)>
-<!ELEMENT number_of_pages (#PCDATA)>
-<!ELEMENT binding (#PCDATA)>
-
-<!ATTLIST binding id_binding (miekka|twarda) #REQUIRED>
-
-<!ELEMENT dimensions (width, height)>
-<!ELEMENT width (#PCDATA)>
-<!ELEMENT height (#PCDATA)>
-
-<!ATTLIST dimensions id_dimension (mm|cm) #REQUIRED>
-
-<!ELEMENT price (#PCDATA)>
-<!ATTLIST price id_currency (PLN|EUR) #REQUIRED>
-
-<!ELEMENT age_category (#PCDATA)>
-<!ATTLIST age_category id_age_category (5|10|13|16|18) #REQUIRED>
-
-<!ELEMENT printing (#PCDATA)>
-<!ATTLIST printing id_printing_type (color|black_white) #REQUIRED>
-
-<!ELEMENT book_authors_list (book_author_info*)>
-<!ELEMENT book_author_info (name, surname, author_nation)>
-  <!ATTLIST book_author_info author_id ID #REQUIRED>
-<!ELEMENT surname (#PCDATA)>
-<!ELEMENT author_nation (#PCDATA)>
-<!ATTLIST author_nation id_author_nation (pl|eng|us) #REQUIRED>
-
-]>
+<!DOCTYPE bookshelf SYSTEM "bookshelf.dtd">
 
 <?xml-stylesheet href="bookshelf.css" type="text/css" ?>
+
 <bookshelf>
 	<information>
 		<description>Zbiór książek w sklepie.</description>
 		<authors>
 			<author>
 				<name>Adrian</name>
-        <surname>Granosik</surname>
+				<surname>Granosik</surname>
 				<indeks>210194</indeks>
 			</author>
 			<author>
 				<name>Izabela</name>
-        <surname>Sobczyk</surname>
+				<surname>Sobczyk</surname>
 				<indeks>210319</indeks>
 			</author>
 		</authors>
@@ -83,7 +25,7 @@
 		<book ISBN="ID11112345678">
 			<title>Gra Anioła</title>
 			<book_authors>
-        <book_author author_id="ID1"/>
+				<book_author author_id="ID1"/>
 			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
@@ -162,8 +104,8 @@
 		<book ISBN="ID11112345682">
 			<title>Skarb Czyngis-Chana</title>
 			<book_authors>
-        <book_author author_id="ID2"/>
-        <book_author author_id="ID4"/>
+				<book_author author_id="ID2"/>
+				<book_author author_id="ID4"/>
 			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
@@ -183,7 +125,7 @@
 		<book ISBN="ID11112345683">
 			<title>Skarb Czyngis-Chana 2</title>
 			<book_authors>
-        <book_author author_id="ID2"/>
+				<book_author author_id="ID2"/>
 			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
@@ -203,8 +145,8 @@
 		<book ISBN="ID11112345684">
 			<title>Niewiadoma Elvisa</title>
 			<book_authors>
-        <book_author author_id="ID5"/>
-        <book_author author_id="ID6"/>
+				<book_author author_id="ID5"/>
+				<book_author author_id="ID6"/>
 			</book_authors>
 			<languages>
 				<language id_language="eng"></language>
@@ -223,8 +165,8 @@
 		<book ISBN="ID11112345685">
 			<title>Niewiadoma Elvisa 2</title>
 			<book_authors>
-        <book_author author_id="ID5"/>
-        <book_author author_id="ID6"/>
+				<book_author author_id="ID5"/>
+				<book_author author_id="ID6"/>
 			</book_authors>
 			<languages>
 				<language id_language="eng"></language>
@@ -244,8 +186,8 @@
 		<book ISBN="ID11112345686">
 			<title>Niewiadoma Elvisa 3</title>
 			<book_authors>
-        <book_author author_id="ID5"/>
-        <book_author author_id="ID6"/>
+				<book_author author_id="ID5"/>
+				<book_author author_id="ID6"/>
 			</book_authors>
 			<languages>
 				<language id_language="eng"></language>
@@ -264,7 +206,7 @@
 		<book ISBN="ID11112345687">
 			<title>First year</title>
 			<book_authors>
-        <book_author author_id="ID7"/>
+				<book_author author_id="ID7"/>
 			</book_authors>
 			<languages>
 				<language id_language="eng"></language>
@@ -283,7 +225,7 @@
 		<book ISBN="ID11112345688">
 			<title>Second year</title>
 			<book_authors>
-        <book_author author_id="ID7"/>
+				<book_author author_id="ID7"/>
 			</book_authors>
 			<languages>
 				<language id_language="eng"></language>
@@ -302,8 +244,8 @@
 		<book ISBN="ID11112345689">
 			<title>Konflikt sióstr</title>
 			<book_authors>
-        <book_author author_id="ID8"/>
-        <book_author author_id="ID9"/>
+				<book_author author_id="ID8"/>
+				<book_author author_id="ID9"/>
 			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
@@ -321,10 +263,10 @@
 		</book>		
 		<book ISBN="ID11112345690">
 			<title>Konflikt matek</title>
-      <book_authors>
-        <book_author author_id="ID8"/>
-        <book_author author_id="ID9"/>
-      </book_authors>
+			<book_authors>
+				<book_author author_id="ID8"/>
+				<book_author author_id="ID9"/>
+			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
 			</languages>
@@ -342,8 +284,8 @@
 		<book ISBN="ID11112345691">
 			<title>Konflikt matek 2</title>
 			<book_authors>
-        <book_author author_id="ID8"/>
-        <book_author author_id="ID9"/>
+				<book_author author_id="ID8"/>
+				<book_author author_id="ID9"/>
 			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
@@ -362,8 +304,8 @@
 		<book ISBN="ID11112345692">
 			<title>Cała Prawda</title>
 			<book_authors>
-        <book_author author_id="ID10"/>
-        <book_author author_id="ID11"/>
+				<book_author author_id="ID10"/>
+				<book_author author_id="ID11"/>
 			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
@@ -383,7 +325,7 @@
 		<book ISBN="ID11112345693">
 			<title>Jak Kupić Dom Natychmiastowo?</title>
 			<book_authors>
-        <book_author author_id="ID12"/>
+				<book_author author_id="ID12"/>
 			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
@@ -402,8 +344,8 @@
 		<book ISBN="ID11112345694">
 			<title>Tajemnica Disneya</title>
 			<book_authors>
-        <book_author author_id="ID9"/>
-      </book_authors>
+				<book_author author_id="ID9"/>
+			</book_authors>
 			<languages>
 				<language id_language="eng"></language>
 			</languages>
@@ -421,7 +363,7 @@
 		<book ISBN="ID11112345695">
 			<title>Poranna kawa</title>
 			<book_authors>
-        <book_author author_id="ID13"/>
+				<book_author author_id="ID13"/>
 			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
@@ -440,7 +382,7 @@
 		<book ISBN="ID11112345696">
 			<title>Historia USA</title>
 			<book_authors>
-        <book_author author_id="ID14"/>
+				<book_author author_id="ID14"/>
 			</book_authors>
 			<languages>
 				<language id_language="eng"></language>
@@ -459,7 +401,7 @@
 		<book ISBN="ID11112345697">
 			<title>Święty Mikołaj istnieje</title>
 			<book_authors>
-        <book_author author_id="ID15"/>
+				<book_author author_id="ID15"/>
 			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
@@ -478,7 +420,7 @@
 		<book ISBN="ID11112345698">
 			<title>Święty Mikołaj istnieje 2</title>
 			<book_authors>
-        <book_author author_id="ID15"/>
+				<book_author author_id="ID15"/>
 			</book_authors>
 			<languages>
 				<language id_language="pl"></language>
@@ -497,8 +439,8 @@
 		<book ISBN="ID11112345699">
 			<title>Złamane serce</title>
 			<book_authors>
-        <book_author author_id="ID16"/>
-        <book_author author_id="ID17"/>
+				<book_author author_id="ID16"/>
+				<book_author author_id="ID17"/>
 			</book_authors>
 			<languages>
 				<language id_language="eng"></language>
@@ -517,8 +459,8 @@
 		<book ISBN="ID11112345700">
 			<title>Brak nadziei</title>
 			<book_authors>
-        <book_author author_id="ID16"/>
-        <book_author author_id="ID17"/>
+				<book_author author_id="ID16"/>
+				<book_author author_id="ID17"/>
 			</book_authors>
 			<languages>
 				<language id_language="eng"></language>
@@ -537,7 +479,7 @@
 		<book ISBN="ID11112345701">
 			<title>Zaginiona rodzina</title>
 			<book_authors>
-        <book_author author_id="ID18"/>
+				<book_author author_id="ID18"/>
 			</book_authors>
 			<languages>
 				<language id_language="eng"></language>
@@ -556,97 +498,97 @@
 		</book>	
 	</books>
 
-  <book_authors_list>
-    <book_author_info author_id="ID1">
-      <name>Kinga</name>
-      <surname>Wojciechowska</surname>
-      <author_nation id_author_nation="pl"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID2">
-      <name>Mikołaj</name>
-      <surname>Brzeziński</surname>
-      <author_nation id_author_nation="pl"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID3">
-      <name>John</name>
-      <surname>Button</surname>
-      <author_nation id_author_nation="us"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID4">
-      <name>Inga</name>
-      <surname>Adamczyk</surname>
-      <author_nation id_author_nation="pl"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID5">
-      <name>Daniel</name>
-      <surname>Piasecki</surname>
-      <author_nation id_author_nation="pl"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID6">
-      <name>Peter</name>
-      <surname>Brown</surname>
-      <author_nation id_author_nation="us"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID7">
-      <name>Zayn</name>
-      <surname>Lesson</surname>
-      <author_nation id_author_nation="us"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID8">
-      <name>Marta</name>
-      <surname>Piotrowska</surname>
-      <author_nation id_author_nation="pl"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID9">
-      <name>Żaneta</name>
-      <surname>Piotrowska</surname>
-      <author_nation id_author_nation="pl"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID10">
-      <name>Maria</name>
-      <surname>Kaczmarek</surname>
-      <author_nation id_author_nation="pl"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID11">
-      <name>Sylwia</name>
-      <surname>Kaczmarek</surname>
-      <author_nation id_author_nation="us"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID12">
-      <name>Wiktor</name>
-      <surname>Malarczyk</surname>
-      <author_nation id_author_nation="pl"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID13">
-      <name>Angelika</name>
-      <surname>Mras</surname>
-      <author_nation id_author_nation="pl"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID14">
-      <name>Carla</name>
-      <surname>McCartney</surname>
-      <author_nation id_author_nation="us"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID15">
-      <name>Mikołaj</name>
-      <surname>Marusiński</surname>
-      <author_nation id_author_nation="pl"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID16">
-      <name>Rebecca</name>
-      <surname>Marley</surname>
-      <author_nation id_author_nation="us"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID17">
-      <name>Eric</name>
-      <surname>Stanley</surname>
-      <author_nation id_author_nation="us"></author_nation>
-    </book_author_info>
-    <book_author_info author_id="ID18">
-      <name>Victoria</name>
-      <surname>Monroe</surname>
-      <author_nation id_author_nation="us"></author_nation>
-    </book_author_info>
-  </book_authors_list>
+	<book_authors_list>
+		<book_author_info author_id="ID1">
+			<name>Kinga</name>
+			<surname>Wojciechowska</surname>
+			<author_nation id_author_nation="pl"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID2">
+			<name>Mikołaj</name>
+			<surname>Brzeziński</surname>
+			<author_nation id_author_nation="pl"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID3">
+			<name>John</name>
+			<surname>Button</surname>
+			<author_nation id_author_nation="us"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID4">
+			<name>Inga</name>
+			<surname>Adamczyk</surname>
+			<author_nation id_author_nation="pl"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID5">
+			<name>Daniel</name>
+			<surname>Piasecki</surname>
+			<author_nation id_author_nation="pl"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID6">
+			<name>Peter</name>
+			<surname>Brown</surname>
+			<author_nation id_author_nation="us"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID7">
+			<name>Zayn</name>
+			<surname>Lesson</surname>
+			<author_nation id_author_nation="us"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID8">
+			<name>Marta</name>
+			<surname>Piotrowska</surname>
+			<author_nation id_author_nation="pl"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID9">
+			<name>Żaneta</name>
+			<surname>Piotrowska</surname>
+			<author_nation id_author_nation="pl"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID10">
+			<name>Maria</name>
+			<surname>Kaczmarek</surname>
+			<author_nation id_author_nation="pl"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID11">
+			<name>Sylwia</name>
+			<surname>Kaczmarek</surname>
+			<author_nation id_author_nation="us"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID12">
+			<name>Wiktor</name>
+			<surname>Malarczyk</surname>
+			<author_nation id_author_nation="pl"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID13">
+			<name>Angelika</name>
+			<surname>Mras</surname>
+			<author_nation id_author_nation="pl"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID14">
+			<name>Carla</name>
+			<surname>McCartney</surname>
+			<author_nation id_author_nation="us"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID15">
+			<name>Mikołaj</name>
+			<surname>Marusiński</surname>
+			<author_nation id_author_nation="pl"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID16">
+			<name>Rebecca</name>
+			<surname>Marley</surname>
+			<author_nation id_author_nation="us"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID17">
+			<name>Eric</name>
+			<surname>Stanley</surname>
+			<author_nation id_author_nation="us"></author_nation>
+		</book_author_info>
+		<book_author_info author_id="ID18">
+			<name>Victoria</name>
+			<surname>Monroe</surname>
+			<author_nation id_author_nation="us"></author_nation>
+		</book_author_info>
+	</book_authors_list>
 
 </bookshelf>

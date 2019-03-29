@@ -1,33 +1,60 @@
-<!-- General -->
-<!ELEMENT bookshelf(information, books)>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<!-- parameter entity -->
-<!ENTITY % id_nation="(pl|en|us)">
-<!ENTITY % id_language="(pl|en|us)">
-<!ENTITY % id_binding="(miękka|twarda)">
-<!ENTITY % id_dimension=(mm|cm)">
-<!ENTITY % id_currency="(PLN|USD|EUR)"
-<!ENTITY % id_printing_type="(color|black_white)">
-<!ENTITY % id_age_category="(5|10|13|16|18)">
-<!ENTITY % id_type="(1|2|3|4|5|6|7)">
+<!-- Gengeral -->
+<!ELEMENT bookshelf (information, books, book_authors_list)>
 
 <!-- Information -->
-<!ELEMENT information (description?, authors, modification_date)>
+<!ELEMENT information (description, authors, modification_date)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT modification_date (#PCDATA)>
 <!ELEMENT authors (author+)>
+<!ELEMENT author (name, surname, indeks)>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT indeks (#PCDATA)>
 
 <!-- Books -->
-<!ELEMENT books (book+)
+<!ELEMENT books (book+)>
 
 <!-- Book -->
-<!ELEMENT book (title, book_authors?, languages, realise_day, number_of_pages, binding, dimensions, price+, age_category, type)>
+<!ELEMENT book (title, book_authors?, languages, realise_day, number_of_pages, binding, dimensions, price+, printing, age_category)>
 <!ATTLIST book ISBN ID #REQUIRED>
 <!ELEMENT title (#PCDATA)>
 
 <!-- Book author/s -->
 <!ELEMENT book_authors (book_author+)>
+<!ELEMENT book_author EMPTY>
+
+<!ATTLIST book_author author_id IDREFS #REQUIRED>
+
+<!ELEMENT languages (language+)>
+<!ELEMENT language (#PCDATA)>
+<!ATTLIST language id_language (pl|eng|us) #REQUIRED>
 
 <!ELEMENT realise_day (#PCDATA)>
 <!ELEMENT number_of_pages (#PCDATA)>
-<!ELEMENT height (#PCDATA)>
+<!ELEMENT binding (#PCDATA)>
+
+<!ATTLIST binding id_binding (miekka|twarda) #REQUIRED>
+
+<!ELEMENT dimensions (width, height)>
 <!ELEMENT width (#PCDATA)>
+<!ELEMENT height (#PCDATA)>
+
+<!ATTLIST dimensions id_dimension (mm|cm) #REQUIRED>
+
 <!ELEMENT price (#PCDATA)>
+<!ATTLIST price id_currency (PLN|EUR) #REQUIRED>
+
+<!ELEMENT age_category (#PCDATA)>
+<!ATTLIST age_category id_age_category (5|10|13|16|18) #REQUIRED>
+
+<!ELEMENT printing (#PCDATA)>
+<!ATTLIST printing id_printing_type (color|black_white) #REQUIRED>
+
+<!ELEMENT book_authors_list (book_author_info*)>
+<!ELEMENT book_author_info (name, surname, author_nation)>
+<!ATTLIST book_author_info author_id ID #REQUIRED>
+<!ELEMENT surname (#PCDATA)>
+<!ELEMENT author_nation (#PCDATA)>
+<!ATTLIST author_nation id_author_nation (pl|eng|us) #REQUIRED>
