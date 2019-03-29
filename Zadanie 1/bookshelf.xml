@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookshelf [
 <!-- Gengeral -->
-<!ELEMENT bookshelf (information, books,author_nations, book_authors_list)>
+<!ELEMENT bookshelf (information, books, book_authors_list)>
 
 <!-- Information -->
 <!ELEMENT information (description, authors, modification_date)>
@@ -26,12 +26,6 @@
 <!ELEMENT book_author EMPTY>
   
  <!ATTLIST book_author author_id IDREFS #REQUIRED>
-
-  
-<!ELEMENT author_name (#PCDATA)>
-<!ELEMENT author_nationality (#PCDATA)>
-<!ATTLIST author_nationality id_author_nation (pl|eng|us) #REQUIRED>
-
 
 <!ELEMENT languages (language+)>
 <!ELEMENT language (#PCDATA)>
@@ -63,11 +57,8 @@
   <!ATTLIST book_author_info author_id ID #REQUIRED>
 <!ELEMENT surname (#PCDATA)>
 <!ELEMENT author_nation (#PCDATA)>
-<!ATTLIST author_nation id_author_nation IDREFS #REQUIRED>
+<!ATTLIST author_nation id_author_nation (pl|eng|us) #REQUIRED>
 
-  <!ELEMENT author_nations (nation*)>
-  <!ELEMENT nation (#PCDATA)>
-  <!ATTLIST nation id_author_nation ID #REQUIRED>
 ]>
 
 <?xml-stylesheet href="bookshelf.css" type="text/css" ?>
@@ -100,7 +91,6 @@
 			<realise_day>2000-07-13</realise_day>
 			<number_of_pages>144</number_of_pages>
 			<binding id_binding="miekka"/>
-			
 			<dimensions id_dimension="cm">
 				<width> 16 </width>
 				<height> 25 </height>
@@ -115,7 +105,7 @@
 				<book_author author_id="ID1"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl"></language>
+				<language id_language="us"></language>
 			</languages>
 			<realise_day>2010-12-12</realise_day>
 			<number_of_pages>225</number_of_pages>
@@ -135,7 +125,7 @@
 				<book_author author_id="ID1"/>
 			</book_authors>
 			<languages>
-				<language id_language="pl"></language>
+				<language id_language="us"></language>
 			</languages>
 			<realise_day>2019-12-24</realise_day>
 			<number_of_pages>369</number_of_pages>
@@ -566,11 +556,6 @@
 		</book>	
 	</books>
 
-  <author_nations>
-    <nation id_author_nation="pl">Polska></nation>
-    <nation id_author_nation="us">USA></nation>
-    <nation id_author_nation="eng">Wielka Brytania></nation>
-  </author_nations>
   <book_authors_list>
     <book_author_info author_id="ID1">
       <name>Kinga</name>
