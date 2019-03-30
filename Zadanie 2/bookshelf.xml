@@ -22,6 +22,28 @@
 		<modification_date>2019-03-14</modification_date>
 	</information>
 
+  <books>
+    <book ISBN="1111234567812">
+      <title>Gra Anioła</title>
+      <book_authors>
+        <book_author author_id="ID1"/>
+      </book_authors>
+      <languages>
+        <language id_language="pl"></language>
+      </languages>
+      <realise_day>2000-07-13</realise_day>
+      <number_of_pages>144</number_of_pages>
+      <binding id_binding="miekka"/>
+      <dimensions id_dimension="cm">
+        <width> 16 </width>
+        <height> 25 </height>
+      </dimensions>
+     <price id_currency="PLN">39.99</price>
+      <printing id_printing_type="black_white"/>
+      <age_category id_age_category="13"/>
+    </book>
+  </books>
+  
   <book_authors_list>
     <book_author_info author_id="ID1">
       <name>Kinga</name>
