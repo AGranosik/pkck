@@ -1,10 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="urn:test.Namespace"
-           xmlns="urn:test.Namespace"
+           xmlns:this="urn:test.Namespace"
            elementFormDefault="qualified" >
 
+  <xs:complexType name="booksComplexType">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="book">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="title" type="xs:string" />
+          </xs:sequence>
+          <xs:attribute name="ISBN">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:length value="13"/>
+                <xs:pattern value="[0-9X -]*"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 
+
+  <xs:complexType name="book_authors_listComplexType">
+    <xs:sequence>
+      <xs:element name="book_author_info" type="this:book_author_infoComplexType" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="book_author_infoComplexType">
+    <xs:complexContent>
+      <xs:extension base="this:book_author_infoContent">
+        <xs:attribute name="author_id" use="required" type="xs:ID" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="book_author_infoContent">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="surname" type="xs:string" />
+      <xs:element name="author_nation">
+        <xs:complexType>
+          <xs:attribute name="id_author_nation" >
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="pl" />
+                <xs:enumeration value="eng" />
+                <xs:enumeration value="us" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  
   <xs:element name="bookshelf">
     <xs:complexType>
       <xs:sequence>
@@ -37,6 +92,8 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <!-- <xs:element name="books" type="this:booksComplexType" /> -->
+        <xs:element name="book_authors_list" type="this:book_authors_listComplexType"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

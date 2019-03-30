@@ -22,4 +22,96 @@
 		<modification_date>2019-03-14</modification_date>
 	</information>
 
+  <book_authors_list>
+    <book_author_info author_id="ID1">
+      <name>Kinga</name>
+      <surname>Wojciechowska</surname>
+      <author_nation id_author_nation="pl"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID2">
+      <name>Mikołaj</name>
+      <surname>Brzeziński</surname>
+      <author_nation id_author_nation="pl"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID3">
+      <name>John</name>
+      <surname>Button</surname>
+      <author_nation id_author_nation="us"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID4">
+      <name>Inga</name>
+      <surname>Adamczyk</surname>
+      <author_nation id_author_nation="pl"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID5">
+      <name>Daniel</name>
+      <surname>Piasecki</surname>
+      <author_nation id_author_nation="pl"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID6">
+      <name>Peter</name>
+      <surname>Brown</surname>
+      <author_nation id_author_nation="us"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID7">
+      <name>Zayn</name>
+      <surname>Lesson</surname>
+      <author_nation id_author_nation="us"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID8">
+      <name>Marta</name>
+      <surname>Piotrowska</surname>
+      <author_nation id_author_nation="pl"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID9">
+      <name>Żaneta</name>
+      <surname>Piotrowska</surname>
+      <author_nation id_author_nation="pl"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID10">
+      <name>Maria</name>
+      <surname>Kaczmarek</surname>
+      <author_nation id_author_nation="pl"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID11">
+      <name>Sylwia</name>
+      <surname>Kaczmarek</surname>
+      <author_nation id_author_nation="us"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID12">
+      <name>Wiktor</name>
+      <surname>Malarczyk</surname>
+      <author_nation id_author_nation="pl"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID13">
+      <name>Angelika</name>
+      <surname>Mras</surname>
+      <author_nation id_author_nation="pl"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID14">
+      <name>Carla</name>
+      <surname>McCartney</surname>
+      <author_nation id_author_nation="us"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID15">
+      <name>Mikołaj</name>
+      <surname>Marusiński</surname>
+      <author_nation id_author_nation="pl"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID16">
+      <name>Rebecca</name>
+      <surname>Marley</surname>
+      <author_nation id_author_nation="us"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID17">
+      <name>Eric</name>
+      <surname>Stanley</surname>
+      <author_nation id_author_nation="us"></author_nation>
+    </book_author_info>
+    <book_author_info author_id="ID18">
+      <name>Victoria</name>
+      <surname>Monroe</surname>
+      <author_nation id_author_nation="us"></author_nation>
+    </book_author_info>
+  </book_authors_list>
 </bookshelf>
