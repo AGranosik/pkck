@@ -48,7 +48,7 @@
     <xs:attribute name="id_age_category">
       <xs:simpleType>
         <xs:restriction base="xs:positiveInteger">
-          <xs:maxExclusive value="17" />
+          <xs:maxExclusive value="19" />
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
@@ -202,6 +202,15 @@
         <xs:element name="book_authors_list" type="this:book_authors_listComplexType"/>
       </xs:sequence>
     </xs:complexType>
+
+    <xs:key name="authorId">
+      <xs:selector xpath="this:book_authors_list/this:book_author_info" />
+      <xs:field xpath="@author_id" />
+    </xs:key>
+    <xs:keyref name="authorIdRef" refer="this:authorId">
+      <xs:selector xpath="this:books/this:book/this:book_authors/this:book_author" />
+      <xs:field xpath="@author_id" />
+    </xs:keyref>
   </xs:element>
   
 </xs:schema>
