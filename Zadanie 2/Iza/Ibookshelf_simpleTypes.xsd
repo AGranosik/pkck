@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="simpleTypes.Namespace"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="simpleTypes.Namespace"
+        >
+
+	<xs:simpleType name="language_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pl" />
+			<xs:enumeration value="eng" />
+			<xs:enumeration value="us" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="binding_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="twarda" />
+			<xs:enumeration value="miekka" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="dimensions_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="mm" />
+			<xs:enumeration value="cm" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="currency_TYPE">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="PLN" />
+			<xs:enumeration value="EUR" />
+			<xs:enumeration value="USD" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="price_restrictions_TYPE">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2" />
+			<xs:minInclusive value="1.00" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="printing_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="black_white" />
+			<xs:enumeration value="color" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="age_category_TYPE">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="19" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ISBN_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:length value="13"/>
+			<xs:pattern value="[0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="id_author_nation_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pl" />
+			<xs:enumeration value="eng" />
+			<xs:enumeration value="us" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="indeks_TYPE">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[1-9][0-9][0-9][0-9][0-9][0-9]" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>	

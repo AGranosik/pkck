@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:test.Namespace"
+		   xmlns:this="urn:test.Namespace"
+           elementFormDefault="qualified" 
+		   xmlns:my="simpleTypes.Namespace"
+		   >
+		   
+	<xs:import namespace="simpleTypes.Namespace"
+               schemaLocation="Ibook_simpleTypes.xsd" />
+
+	<xs:group name="dimensions_GROUP">
+		<xs:sequence>
+			<xs:element name="width" type="xs:positiveInteger" />
+			<xs:element name="height" type="xs:positiveInteger" />
+		</xs:sequence>
+	</xs:group>
+
+	<xs:complexType name="booksComplexType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="book">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="title" type="xs:string" />
+						<xs:element name="book_authors" type="this:book_authorComplexType" />
+						<xs:element name="languages" type="this:languageComplexType" />
+						<xs:element name="realise_day" type="xs:date" />
+						<xs:element name="number_of_pages" type="xs:positiveInteger" />
+						<xs:element name="binding" type="this:bindingComplexType" />
+						<xs:element name="dimensions" type="this:dimensionsComplexType" />
+						<xs:element name="price" type="this:priceComplexType" />
+						<xs:element name="printing" type="this:printingComplexType" />
+						<xs:element name="age_category" type="this:age_categoryComplexType" />
+					</xs:sequence>
+					<xs:attribute name="ISBN" type="my:ISBN_TYPE"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="book_authorComplexType">
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="book_author">
+				<xs:complexType>
+					<xs:attribute name="author_id" use="required" />
+				</xs:complexType>
+			</xs:element> 
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="languageComplexType">
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="language">
+				<xs:complexType>
+					<xs:attribute name="id_language" type="my:language_TYPE"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="bindingComplexType">
+		<xs:attribute name="id_binding" type="my:binding_TYPE"/>
+	</xs:complexType>
+
+	<xs:complexType name="dimensionsComplexType">
+		<xs:group ref="this:dimensions_GROUP"/>
+		<xs:attribute name="id_dimension" type="my:dimensions_TYPE"/>
+	</xs:complexType>
+
+	<xs:complexType name="priceComplexType">
+		<xs:simpleContent>
+			<xs:extension base="my:price_restrictions_TYPE">
+				<xs:attribute name="id_currency" type="my:currency_TYPE" use="optional" default="PLN" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="printingComplexType">
+		<xs:attribute name="id_printing_type" type="my:printing_TYPE"/>
+	</xs:complexType>
+
+	<xs:complexType name="age_categoryComplexType">
+		<xs:attribute name="id_age_category" type="my:age_category_TYPE"/>
+	</xs:complexType>
+
+	<xs:complexType name="book_authors_listComplexType">
+		<xs:sequence>
+			<xs:element name="book_author_info" type="this:book_author_infoComplexType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="book_author_infoComplexType">
+		<xs:complexContent>
+			<xs:extension base="this:book_author_infoContent">
+				<xs:attribute name="author_id" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="book_author_infoContent">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="surname" type="xs:string" />
+			<xs:element name="author_nation">
+				<xs:complexType>
+					<xs:attribute name="id_author_nation" type="my:id_author_nation_TYPE" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="bookshelf">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="information">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="description" type="xs:string" />
+							<xs:element name="authors">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="author" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="name" type="xs:string"/>
+													<xs:element name="surname" type="xs:string"/>
+													<xs:element name="indeks" type="my:indeks_TYPE"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="modification_date" type="xs:date" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="books" type="this:booksComplexType" />
+				<xs:element name="book_authors_list" type="this:book_authors_listComplexType"/>
+			</xs:sequence>
+		</xs:complexType>
+
+		<xs:key name="authorId">
+			<xs:selector xpath="this:book_authors_list/this:book_author_info" />
+			<xs:field xpath="@author_id" />
+		</xs:key>
+		<xs:keyref name="authorIdRef" refer="this:authorId">
+			<xs:selector xpath="this:books/this:book/this:book_authors/this:book_author" />
+			<xs:field xpath="@author_id" />
+		</xs:keyref>
+	</xs:element>
+
+</xs:schema>
