@@ -1,561 +1,561 @@
 <subsidiary>
-   <informations>
-      <name>Bookshelf</name>
-      <generated>2019-04-24</generated>
-      <description>Zbiór książek w sklepie.</description>
-      <author>Adrian Granosik, Indeks: 210194</author>
-      <author>Izabela Sobczyk, Indeks: 210319</author>
-   </informations>
-   <statistic>
-      <position_count>24</position_count>
-      <avg_bookshelf_value>58.48 PLN</avg_bookshelf_value>
-      <number_polish_items>12</number_polish_items>
-      <number_eng_items>16</number_eng_items>
-      <number_book_for_adult>3</number_book_for_adult>
-      <oldest_book>
-         <title>Niewiadoma Elvisa</title>
-         <realise_day>1995-10-15</realise_day>
-      </oldest_book>
-      <youngest_book>
-         <title>Gra Anioła 3</title>
-         <realise_day>2019-12-24</realise_day>
-      </youngest_book>
-   </statistic>
-   <books>
-      <book>
-         <ISBN>8911112345700</ISBN>
-         <title>Brak nadziei</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Rebecca</name>
-               <surname>Marley</surname>
-               <author_nation>USA</author_nation>
-            </author>
-            <author>
-               <name>Eric</name>
-               <surname>Stanley</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 115  x  280 mm</dimensions>
-         <price>75.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>6311112345692</ISBN>
-         <title>Cała Prawda</title>
-         <language>polish</language>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Maria</name>
-               <surname>Kaczmarek</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-            <author>
-               <name>Sylwia</name>
-               <surname>Kaczmarek</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 105  x  313 mm</dimensions>
-         <price>53.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>5511112345687</ISBN>
-         <title>First year</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Zayn</name>
-               <surname>Lesson</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 170  x  250 mm</dimensions>
-         <price>17.99 EUR</price>
-         <if_for_adult>yes</if_for_adult>
-      </book>
-      <book>
-         <ISBN>4561112345678</ISBN>
-         <title>Gra Anioła</title>
-         <language>polish</language>
-         <authors>
-            <author>
-               <name>Kinga</name>
-               <surname>Wojciechowska</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 16  x  25 cm</dimensions>
-         <price>39.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>1231112345679</ISBN>
-         <title>Gra Anioła 2</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Kinga</name>
-               <surname>Wojciechowska</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 167  x  255 mm</dimensions>
-         <price>42.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>1112112345680</ISBN>
-         <title>Gra Anioła 3</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Kinga</name>
-               <surname>Wojciechowska</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 167  x  155 mm</dimensions>
-         <price>59.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>1711112345696</ISBN>
-         <title>Historia USA</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Carla</name>
-               <surname>McCartney</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 100  x  305 mm</dimensions>
-         <price>119.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>3611112345693</ISBN>
-         <title>Jak Kupić Dom Natychmiastowo?</title>
-         <language>polish</language>
-         <authors>
-            <author>
-               <name>Wiktor</name>
-               <surname>Malarczyk</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 150  x  350 mm</dimensions>
-         <price>99.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>6211112345690</ISBN>
-         <title>Konflikt matek</title>
-         <language>polish</language>
-         <authors>
-            <author>
-               <name>Marta</name>
-               <surname>Piotrowska</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-            <author>
-               <name>Żaneta</name>
-               <surname>Piotrowska</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 180  x  305 mm</dimensions>
-         <price>39.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>2611112345691</ISBN>
-         <title>Konflikt matek 2</title>
-         <language>polish</language>
-         <authors>
-            <author>
-               <name>Marta</name>
-               <surname>Piotrowska</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-            <author>
-               <name>Żaneta</name>
-               <surname>Piotrowska</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 180  x  305 mm</dimensions>
-         <price>39.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>8811112345689</ISBN>
-         <title>Konflikt sióstr</title>
-         <language>polish</language>
-         <authors>
-            <author>
-               <name>Marta</name>
-               <surname>Piotrowska</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-            <author>
-               <name>Żaneta</name>
-               <surname>Piotrowska</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 180  x  305 mm</dimensions>
-         <price>39.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>5211112345684</ISBN>
-         <title>Niewiadoma Elvisa</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Daniel</name>
-               <surname>Piasecki</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-            <author>
-               <name>Peter</name>
-               <surname>Brown</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 167  x  259 mm</dimensions>
-         <price>29.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>1111112345685</ISBN>
-         <title>Niewiadoma Elvisa 2</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Daniel</name>
-               <surname>Piasecki</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-            <author>
-               <name>Peter</name>
-               <surname>Brown</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 167  x  259 mm</dimensions>
-         <price>45.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>6611112345686</ISBN>
-         <title>Niewiadoma Elvisa 3</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Daniel</name>
-               <surname>Piasecki</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-            <author>
-               <name>Peter</name>
-               <surname>Brown</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 167  x  259 mm</dimensions>
-         <price>55.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>7111112345695</ISBN>
-         <title>Poranna kawa</title>
-         <language>polish</language>
-         <authors>
-            <author>
-               <name>Angelika</name>
-               <surname>Mras</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 180  x  250 mm</dimensions>
-         <price>59.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>9911112345688</ISBN>
-         <title>Second year</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Zayn</name>
-               <surname>Lesson</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 170  x  250 mm</dimensions>
-         <price>14.99 EUR</price>
-         <if_for_adult>yes</if_for_adult>
-      </book>
-      <book>
-         <ISBN>9411112345682</ISBN>
-         <title>Skarb Czyngis-Chana</title>
-         <language>polish</language>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Mikołaj</name>
-               <surname>Brzeziński</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-            <author>
-               <name>Inga</name>
-               <surname>Adamczyk</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 200  x  600 mm</dimensions>
-         <price>69.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>4911112345683</ISBN>
-         <title>Skarb Czyngis-Chana 2</title>
-         <language>polish</language>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Mikołaj</name>
-               <surname>Brzeziński</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 200  x  600 mm</dimensions>
-         <price>69.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>8211112345681</ISBN>
-         <title>Skarb Herkulesa</title>
-         <language>polish</language>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Mikołaj</name>
-               <surname>Brzeziński</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-            <author>
-               <name>John</name>
-               <surname>Button</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 10  x  30 cm</dimensions>
-         <price>19.99 EUR</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>4111112345694</ISBN>
-         <title>Tajemnica Disneya</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Żaneta</name>
-               <surname>Piotrowska</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 90  x  220 mm</dimensions>
-         <price>39.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>1111234570156</ISBN>
-         <title>Zaginiona rodzina</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Victoria</name>
-               <surname>Monroe</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 105  x  255 mm</dimensions>
-         <price>35.99 PLN</price>
-         <if_for_adult>yes</if_for_adult>
-      </book>
-      <book>
-         <ISBN>7711112345699</ISBN>
-         <title>Złamane serce</title>
-         <language>english</language>
-         <authors>
-            <author>
-               <name>Rebecca</name>
-               <surname>Marley</surname>
-               <author_nation>USA</author_nation>
-            </author>
-            <author>
-               <name>Eric</name>
-               <surname>Stanley</surname>
-               <author_nation>USA</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 115  x  280 mm</dimensions>
-         <price>65.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>3311112345697</ISBN>
-         <title>Święty Mikołaj istnieje</title>
-         <language>polish</language>
-         <authors>
-            <author>
-               <name>Mikołaj</name>
-               <surname>Marusiński</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 90  x  290 mm</dimensions>
-         <price>39.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-      <book>
-         <ISBN>2211112345698</ISBN>
-         <title>Święty Mikołaj istnieje 2</title>
-         <language>polish</language>
-         <authors>
-            <author>
-               <name>Mikołaj</name>
-               <surname>Marusiński</surname>
-               <author_nation>Poland</author_nation>
-            </author>
-         </authors>
-         <binding>soft</binding>
-         <dimensions> 90  x  290 mm</dimensions>
-         <price>49.99 PLN</price>
-         <if_for_adult>no</if_for_adult>
-      </book>
-   </books>
-   <book_authors_list>
-      <book_author>
-         <name>Kinga</name>
-         <surname>Wojciechowska</surname>
-         <author_nation>Poland</author_nation>
-      </book_author>
-      <book_author>
-         <name>Eric</name>
-         <surname>Stanley</surname>
-         <author_nation>USA</author_nation>
-      </book_author>
-      <book_author>
-         <name>Marta</name>
-         <surname>Piotrowska</surname>
-         <author_nation>Poland</author_nation>
-      </book_author>
-      <book_author>
-         <name>Żaneta</name>
-         <surname>Piotrowska</surname>
-         <author_nation>Poland</author_nation>
-      </book_author>
-      <book_author>
-         <name>Daniel</name>
-         <surname>Piasecki</surname>
-         <author_nation>Poland</author_nation>
-      </book_author>
-      <book_author>
-         <name>Angelika</name>
-         <surname>Mras</surname>
-         <author_nation>Poland</author_nation>
-      </book_author>
-      <book_author>
-         <name>Victoria</name>
-         <surname>Monroe</surname>
-         <author_nation>USA</author_nation>
-      </book_author>
-      <book_author>
-         <name>Carla</name>
-         <surname>McCartney</surname>
-         <author_nation>USA</author_nation>
-      </book_author>
-      <book_author>
-         <name>Mikołaj</name>
-         <surname>Marusiński</surname>
-         <author_nation>Poland</author_nation>
-      </book_author>
-      <book_author>
-         <name>Rebecca</name>
-         <surname>Marley</surname>
-         <author_nation>USA</author_nation>
-      </book_author>
-      <book_author>
-         <name>Wiktor</name>
-         <surname>Malarczyk</surname>
-         <author_nation>Poland</author_nation>
-      </book_author>
-      <book_author>
-         <name>Zayn</name>
-         <surname>Lesson</surname>
-         <author_nation>USA</author_nation>
-      </book_author>
-      <book_author>
-         <name>Maria</name>
-         <surname>Kaczmarek</surname>
-         <author_nation>Poland</author_nation>
-      </book_author>
-      <book_author>
-         <name>Sylwia</name>
-         <surname>Kaczmarek</surname>
-         <author_nation>USA</author_nation>
-      </book_author>
-      <book_author>
-         <name>John</name>
-         <surname>Button</surname>
-         <author_nation>USA</author_nation>
-      </book_author>
-      <book_author>
-         <name>Mikołaj</name>
-         <surname>Brzeziński</surname>
-         <author_nation>Poland</author_nation>
-      </book_author>
-      <book_author>
-         <name>Peter</name>
-         <surname>Brown</surname>
-         <author_nation>USA</author_nation>
-      </book_author>
-      <book_author>
-         <name>Inga</name>
-         <surname>Adamczyk</surname>
-         <author_nation>Poland</author_nation>
-      </book_author>
-   </book_authors_list>
+	<informations>
+		<name>Bookshelf</name>
+		<generated>2019-04-24</generated>
+		<description>Zbiór książek w sklepie.</description>
+		<author>Adrian Granosik, Indeks: 210194</author>
+		<author>Izabela Sobczyk, Indeks: 210319</author>
+	</informations>
+	<statistic>
+		<position_count>24</position_count>
+		<avg_bookshelf_value>58.48 PLN</avg_bookshelf_value>
+		<number_polish_items>12</number_polish_items>
+		<number_eng_items>16</number_eng_items>
+		<number_book_for_adult>3</number_book_for_adult>
+		<oldest_book>
+			<title>Niewiadoma Elvisa</title>
+			<realise_day>1995-10-15</realise_day>
+		</oldest_book>
+		<youngest_book>
+			<title>Gra Anioła 3</title>
+			<realise_day>2019-12-24</realise_day>
+		</youngest_book>
+	</statistic>
+	<books>
+		<book>
+			<ISBN>8911112345700</ISBN>
+			<title>Brak nadziei</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Rebecca</name>
+					<surname>Marley</surname>
+					<author_nation>USA</author_nation>
+				</author>
+				<author>
+					<name>Eric</name>
+					<surname>Stanley</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 115  x  280 mm</dimensions>
+			<price>75.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>6311112345692</ISBN>
+			<title>Cała Prawda</title>
+			<language>polish</language>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Maria</name>
+					<surname>Kaczmarek</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+				<author>
+					<name>Sylwia</name>
+					<surname>Kaczmarek</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 105  x  313 mm</dimensions>
+			<price>53.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>5511112345687</ISBN>
+			<title>First year</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Zayn</name>
+					<surname>Lesson</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 170  x  250 mm</dimensions>
+			<price>17.99 EUR</price>
+			<if_for_adult>yes</if_for_adult>
+		</book>
+		<book>
+			<ISBN>4561112345678</ISBN>
+			<title>Gra Anioła</title>
+			<language>polish</language>
+			<authors>
+				<author>
+					<name>Kinga</name>
+					<surname>Wojciechowska</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 16  x  25 cm</dimensions>
+			<price>39.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>1231112345679</ISBN>
+			<title>Gra Anioła 2</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Kinga</name>
+					<surname>Wojciechowska</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 167  x  255 mm</dimensions>
+			<price>42.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>1112112345680</ISBN>
+			<title>Gra Anioła 3</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Kinga</name>
+					<surname>Wojciechowska</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 167  x  155 mm</dimensions>
+			<price>59.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>1711112345696</ISBN>
+			<title>Historia USA</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Carla</name>
+					<surname>McCartney</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 100  x  305 mm</dimensions>
+			<price>119.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>3611112345693</ISBN>
+			<title>Jak Kupić Dom Natychmiastowo?</title>
+			<language>polish</language>
+			<authors>
+				<author>
+					<name>Wiktor</name>
+					<surname>Malarczyk</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 150  x  350 mm</dimensions>
+			<price>99.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>6211112345690</ISBN>
+			<title>Konflikt matek</title>
+			<language>polish</language>
+			<authors>
+				<author>
+					<name>Marta</name>
+					<surname>Piotrowska</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+				<author>
+					<name>Żaneta</name>
+					<surname>Piotrowska</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 180  x  305 mm</dimensions>
+			<price>39.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>2611112345691</ISBN>
+			<title>Konflikt matek 2</title>
+			<language>polish</language>
+			<authors>
+				<author>
+					<name>Marta</name>
+					<surname>Piotrowska</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+				<author>
+					<name>Żaneta</name>
+					<surname>Piotrowska</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 180  x  305 mm</dimensions>
+			<price>39.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>8811112345689</ISBN>
+			<title>Konflikt sióstr</title>
+			<language>polish</language>
+			<authors>
+				<author>
+					<name>Marta</name>
+					<surname>Piotrowska</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+				<author>
+					<name>Żaneta</name>
+					<surname>Piotrowska</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 180  x  305 mm</dimensions>
+			<price>39.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>5211112345684</ISBN>
+			<title>Niewiadoma Elvisa</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Daniel</name>
+					<surname>Piasecki</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+				<author>
+					<name>Peter</name>
+					<surname>Brown</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 167  x  259 mm</dimensions>
+			<price>29.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>1111112345685</ISBN>
+			<title>Niewiadoma Elvisa 2</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Daniel</name>
+					<surname>Piasecki</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+				<author>
+					<name>Peter</name>
+					<surname>Brown</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 167  x  259 mm</dimensions>
+			<price>45.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>6611112345686</ISBN>
+			<title>Niewiadoma Elvisa 3</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Daniel</name>
+					<surname>Piasecki</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+				<author>
+					<name>Peter</name>
+					<surname>Brown</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 167  x  259 mm</dimensions>
+			<price>55.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>7111112345695</ISBN>
+			<title>Poranna kawa</title>
+			<language>polish</language>
+			<authors>
+				<author>
+					<name>Angelika</name>
+					<surname>Mras</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 180  x  250 mm</dimensions>
+			<price>59.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>9911112345688</ISBN>
+			<title>Second year</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Zayn</name>
+					<surname>Lesson</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 170  x  250 mm</dimensions>
+			<price>14.99 EUR</price>
+			<if_for_adult>yes</if_for_adult>
+		</book>
+		<book>
+			<ISBN>9411112345682</ISBN>
+			<title>Skarb Czyngis-Chana</title>
+			<language>polish</language>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Mikołaj</name>
+					<surname>Brzeziński</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+				<author>
+					<name>Inga</name>
+					<surname>Adamczyk</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 200  x  600 mm</dimensions>
+			<price>69.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>4911112345683</ISBN>
+			<title>Skarb Czyngis-Chana 2</title>
+			<language>polish</language>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Mikołaj</name>
+					<surname>Brzeziński</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 200  x  600 mm</dimensions>
+			<price>69.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>8211112345681</ISBN>
+			<title>Skarb Herkulesa</title>
+			<language>polish</language>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Mikołaj</name>
+					<surname>Brzeziński</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+				<author>
+					<name>John</name>
+					<surname>Button</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 10  x  30 cm</dimensions>
+			<price>19.99 EUR</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>4111112345694</ISBN>
+			<title>Tajemnica Disneya</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Żaneta</name>
+					<surname>Piotrowska</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 90  x  220 mm</dimensions>
+			<price>39.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>1111234570156</ISBN>
+			<title>Zaginiona rodzina</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Victoria</name>
+					<surname>Monroe</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 105  x  255 mm</dimensions>
+			<price>35.99 PLN</price>
+			<if_for_adult>yes</if_for_adult>
+		</book>
+		<book>
+			<ISBN>7711112345699</ISBN>
+			<title>Złamane serce</title>
+			<language>english</language>
+			<authors>
+				<author>
+					<name>Rebecca</name>
+					<surname>Marley</surname>
+					<author_nation>USA</author_nation>
+				</author>
+				<author>
+					<name>Eric</name>
+					<surname>Stanley</surname>
+					<author_nation>USA</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 115  x  280 mm</dimensions>
+			<price>65.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>3311112345697</ISBN>
+			<title>Święty Mikołaj istnieje</title>
+			<language>polish</language>
+			<authors>
+				<author>
+					<name>Mikołaj</name>
+					<surname>Marusiński</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 90  x  290 mm</dimensions>
+			<price>39.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+		<book>
+			<ISBN>2211112345698</ISBN>
+			<title>Święty Mikołaj istnieje 2</title>
+			<language>polish</language>
+			<authors>
+				<author>
+					<name>Mikołaj</name>
+					<surname>Marusiński</surname>
+					<author_nation>Poland</author_nation>
+				</author>
+			</authors>
+			<binding>soft</binding>
+			<dimensions> 90  x  290 mm</dimensions>
+			<price>49.99 PLN</price>
+			<if_for_adult>no</if_for_adult>
+		</book>
+	</books>
+	<book_authors_list>
+		<book_author>
+			<name>Kinga</name>
+			<surname>Wojciechowska</surname>
+			<author_nation>Poland</author_nation>
+		</book_author>
+		<book_author>
+			<name>Eric</name>
+			<surname>Stanley</surname>
+			<author_nation>USA</author_nation>
+		</book_author>
+		<book_author>
+			<name>Marta</name>
+			<surname>Piotrowska</surname>
+			<author_nation>Poland</author_nation>
+		</book_author>
+		<book_author>
+			<name>Żaneta</name>
+			<surname>Piotrowska</surname>
+			<author_nation>Poland</author_nation>
+		</book_author>
+		<book_author>
+			<name>Daniel</name>
+			<surname>Piasecki</surname>
+			<author_nation>Poland</author_nation>
+		</book_author>
+		<book_author>
+			<name>Angelika</name>
+			<surname>Mras</surname>
+			<author_nation>Poland</author_nation>
+		</book_author>
+		<book_author>
+			<name>Victoria</name>
+			<surname>Monroe</surname>
+			<author_nation>USA</author_nation>
+		</book_author>
+		<book_author>
+			<name>Carla</name>
+			<surname>McCartney</surname>
+			<author_nation>USA</author_nation>
+		</book_author>
+		<book_author>
+			<name>Mikołaj</name>
+			<surname>Marusiński</surname>
+			<author_nation>Poland</author_nation>
+		</book_author>
+		<book_author>
+			<name>Rebecca</name>
+			<surname>Marley</surname>
+			<author_nation>USA</author_nation>
+		</book_author>
+		<book_author>
+			<name>Wiktor</name>
+			<surname>Malarczyk</surname>
+			<author_nation>Poland</author_nation>
+		</book_author>
+		<book_author>
+			<name>Zayn</name>
+			<surname>Lesson</surname>
+			<author_nation>USA</author_nation>
+		</book_author>
+		<book_author>
+			<name>Maria</name>
+			<surname>Kaczmarek</surname>
+			<author_nation>Poland</author_nation>
+		</book_author>
+		<book_author>
+			<name>Sylwia</name>
+			<surname>Kaczmarek</surname>
+			<author_nation>USA</author_nation>
+		</book_author>
+		<book_author>
+			<name>John</name>
+			<surname>Button</surname>
+			<author_nation>USA</author_nation>
+		</book_author>
+		<book_author>
+			<name>Mikołaj</name>
+			<surname>Brzeziński</surname>
+			<author_nation>Poland</author_nation>
+		</book_author>
+		<book_author>
+			<name>Peter</name>
+			<surname>Brown</surname>
+			<author_nation>USA</author_nation>
+		</book_author>
+		<book_author>
+			<name>Inga</name>
+			<surname>Adamczyk</surname>
+			<author_nation>Poland</author_nation>
+		</book_author>
+	</book_authors_list>
 </subsidiary>

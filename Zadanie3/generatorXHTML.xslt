@@ -1,53 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="2.0" 
-xmlns="http://www.w3.org/1999/xhtml"
-xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+				xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
 	<xsl:output method="xhtml" version="1.0" encoding="utf-8" />
 
 	<xsl:template match="/">
 		<html>
 			<head>
+				<link rel="stylesheet" type="text/css" href="bookshelf.css" />
 				<title>
 					<xsl:value-of select="//informations/name"/>
 				</title>
 			</head>
-			<body style="text-align: center; background-color: #baecff;">
+			<body id="main_style">
 				<xsl:call-template name="informations"/>
-				<p/>
-				<p/>
 				<xsl:call-template name="books"/>
-				<p/>
 				<p/>
 				<xsl:call-template name="authors"/>
 				<p/>
-				<p/>
-				<xsl:call-template name="statistic"/> 
+				<xsl:call-template name="statistic"/>
 			</body>
 		</html>
 	</xsl:template>
 
 	<xsl:template name="informations">
-		<p style=" font-size: 32px; text-align: center;">
+		<p>
 			<b>
 				<xsl:value-of select="//informations/description"/>
 			</b>
-			<p/>
-			<p/>
-			Authors:
-			<p/>
-			<p/>
-			<xsl:for-each select="//informations/author">
+		</p>
+		<p>Authors:</p>
+		<xsl:for-each select="//informations/author">
+			<p>
 				<xsl:value-of select="."/>
-				<p/>
-				<p/>
-			</xsl:for-each>
+			</p>
+		</xsl:for-each>
+		<p>
 			Modyfication date: 
 			<xsl:value-of select="//informations/generated"/>
 		</p>
 	</xsl:template>
 
 	<xsl:template name="books">
-		<table border="2" style="text-align: center; margin: 0px auto; border-collapse: collapse; padding: 15px; background-color: #edc390;">
+		<table id="books_table">
 			<tr>
 				<th>ISBN</th>
 				<th>Title</th>
@@ -67,17 +62,19 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
 						<xsl:value-of select="title"/>
 					</td>
 					<td>
+
 						<xsl:for-each select="authors/author">
-							<xsl:value-of select="." separator=" "/>
-							<p/>
-							<p/>
+							<p>
+								<xsl:value-of select="." separator=" "/>
+							</p>
 						</xsl:for-each>
 					</td>
 					<td>
 						<xsl:for-each select="language">
-							<xsl:value-of select="." separator=" "/>
-							<p/>
-							<p/>
+							<p>
+								<xsl:value-of select="." separator=" "/>
+							</p>
+
 						</xsl:for-each>
 					</td>
 					<td>
@@ -98,20 +95,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
 	</xsl:template>
 
 	<xsl:template name="authors">
-		<table border="1" style="text-align: center; margin: 0px auto; border-collapse: collapse; padding: 15px; background-color: #edd4b6;">
+		<table id="authors_table">
 			<tr>
 				<th>Authors</th>
 			</tr>
 			<xsl:for-each select="//book_authors_list/book_author">
 				<tr>
 					<td>
-					<!--
-						<b>
-							<xsl:value-of select="name"/>
-							<xsl:value-of select="surname"/>
-						</b>
-						<xsl:value-of select="author_nation"/>
-						-->
 						<xsl:value-of select="."/>
 					</td>
 				</tr>
@@ -120,7 +110,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
 	</xsl:template>
 
 	<xsl:template name="statistic">
-		<table style="text-align: center; margin: 0px auto; border-collapse: collapse;">
+		<table id="statistic_table">
 			<tr>
 				<td>
 					<xsl:value-of select="concat('Position count: ',//statistic/position_count)"/>
