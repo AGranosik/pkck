@@ -1,0 +1,965 @@
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" font-family="sans-serif">
+	<fo:layout-master-set>
+		<fo:simple-page-master master-name="Summary"
+                             page-height="297mm"
+                             page-width="210mm"
+                             margin-top="5mm"
+                             margin-bottom="5mm"
+                             margin-left="5mm"
+                             margin-right="5mm">
+			<fo:region-body margin-top="10mm" margin-bottom="10mm"/>
+			<fo:region-after region-name="xsl-region-after" extent="10mm"/>
+		</fo:simple-page-master>
+	</fo:layout-master-set>
+	<fo:page-sequence master-reference="Summary">
+		<fo:static-content flow-name="xsl-region-after">
+			<fo:block>
+				<fo:block text-align="right">Generated: 2019-05-25</fo:block>
+			</fo:block>
+		</fo:static-content>
+		<fo:flow flow-name="xsl-region-body">
+			<fo:block font-weight="bold" text-align="center" font-size="large">Statistics:</fo:block>
+			<fo:list-block>
+				<fo:list-item>
+					<fo:list-item-label>
+						<fo:block>
+                            Position count:
+						</fo:block>
+					</fo:list-item-label>
+					<fo:list-item-body>
+						<fo:block font-style="italic" margin-left="15em">24</fo:block>
+					</fo:list-item-body>
+				</fo:list-item>
+				<fo:list-item>
+					<fo:list-item-label>
+						<fo:block>
+                            Average bookshelf value:
+						</fo:block>
+					</fo:list-item-label>
+					<fo:list-item-body>
+						<fo:block font-style="italic" margin-left="15em">58.48 PLN</fo:block>
+					</fo:list-item-body>
+				</fo:list-item>
+				<fo:list-item>
+					<fo:list-item-label>
+						<fo:block>
+                            Number of polish items:
+						</fo:block>
+					</fo:list-item-label>
+					<fo:list-item-body>
+						<fo:block font-style="italic" margin-left="15em">12</fo:block>
+					</fo:list-item-body>
+				</fo:list-item>
+				<fo:list-item>
+					<fo:list-item-label>
+						<fo:block>
+                            Number of english items:
+						</fo:block>
+					</fo:list-item-label>
+					<fo:list-item-body>
+						<fo:block font-style="italic" margin-left="15em">16</fo:block>
+					</fo:list-item-body>
+				</fo:list-item>
+				<fo:list-item>
+					<fo:list-item-label>
+						<fo:block>
+                            Number books for adult:
+						</fo:block>
+					</fo:list-item-label>
+					<fo:list-item-body>
+						<fo:block font-style="italic" margin-left="15em">3</fo:block>
+					</fo:list-item-body>
+				</fo:list-item>
+				<fo:list-item>
+					<fo:list-item-label>
+						<fo:block>
+                            Oldest book:
+						</fo:block>
+					</fo:list-item-label>
+					<fo:list-item-body>
+						<fo:block font-style="italic" margin-left="15em">Niewiadoma Elvisa</fo:block>
+					</fo:list-item-body>
+				</fo:list-item>
+				<fo:list-item>
+					<fo:list-item-label>
+						<fo:block>
+                            Youngest book:
+						</fo:block>
+					</fo:list-item-label>
+					<fo:list-item-body>
+						<fo:block font-style="italic" margin-left="15em">Gra Anioła 3</fo:block>
+					</fo:list-item-body>
+				</fo:list-item>
+			</fo:list-block>
+			<fo:block font-weight="bold"
+                   text-align="center"
+                   font-size="large"
+                   margin-top="10mm">Books:</fo:block>
+			<fo:table margin-left="2mm"
+                   margin-right="2mm"
+                   margin-bottom="10mm"
+                   margin-top="5mm"
+                   table-layout="fixed"
+                   width="196mm"
+                   font-size="8px">
+				<fo:table-header>
+					<fo:table-row>
+						<fo:table-cell text-align="left">
+							<fo:block font-weight="bold">ISBN</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="left">
+							<fo:block font-weight="bold">Title</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="left">
+							<fo:block font-weight="bold">Language</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="left">
+							<fo:block font-weight="bold">Authors</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="left">
+							<fo:block font-weight="bold">Binding</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="left">
+							<fo:block font-weight="bold">Dimensions</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="left">
+							<fo:block font-weight="bold">Price</fo:block>
+						</fo:table-cell>
+						<fo:table-cell text-align="left">
+							<fo:block font-weight="bold">For adult</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-header>
+				<fo:table-body>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">8911112345700</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Brak nadziei</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Rebecca Marley
+Eric Stanley
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 115  x  280 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 115  x  280 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">6311112345692</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Cała Prawda</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Maria Kaczmarek
+Sylwia Kaczmarek
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 105  x  313 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 105  x  313 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">5511112345687</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">First year</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Zayn Lesson
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 170  x  250 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 170  x  250 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">yes</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">4561112345678</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Gra Anioła</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Kinga Wojciechowska
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 16  x  25 cm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 16  x  25 cm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">1231112345679</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Gra Anioła 2</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Kinga Wojciechowska
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 167  x  255 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 167  x  255 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">1112112345680</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Gra Anioła 3</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Kinga Wojciechowska
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 167  x  155 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 167  x  155 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">1711112345696</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Historia USA</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Carla McCartney
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 100  x  305 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 100  x  305 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">3611112345693</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Jak Kupić Dom Natychmiastowo?</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Wiktor Malarczyk
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 150  x  350 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 150  x  350 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">6211112345690</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Konflikt matek</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Marta Piotrowska
+Żaneta Piotrowska
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 180  x  305 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 180  x  305 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">2611112345691</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Konflikt matek 2</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Marta Piotrowska
+Żaneta Piotrowska
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 180  x  305 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 180  x  305 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">8811112345689</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Konflikt sióstr</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Marta Piotrowska
+Żaneta Piotrowska
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 180  x  305 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 180  x  305 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">5211112345684</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Niewiadoma Elvisa</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Peter Brown
+Daniel Piasecki
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 167  x  259 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 167  x  259 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">1111112345685</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Niewiadoma Elvisa 2</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Peter Brown
+Daniel Piasecki
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 167  x  259 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 167  x  259 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">6611112345686</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Niewiadoma Elvisa 3</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Peter Brown
+Daniel Piasecki
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 167  x  259 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 167  x  259 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">7111112345695</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Poranna kawa</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Angelika Mras
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 180  x  250 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 180  x  250 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">9911112345688</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Second year</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Zayn Lesson
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 170  x  250 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 170  x  250 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">yes</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">9411112345682</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Skarb Czyngis-Chana</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Inga Adamczyk
+Mikołaj Brzeziński
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 200  x  600 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 200  x  600 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">4911112345683</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Skarb Czyngis-Chana 2</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Mikołaj Brzeziński
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 200  x  600 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 200  x  600 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">8211112345681</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Skarb Herkulesa</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Mikołaj Brzeziński
+John Button
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 10  x  30 cm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 10  x  30 cm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">4111112345694</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Tajemnica Disneya</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Żaneta Piotrowska
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 90  x  220 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 90  x  220 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">1111234570156</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Zaginiona rodzina</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Victoria Monroe
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 105  x  255 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 105  x  255 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">yes</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">7711112345699</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Złamane serce</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">english	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Rebecca Marley
+Eric Stanley
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 115  x  280 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 115  x  280 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">3311112345697</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Święty Mikołaj istnieje</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Mikołaj Marusiński
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 90  x  290 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 90  x  290 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+					<fo:table-row line-height="20mm"
+                             top="2mm"
+                             bottom="2mm"
+                             left="2mm"
+                             right="2mm"
+                             border-color="black"
+                             border-width="0.6mm"
+                             border-style="solid">
+						<fo:table-cell>
+							<fo:block line-height="5mm" font-style="italic">2211112345698</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Święty Mikołaj istnieje 2</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">polish	</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">Mikołaj Marusiński
+							</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">soft</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 90  x  290 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm"> 90  x  290 mm</fo:block>
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block line-height="5mm">no</fo:block>
+						</fo:table-cell>
+					</fo:table-row>
+				</fo:table-body>
+			</fo:table>
+		</fo:flow>
+	</fo:page-sequence>
+</fo:root>

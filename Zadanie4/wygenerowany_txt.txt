@@ -1,0 +1,305 @@
+Statistic:
+
+Position_count:            24
+Average bookshelf value:   58.48 PLN
+Number of polish items:    12
+Number of english items:   16
+Number books for adult:    3
+Oldest book:               Niewiadoma Elvisa	1995-10-15
+Youngest book:             Gra Anio³a 3	2019-12-24
+
+----------------------------------------------------
+
+Books:
+
+ISBN:                      8911112345700
+Title:                     Brak nadziei
+Language:                  english	
+Authors:                   Rebecca Marley	Eric Stanley	
+Binding:                   soft
+Dimensions:                 115  x  280 mm
+Price:                     75.99 PLN
+For adults:                no
+
+ISBN:                      6311112345692
+Title:                     Ca³a Prawda
+Language:                  polish	english	
+Authors:                   Maria Kaczmarek	Sylwia Kaczmarek	
+Binding:                   soft
+Dimensions:                 105  x  313 mm
+Price:                     53.99 PLN
+For adults:                no
+
+ISBN:                      5511112345687
+Title:                     First year
+Language:                  english	
+Authors:                   Zayn Lesson	
+Binding:                   soft
+Dimensions:                 170  x  250 mm
+Price:                     17.99 EUR
+For adults:                yes
+
+ISBN:                      4561112345678
+Title:                     Gra Anio³a
+Language:                  polish	
+Authors:                   Kinga Wojciechowska	
+Binding:                   soft
+Dimensions:                 16  x  25 cm
+Price:                     39.99 PLN
+For adults:                no
+
+ISBN:                      1231112345679
+Title:                     Gra Anio³a 2
+Language:                  english	
+Authors:                   Kinga Wojciechowska	
+Binding:                   soft
+Dimensions:                 167  x  255 mm
+Price:                     42.99 PLN
+For adults:                no
+
+ISBN:                      1112112345680
+Title:                     Gra Anio³a 3
+Language:                  english	
+Authors:                   Kinga Wojciechowska	
+Binding:                   soft
+Dimensions:                 167  x  155 mm
+Price:                     59.99 PLN
+For adults:                no
+
+ISBN:                      1711112345696
+Title:                     Historia USA
+Language:                  english	
+Authors:                   Carla McCartney	
+Binding:                   soft
+Dimensions:                 100  x  305 mm
+Price:                     119.99 PLN
+For adults:                no
+
+ISBN:                      3611112345693
+Title:                     Jak Kupiæ Dom Natychmiastowo?
+Language:                  polish	
+Authors:                   Wiktor Malarczyk	
+Binding:                   soft
+Dimensions:                 150  x  350 mm
+Price:                     99.99 PLN
+For adults:                no
+
+ISBN:                      6211112345690
+Title:                     Konflikt matek
+Language:                  polish	
+Authors:                   Marta Piotrowska	¯aneta Piotrowska	
+Binding:                   soft
+Dimensions:                 180  x  305 mm
+Price:                     39.99 PLN
+For adults:                no
+
+ISBN:                      2611112345691
+Title:                     Konflikt matek 2
+Language:                  polish	
+Authors:                   Marta Piotrowska	¯aneta Piotrowska	
+Binding:                   soft
+Dimensions:                 180  x  305 mm
+Price:                     39.99 PLN
+For adults:                no
+
+ISBN:                      8811112345689
+Title:                     Konflikt sióstr
+Language:                  polish	
+Authors:                   Marta Piotrowska	¯aneta Piotrowska	
+Binding:                   soft
+Dimensions:                 180  x  305 mm
+Price:                     39.99 PLN
+For adults:                no
+
+ISBN:                      5211112345684
+Title:                     Niewiadoma Elvisa
+Language:                  english	
+Authors:                   Peter Brown	Daniel Piasecki	
+Binding:                   soft
+Dimensions:                 167  x  259 mm
+Price:                     29.99 PLN
+For adults:                no
+
+ISBN:                      1111112345685
+Title:                     Niewiadoma Elvisa 2
+Language:                  english	
+Authors:                   Peter Brown	Daniel Piasecki	
+Binding:                   soft
+Dimensions:                 167  x  259 mm
+Price:                     45.99 PLN
+For adults:                no
+
+ISBN:                      6611112345686
+Title:                     Niewiadoma Elvisa 3
+Language:                  english	
+Authors:                   Peter Brown	Daniel Piasecki	
+Binding:                   soft
+Dimensions:                 167  x  259 mm
+Price:                     55.99 PLN
+For adults:                no
+
+ISBN:                      7111112345695
+Title:                     Poranna kawa
+Language:                  polish	
+Authors:                   Angelika Mras	
+Binding:                   soft
+Dimensions:                 180  x  250 mm
+Price:                     59.99 PLN
+For adults:                no
+
+ISBN:                      9911112345688
+Title:                     Second year
+Language:                  english	
+Authors:                   Zayn Lesson	
+Binding:                   soft
+Dimensions:                 170  x  250 mm
+Price:                     14.99 EUR
+For adults:                yes
+
+ISBN:                      9411112345682
+Title:                     Skarb Czyngis-Chana
+Language:                  polish	english	
+Authors:                   Inga Adamczyk	Miko³aj Brzeziñski	
+Binding:                   soft
+Dimensions:                 200  x  600 mm
+Price:                     69.99 PLN
+For adults:                no
+
+ISBN:                      4911112345683
+Title:                     Skarb Czyngis-Chana 2
+Language:                  polish	english	
+Authors:                   Miko³aj Brzeziñski	
+Binding:                   soft
+Dimensions:                 200  x  600 mm
+Price:                     69.99 PLN
+For adults:                no
+
+ISBN:                      8211112345681
+Title:                     Skarb Herkulesa
+Language:                  polish	english	
+Authors:                   Miko³aj Brzeziñski	John Button	
+Binding:                   soft
+Dimensions:                 10  x  30 cm
+Price:                     19.99 EUR
+For adults:                no
+
+ISBN:                      4111112345694
+Title:                     Tajemnica Disneya
+Language:                  english	
+Authors:                   ¯aneta Piotrowska	
+Binding:                   soft
+Dimensions:                 90  x  220 mm
+Price:                     39.99 PLN
+For adults:                no
+
+ISBN:                      1111234570156
+Title:                     Zaginiona rodzina
+Language:                  english	
+Authors:                   Victoria Monroe	
+Binding:                   soft
+Dimensions:                 105  x  255 mm
+Price:                     35.99 PLN
+For adults:                yes
+
+ISBN:                      7711112345699
+Title:                     Z³amane serce
+Language:                  english	
+Authors:                   Rebecca Marley	Eric Stanley	
+Binding:                   soft
+Dimensions:                 115  x  280 mm
+Price:                     65.99 PLN
+For adults:                no
+
+ISBN:                      3311112345697
+Title:                     Œwiêty Miko³aj istnieje
+Language:                  polish	
+Authors:                   Miko³aj Marusiñski	
+Binding:                   soft
+Dimensions:                 90  x  290 mm
+Price:                     39.99 PLN
+For adults:                no
+
+ISBN:                      2211112345698
+Title:                     Œwiêty Miko³aj istnieje 2
+Language:                  polish	
+Authors:                   Miko³aj Marusiñski	
+Binding:                   soft
+Dimensions:                 90  x  290 mm
+Price:                     49.99 PLN
+For adults:                no
+
+----------------------------------------------------
+
+List of book authors:
+
+Name:                      Kinga
+Surname:                   Wojciechowska
+Nation:                    Poland
+
+Name:                      Eric
+Surname:                   Stanley
+Nation:                    USA
+
+Name:                      Marta
+Surname:                   Piotrowska
+Nation:                    Poland
+
+Name:                      ¯aneta
+Surname:                   Piotrowska
+Nation:                    Poland
+
+Name:                      Daniel
+Surname:                   Piasecki
+Nation:                    Poland
+
+Name:                      Angelika
+Surname:                   Mras
+Nation:                    Poland
+
+Name:                      Victoria
+Surname:                   Monroe
+Nation:                    USA
+
+Name:                      Carla
+Surname:                   McCartney
+Nation:                    USA
+
+Name:                      Miko³aj
+Surname:                   Marusiñski
+Nation:                    Poland
+
+Name:                      Rebecca
+Surname:                   Marley
+Nation:                    USA
+
+Name:                      Wiktor
+Surname:                   Malarczyk
+Nation:                    Poland
+
+Name:                      Zayn
+Surname:                   Lesson
+Nation:                    USA
+
+Name:                      Maria
+Surname:                   Kaczmarek
+Nation:                    Poland
+
+Name:                      Sylwia
+Surname:                   Kaczmarek
+Nation:                    USA
+
+Name:                      John
+Surname:                   Button
+Nation:                    USA
+
+Name:                      Miko³aj
+Surname:                   Brzeziñski
+Nation:                    Poland
+
+Name:                      Peter
+Surname:                   Brown
+Nation:                    USA
+
+Name:                      Inga
+Surname:                   Adamczyk
+Nation:                    Poland
