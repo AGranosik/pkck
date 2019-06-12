@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:saps="http://example.com/saps" 
+           xmlns:saps="http://example.com/saps"
            targetNamespace="http://example.com/saps">
     <xs:element name="dokument">
         <xs:complexType>
@@ -89,8 +89,8 @@
         </xs:complexType>
 
         <xs:key name="sklep_key">
-            <xs:selector xpath="definicje_sklepów/sklep"/>
-            <xs:field xpath="@identyfikator"/>
+            <xs:selector xpath="ciało/fdgd/sklep"/>
+            <xs:field xpath="@id"/>
         </xs:key>
         <xs:keyref name="sklep_ref" refer="saps:sklep_key">
             <xs:selector xpath="ciało/lista_dysków/dysk"/>

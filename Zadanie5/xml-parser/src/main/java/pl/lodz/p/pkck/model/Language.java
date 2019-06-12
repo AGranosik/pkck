@@ -26,4 +26,6 @@ public class Language {
     public void setIdLanguage(String idLanguage) {
         this.idLanguage = idLanguage;
     }
+
+
 }

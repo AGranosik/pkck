@@ -26,9 +26,7 @@
 		<book ISBN="4561112345678">
 			<title>Gra Anioła</title>
 			<book_author author_id="ID1"/>
-			<languages>
-				<language id_language="pl"></language>
-			</languages>
+			<language id_language="pl"/>
 			<realise_day>2000-07-13</realise_day>
 			<number_of_pages>144</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -42,10 +40,8 @@
 		</book>
 		<book ISBN="1231112345679">
 			<title>Gra Anioła 2</title>
-				<book_author author_id="ID1"/>
-			<languages>
-				<language id_language="us"></language>
-			</languages>
+			<book_author author_id="ID1"/>
+			<language id_language="us"/>
 			<realise_day>2010-12-12</realise_day>
 			<number_of_pages>225</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -60,10 +56,8 @@
 		</book>
 		<book ISBN="1112112345680">
 			<title>Gra Anioła 3</title>
-				<book_author author_id="ID1"/>
-			<languages>
-				<language id_language="us"></language>
-			</languages>
+			<book_author author_id="ID1"/>
+			<language id_language="us"/>
 			<realise_day>2019-12-24</realise_day>
 			<number_of_pages>369</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -77,11 +71,8 @@
 		</book>
 		<book ISBN="8211112345681">
 			<title>Skarb Herkulesa</title>
-				<book_author author_id="ID2"/>
-			<languages>
-				<language id_language="pl"></language>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID2"/>
+			<language id_language="pl"/>
 			<realise_day>2010-12-12</realise_day>
 			<number_of_pages>450</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -95,11 +86,8 @@
 		</book>
 		<book ISBN="9411112345682">
 			<title>Skarb Czyngis-Chana</title>
-				<book_author author_id="ID4"/>
-			<languages>
-				<language id_language="pl"></language>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID4"/>
+			<language id_language="pl"/>
 			<realise_day>2005-12-12</realise_day>
 			<number_of_pages>644</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -113,11 +101,8 @@
 		</book>
 		<book ISBN="4911112345683">
 			<title>Skarb Czyngis-Chana 2</title>
-				<book_author author_id="ID2"/>
-			<languages>
-				<language id_language="pl"></language>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID2"/>
+			<language id_language="pl"/>
 			<realise_day>2010-12-19</realise_day>
 			<number_of_pages>355</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -131,10 +116,8 @@
 		</book>
 		<book ISBN="5211112345684">
 			<title>Niewiadoma Elvisa</title>
-				<book_author author_id="ID6"/>
-			<languages>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID6"/>
+			<language id_language="eng"/>
 			<realise_day>1995-10-15</realise_day>
 			<number_of_pages>99</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -148,14 +131,11 @@
 		</book>
 		<book ISBN="1111112345685">
 			<title>Niewiadoma Elvisa 2</title>
-				<book_author author_id="ID6"/>
-			<languages>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID6"/>
+			<language id_language="eng"/>
 			<realise_day>2010-12-12</realise_day>
 			<number_of_pages>187</number_of_pages>
 			<binding id_binding="miekka"/>
-
 			<dimensions id_dimension="mm">
 				<width> 167 </width>
 				<height> 259 </height>
@@ -166,10 +146,8 @@
 		</book>
 		<book ISBN="6611112345686">
 			<title>Niewiadoma Elvisa 3</title>
-				<book_author author_id="ID6"/>
-			<languages>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID6"/>
+			<language id_language="eng"/>
 			<realise_day>2015-12-12</realise_day>
 			<number_of_pages>198</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -183,10 +161,8 @@
 		</book>
 		<book ISBN="5511112345687">
 			<title>First year</title>
-				<book_author author_id="ID7"/>
-			<languages>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID7"/>
+			<language id_language="eng"/>
 			<realise_day>2010-12-12</realise_day>
 			<number_of_pages>568</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -200,10 +176,8 @@
 		</book>
 		<book ISBN="9911112345688">
 			<title>Second year</title>
-				<book_author author_id="ID7"/>
-			<languages>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID7"/>
+			<language id_language="eng"/>
 			<realise_day>2012-12-12</realise_day>
 			<number_of_pages>459</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -217,10 +191,8 @@
 		</book>
 		<book ISBN="8811112345689">
 			<title>Konflikt sióstr</title>
-				<book_author author_id="ID8"/>
-			<languages>
-				<language id_language="pl"></language>
-			</languages>
+			<book_author author_id="ID8"/>
+			<language id_language="pl"/>
 			<realise_day>2009-11-06</realise_day>
 			<number_of_pages>250</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -234,10 +206,8 @@
 		</book>
 		<book ISBN="6211112345690">
 			<title>Konflikt matek</title>
-				<book_author author_id="ID9"/>
-			<languages>
-				<language id_language="pl"></language>
-			</languages>
+			<book_author author_id="ID9"/>
+			<language id_language="pl"/>
 			<realise_day>2012-10-29</realise_day>
 			<number_of_pages>290</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -251,10 +221,8 @@
 		</book>
 		<book ISBN="2611112345691">
 			<title>Konflikt matek 2</title>
-				<book_author author_id="ID9"/>
-			<languages>
-				<language id_language="pl"></language>
-			</languages>
+			<book_author author_id="ID9"/>
+			<language id_language="pl"/>
 			<realise_day>2015-02-15</realise_day>
 			<number_of_pages>255</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -268,11 +236,8 @@
 		</book>
 		<book ISBN="6311112345692">
 			<title>Cała Prawda</title>
-				<book_author author_id="ID10"/>
-			<languages>
-				<language id_language="pl"></language>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID10"/>
+			<language id_language="eng"/>
 			<realise_day>2007-08-11</realise_day>
 			<number_of_pages>231</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -286,10 +251,8 @@
 		</book>
 		<book ISBN="3611112345693">
 			<title>Jak Kupić Dom Natychmiastowo?</title>
-				<book_author author_id="ID12"/>
-			<languages>
-				<language id_language="pl"></language>
-			</languages>
+			<book_author author_id="ID12"/>
+			<language id_language="pl"/>
 			<realise_day>2010-03-15</realise_day>
 			<number_of_pages>125</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -303,10 +266,8 @@
 		</book>
 		<book ISBN="4111112345694">
 			<title>Tajemnica Disneya</title>
-				<book_author author_id="ID9"/>
-			<languages>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID9"/>
+			<language id_language="eng"/>
 			<realise_day>2011-11-12</realise_day>
 			<number_of_pages>259</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -320,10 +281,8 @@
 		</book>
 		<book ISBN="7111112345695">
 			<title>Poranna kawa</title>
-				<book_author author_id="ID13"/>
-			<languages>
-				<language id_language="pl"></language>
-			</languages>
+			<book_author author_id="ID13"/>
+			<language id_language="pl"/>
 			<realise_day>2011-09-12</realise_day>
 			<number_of_pages>112</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -337,10 +296,8 @@
 		</book>
 		<book ISBN="1711112345696">
 			<title>Historia USA</title>
-				<book_author author_id="ID14"/>
-			<languages>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID14"/>
+			<language id_language="eng"/>
 			<realise_day>2018-12-13</realise_day>
 			<number_of_pages>455</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -354,10 +311,8 @@
 		</book>
 		<book ISBN="3311112345697">
 			<title>Święty Mikołaj istnieje</title>
-				<book_author author_id="ID15"/>
-			<languages>
-				<language id_language="pl"></language>
-			</languages>
+			<book_author author_id="ID15"/>
+			<language id_language="pl"/>
 			<realise_day>2005-12-24</realise_day>
 			<number_of_pages>155</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -371,10 +326,8 @@
 		</book>
 		<book ISBN="2211112345698">
 			<title>Święty Mikołaj istnieje 2</title>
-				<book_author author_id="ID15"/>
-			<languages>
-				<language id_language="pl"></language>
-			</languages>
+			<book_author author_id="ID15"/>
+			<language id_language="pl"/>
 			<realise_day>2007-12-24</realise_day>
 			<number_of_pages>159</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -388,10 +341,8 @@
 		</book>
 		<book ISBN="7711112345699">
 			<title>Złamane serce</title>
-				<book_author author_id="ID17"/>
-			<languages>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID17"/>
+			<language id_language="eng"/>
 			<realise_day>1999-12-10</realise_day>
 			<number_of_pages>203</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -405,10 +356,8 @@
 		</book>
 		<book ISBN="8911112345700">
 			<title>Brak nadziei</title>
-				<book_author author_id="ID17"/>
-			<languages>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID17"/>
+			<language id_language="eng"/>
 			<realise_day>2003-01-19</realise_day>
 			<number_of_pages>203</number_of_pages>
 			<binding id_binding="miekka"/>
@@ -422,14 +371,11 @@
 		</book>
 		<book ISBN="1111234570156">
 			<title>Zaginiona rodzina</title>
-				<book_author author_id="ID18"/>
-			<languages>
-				<language id_language="eng"></language>
-			</languages>
+			<book_author author_id="ID1"/>
+			<language id_language="eng"/>
 			<realise_day>2015-11-17</realise_day>
 			<number_of_pages>132</number_of_pages>
 			<binding id_binding="miekka"/>
-
 			<dimensions id_dimension="mm">
 				<width> 105 </width>
 				<height> 255 </height>

@@ -30,8 +30,39 @@ public class BookAuthorInfo {
         this.authorNation = authorNation;
     }
 
+    public String getId() {
+        return id;
+    }
 
-//    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public AuthorNation getAuthorNation() {
+        return authorNation;
+    }
+
+    public void setAuthorNation(AuthorNation authorNation) {
+        this.authorNation = authorNation;
+    }
+
+    //    @Override
 //    public boolean equals(Object o) {
 //        if (this == o) return true;
 //        if (o == null || getClass() != o.getClass()) return false;

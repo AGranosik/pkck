@@ -51,16 +51,51 @@ public class MainController extends Controller {
     private Button addAuthorButton;
 
     @FXML
+    private Button addBookButton;
+
+    @FXML
+    private Button editBookButton;
+
+    @FXML
+    private Button removeBookButton;
+
+    @FXML
     private Button editAuthorButton;
 
     @FXML
     private Button removeAuthorButton;
 
-    @FXML
-    private ListView driveListView;
+//    @FXML
+//    private ListView driveListView;
 
     @FXML
-    private TextField driveBrandTextField;
+    private ListView bookListView;
+
+    @FXML
+    private ListView bookAuthorsListView;
+//
+//    @FXML
+//    private TextField driveBrandTextField;
+
+    @FXML
+    private TextField realiseDayBookTextField;
+
+    @FXML
+    private TextField widthTextField;
+
+    @FXML
+    private TextField heightTextField;
+    @FXML
+    private TextField nameBookAuthorTextField;
+
+    @FXML
+    private TextField pageNumberBookTextField1;
+
+    @FXML
+    private TextField surnameBookAuthorTextField;
+
+    @FXML
+    private TextField BookTitleTextField;
 
     @FXML
     private Button addDriveButton;
@@ -71,11 +106,11 @@ public class MainController extends Controller {
     @FXML
     private Button removeDriveButton;
 
-    @FXML
-    private ListView shopListView;
+//    @FXML
+//    private ListView shopListView;
 
-    @FXML
-    private TextField shopNameTextField;
+//    @FXML
+//    private TextField shopNameTextField;
 
     @FXML
     private Button addShopButton;
@@ -107,26 +142,44 @@ public class MainController extends Controller {
     @FXML
     private Button savePdfButton;
 
-    @FXML
-    private TextField driveModelTextField;
+//    @FXML
+//    private TextField driveModelTextField;
+
+//    @FXML
+//    private TextField driveCapacityTextField;
+//
+//    @FXML
+//    private TextField drivePriceTextField;
+//
+//    @FXML
+//    private ChoiceBox driveRatingChoiceBox;
+//
+//    @FXML
+//    private ChoiceBox driveTypeChoiceBox;
+//
+//    @FXML
+//    private ChoiceBox driveShopChoiceBox;
 
     @FXML
-    private TextField driveCapacityTextField;
+    private ChoiceBox ageCatBookChoiceBox;
 
     @FXML
-    private TextField drivePriceTextField;
+    private ChoiceBox bookAuthorChoiceBox;
 
     @FXML
-    private ChoiceBox driveRatingChoiceBox;
+    private ChoiceBox languageBookChoiceBox;
 
     @FXML
-    private ChoiceBox driveTypeChoiceBox;
+    private ChoiceBox bindingBookChoiceBox;
 
     @FXML
-    private ChoiceBox driveShopChoiceBox;
+    private ChoiceBox dimTypeChoiceBox1;
 
     @FXML
-    private TextField shopUriTextField;
+    private ChoiceBox bookAuthorNationChoiceBox11;
+
+//    @FXML
+//    private TextField shopUriTextField;
     //endregion
 
     private Bookshelf document = new Bookshelf();
@@ -134,34 +187,42 @@ public class MainController extends Controller {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initializeAuthorListView();
-//        initializeDriveListView();
-//        initializeShopListView();
+        initializeBookAuthorsListView();
+        initializeBookListView();
 
-        driveTypeChoiceBox.setItems(
-                FXCollections.observableArrayList(Arrays.asList("HDD", "SSD")));
-        driveRatingChoiceBox.setItems(
-                FXCollections.observableArrayList(Arrays.asList(1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0)));
+        bookAuthorNationChoiceBox11.setItems(
+                FXCollections.observableArrayList(Arrays.asList("pl", "us")));
+        bindingBookChoiceBox.setItems(
+                FXCollections.observableArrayList(Arrays.asList("miekka", "twarda")));
+        ageCatBookChoiceBox.setItems(
+                FXCollections.observableArrayList(Arrays.asList(5, 10 ,13, 16, 18)));
+        languageBookChoiceBox.setItems(
+                FXCollections.observableArrayList(Arrays.asList("eng", "pl")));
+        dimTypeChoiceBox1.setItems(
+                FXCollections.observableArrayList(Arrays.asList("cm", "mm")));
+        bookAuthorNationChoiceBox11.setItems(
+                FXCollections.observableArrayList(Arrays.asList("us", "pl")));
 
         loadXmlButton.setOnAction(event -> loadXml());
         saveXmlButton.setOnAction(event -> saveXml());
         savePdfButton.setOnAction(event -> savePdf());
 
-        addAuthorButton.setOnAction(event -> addAuthor());
-        editAuthorButton.setOnAction(event -> editAuthor());
-        removeAuthorButton.setOnAction(event -> removeAuthor());
-        addDriveButton.setOnAction(event -> addDrive());
-        editDriveButton.setOnAction(event -> editDrive());
-        removeDriveButton.setOnAction(event -> removeDrive());
-        addShopButton.setOnAction(event -> addShop());
-        editShopButton.setOnAction(event -> editShop());
-        removeShopButton.setOnAction(event -> removeShop());
+//        addAuthorButton.setOnAction(event -> addAuthor());
+//        editAuthorButton.setOnAction(event -> editAuthor());
+//        removeAuthorButton.setOnAction(event -> removeAuthor());
+//        addDriveButton.setOnAction(event -> addDrive());
+//        editDriveButton.setOnAction(event -> editDrive());
+//        removeDriveButton.setOnAction(event -> removeDrive());
+//        addShopButton.setOnAction(event -> addShop());
+//        editShopButton.setOnAction(event -> editShop());
+//        removeShopButton.setOnAction(event -> removeShop());
     }
 
-    //region SHOP
+    //region BOOKS
     private void removeShop() {
 //        Shop selectedShop = document.getBody().getShops().get(shopListView.getSelectionModel().getSelectedIndex());
 //        document.getBody().getShops().remove(selectedShop);
-//        updateShopListView();
+//        updateBookListView();
 //        clearShopData();
     }
 
@@ -169,7 +230,7 @@ public class MainController extends Controller {
 //        Shop selectedShop = document.getBody().getShops().get(shopListView.getSelectionModel().getSelectedIndex());
 //        selectedShop.setName(shopNameTextField.getText());
 //        selectedShop.setUri(shopUriTextField.getText());
-//        updateShopListView();
+//        updateBookListView();
 //        clearShopData();
     }
 
@@ -180,47 +241,50 @@ public class MainController extends Controller {
 //        newShop.setName(shopNameTextField.getText());
 //        newShop.setUri(shopUriTextField.getText());
 //        document.getBody().getShops().add(newShop);
-//        updateShopListView();
+//        updateBookListView();
 //        clearShopData();
     }
 
-    private void updateShopListView() {
+    private void updateBookListView() {
 //        ObservableList<Shop> shopsObservableList = FXCollections.observableArrayList(document.getBody().getShops());
 //        shopListView.setItems(shopsObservableList);
 //        shopListView.refresh();
         //driveShopChoiceBox.setItems(shopsObservableList);
         ObservableList<Book> shopsObservableList = FXCollections.observableArrayList(document.getBooks());
-        shopListView.setItems(shopsObservableList);
-        shopListView.refresh();
-        driveShopChoiceBox.setItems(shopsObservableList);
+        bookListView.setItems(shopsObservableList);
+        bookListView.refresh();
+        //driveShopChoiceBox.setItems(shopsObservableList);
     }
 
-    private void initializeShopListView() {
-//        shopListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
-//            if (newValue.intValue() >= 0) {
-//
-//                Shop selectedShop = document.getBody().getShops().get(newValue.intValue());
-//                shopNameTextField.setText(selectedShop.getName());
-//                shopUriTextField.setText(selectedShop.getUri());
-//            } else {
-//                clearShopData();
-//            }
-//        });
+    private void initializeBookListView() {
+        bookListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.intValue() >= 0) {
+
+                Book selectedShop = document.getBooks().get(newValue.intValue());
+                BookTitleTextField.setText(selectedShop.getTitle());
+                bookAuthorChoiceBox.setValue(selectedShop.getBookAuthor().getBookAuthorInfo());
+                languageBookChoiceBox.setValue(selectedShop.getLanguages().getIdLanguage());
+                bindingBookChoiceBox.setValue(selectedShop.getBinding().getBindingName());
+                pageNumberBookTextField1.setText(selectedShop.getNumberOfPages().toString());
+            } else {
+                clearShopData();
+            }
+        });
     }
 
     private void clearShopData() {
-        shopNameTextField.clear();
-        shopUriTextField.clear();
-
-        shopListView.getSelectionModel().clearSelection();
+//        shopNameTextField.clear();
+//        shopUriTextField.clear();
+//
+//        shopListView.getSelectionModel().clearSelection();
     }
     //endregion
 
-    //region DRIVE
+    //region Book authors
     private void removeDrive() {
 //        Drive selectedDrive = document.getBody().getDrives().get(driveListView.getSelectionModel().getSelectedIndex());
 //        document.getBody().getDrives().remove(selectedDrive);
-//        updateDriveListView();
+//        updateBookAuthorsListView();
 //        clearDriveData();
     }
 
@@ -233,7 +297,7 @@ public class MainController extends Controller {
 //        selectedDrive.setCapacity(new Capacity(driveCapacityTextField.getText()));
 //        selectedDrive.setPrice(new Price(drivePriceTextField.getText()));
 //        selectedDrive.setRating((double) driveRatingChoiceBox.getValue());
-//        updateDriveListView();
+//        updateBookAuthorsListView();
 //        clearDriveData();
     }
 
@@ -249,43 +313,48 @@ public class MainController extends Controller {
 //        newDrive.setPrice(new Price(drivePriceTextField.getText()));
 //        newDrive.setRating((double) driveRatingChoiceBox.getValue());
 //        document.getBody().getDrives().add(newDrive);
-//        updateDriveListView();
+//        updateBookAuthorsListView();
 //        clearDriveData();
     }
 
-    private void updateDriveListView() {
-        driveListView.setItems(FXCollections.observableArrayList(document.getBookAuthorsList()));
-        driveListView.refresh();
+    private void updateBookAuthorsListView() {
+        ObservableList<BookAuthorInfo> bookAuthorsObservableList = FXCollections.observableArrayList(document.getBookAuthorsList());
+        bookAuthorChoiceBox.setItems(bookAuthorsObservableList);
+        bookAuthorsListView.setItems(bookAuthorsObservableList);
+        bookAuthorsListView.refresh();
     }
 
-    private void initializeDriveListView() {
-//        driveListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
-//            if (newValue.intValue() >= 0) {
-//                Drive selectedDrive = document.getBody().getDrives().get(newValue.intValue());
+    private void initializeBookAuthorsListView() {
+        bookAuthorsListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.intValue() >= 0) {
+                BookAuthorInfo selectedDrive = document.getBookAuthorsList().get(newValue.intValue());
+                nameBookAuthorTextField.setText(selectedDrive.getName());
+                surnameBookAuthorTextField.setText(selectedDrive.getSurname());
+                bookAuthorNationChoiceBox11.setValue(selectedDrive.getAuthorNation().getAuthorNation());
 //                driveShopChoiceBox.setValue(selectedDrive.getShop());
 //                driveTypeChoiceBox.setValue(selectedDrive.getType());
 //                driveBrandTextField.setText(selectedDrive.getBrand());
-//                driveModelTextField.setText(selectedDrive.getModel());
+//
 //                driveCapacityTextField.setText(selectedDrive.getCapacity().toString());
 //                drivePriceTextField.setText(selectedDrive.getPrice().toString());
-//                driveRatingChoiceBox.setValue(selectedDrive.getRating());
-//            } else {
-//                clearDriveData();
-//
-//            }
-//        });
+
+            } else {
+                clearDriveData();
+
+            }
+        });
     }
 
     private void clearDriveData() {
-        driveShopChoiceBox.getSelectionModel().clearSelection();
-        driveTypeChoiceBox.getSelectionModel().clearSelection();
-        driveBrandTextField.clear();
-        driveModelTextField.clear();
-        driveCapacityTextField.clear();
-        drivePriceTextField.clear();
-        driveRatingChoiceBox.getSelectionModel().clearSelection();
-
-        driveListView.getSelectionModel().clearSelection();
+//        driveShopChoiceBox.getSelectionModel().clearSelection();
+//        driveTypeChoiceBox.getSelectionModel().clearSelection();
+//        driveBrandTextField.clear();
+//        driveModelTextField.clear();
+//        driveCapacityTextField.clear();
+//        drivePriceTextField.clear();
+//        driveRatingChoiceBox.getSelectionModel().clearSelection();
+//
+//        driveListView.getSelectionModel().clearSelection();
     }
     //endregion
 
@@ -387,8 +456,8 @@ public class MainController extends Controller {
         try {
             //headerDateTextField.setText(document.getHeader().getGenerationTime().toString());
             updateAuthorListView();
-            updateDriveListView();
-            updateShopListView();
+            updateBookAuthorsListView();
+            updateBookListView();
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             showErrorAlert("Wystąpił błąd podczas parsowania danych z XML.", e.getMessage());

@@ -7,7 +7,6 @@ import java.util.Objects;
 @XmlRootElement(name = "book")
 @XmlAccessorType(XmlAccessType.NONE)
 public class Book {
-    //@XmlID
     @XmlAttribute(name = "ISBN", required = true)
     private Long ISBN;
 
@@ -18,12 +17,12 @@ public class Book {
     @XmlElement(name = "title", required = true)
     private String title;
 
-    @XmlElement(name = "book_author", required = true)
-    private BookAuthorInfo bookAuthor;
 
-    @XmlElementWrapper(name = "languages", required = true)
+    @XmlElement(name = "book_author", required = true)
+    private BookAuthor bookAuthor;
+
     @XmlElement(name = "language", required = true)
-    private List<Language> languages;
+    private Language languages;
 
     @XmlElement(name = "realise_day", required = true)
     private String realiseDay;
@@ -49,7 +48,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(Long ISBN, String title, BookAuthorInfo bookAuthor, List<Language> languages, String realiseDay, Long numberOfPages,
+    public Book(Long ISBN, String title, BookAuthor bookAuthor, Language languages, String realiseDay, Long numberOfPages,
                 Binding binding, Dimensions dimensions, Price price, Printing printing, AgeCategory ageCategory) {
         this.ISBN = ISBN;
         this.title = title;
@@ -80,19 +79,19 @@ public class Book {
         this.title = title;
     }
 
-    public BookAuthorInfo getBookAuthor() {
+    public BookAuthor getBookAuthor() {
         return bookAuthor;
     }
 
-    public void setBookAuthor(BookAuthorInfo bookAuthor) {
+    public void setBookAuthor(BookAuthor bookAuthor) {
         this.bookAuthor = bookAuthor;
     }
 
-    public List<Language> getLanguages() {
+    public Language getLanguages() {
         return languages;
     }
 
-    public void setLanguages(List<Language> languages) {
+    public void setLanguages(Language languages) {
         this.languages = languages;
     }
 

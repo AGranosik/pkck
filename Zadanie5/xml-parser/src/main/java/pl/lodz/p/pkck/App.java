@@ -24,6 +24,7 @@ public class App extends Application {
         try {
             mainView = new MainView("/views/MainScene.fxml");
         } catch (Exception e) {
+            e.printStackTrace();
             logger.error(e.getMessage(), e);
         }
 
