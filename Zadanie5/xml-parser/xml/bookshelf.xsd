@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:my="http://example.com/my"
+           targetNamespace="http://example.com/my">
+		  
+	<xs:group name="dimensions_GROUP">
+		<xs:sequence>
+			<xs:element name="width" type="xs:positiveInteger" />
+			<xs:element name="height" type="xs:positiveInteger" />
+		</xs:sequence>
+	</xs:group>
+
+	<xs:complexType name="booksComplexType">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="book">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="title" type="xs:string" />
+						<xs:element name="book_author" type="my:book_authorComplexType" />
+						<xs:element name="languages" type="my:languageComplexType" />
+						<xs:element name="realise_day" type="xs:date" />
+						<xs:element name="number_of_pages" type="xs:positiveInteger" />
+						<xs:element name="binding" type="my:bindingComplexType" />
+						<xs:element name="dimensions" type="my:dimensionsComplexType" />
+						<xs:element name="price" type="my:priceComplexType" />
+						<xs:element name="printing" type="my:printingComplexType" />
+						<xs:element name="age_category" type="my:age_categoryComplexType" />
+					</xs:sequence>
+					<xs:attribute name="ISBN" type="my:ISBN_TYPE"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="book_authorComplexType">
+					<xs:attribute name="author_id" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="languageComplexType">
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="language">
+				<xs:complexType>
+					<xs:attribute name="id_language" type="my:language_TYPE"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="bindingComplexType">
+		<xs:attribute name="id_binding" type="my:binding_TYPE"/>
+	</xs:complexType>
+
+	<xs:complexType name="dimensionsComplexType">
+		<xs:group ref="my:dimensions_GROUP"/>
+		<xs:attribute name="id_dimension" type="my:dimensions_TYPE"/>
+	</xs:complexType>
+
+	<xs:complexType name="priceComplexType">
+		<xs:simpleContent>
+			<xs:extension base="my:price_restrictions_TYPE">
+				<xs:attribute name="id_currency" type="my:currency_TYPE" use="optional" default="PLN" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="printingComplexType">
+		<xs:attribute name="id_printing_type" type="my:printing_TYPE"/>
+	</xs:complexType>
+
+	<xs:complexType name="age_categoryComplexType">
+		<xs:attribute name="id_age_category" type="my:age_category_TYPE"/>
+	</xs:complexType>
+
+	<xs:complexType name="book_authors_listComplexType">
+		<xs:sequence>
+			<xs:element name="book_author_info" type="my:book_author_infoComplexType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="book_author_infoComplexType">
+		<xs:complexContent>
+			<xs:extension base="my:book_author_infoContent">
+				<xs:attribute name="author_id" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="book_author_infoContent">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="surname" type="xs:string" />
+			<xs:element name="author_nation">
+				<xs:complexType>
+					<xs:attribute name="id_author_nation" type="my:id_author_nation_TYPE" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="bookshelf">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="information">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="description" type="xs:string" />
+							<xs:element name="authors">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="author" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="name" type="xs:string"/>
+													<xs:element name="surname" type="xs:string"/>
+													<xs:element name="indeks" type="my:indeks_TYPE"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="modification_date" type="xs:date" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="books" type="my:booksComplexType" />
+				<xs:element name="book_authors_list" type="my:book_authors_listComplexType"/>
+			</xs:sequence>
+		</xs:complexType>
+
+		<xs:key name="authorId">
+			<xs:selector xpath="book_authors_list/book_author_info" />
+			<xs:field xpath="@author_id" />
+		</xs:key>
+		<xs:keyref name="authorIdRef" refer="my:authorId">
+			<xs:selector xpath="books/book/book_authors/book_author" />
+			<xs:field xpath="@author_id" />
+		</xs:keyref>
+	</xs:element>
+	
+	<xs:simpleType name="language_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pl" />
+			<xs:enumeration value="eng" />
+			<xs:enumeration value="us" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="binding_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="twarda" />
+			<xs:enumeration value="miekka" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="dimensions_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="mm" />
+			<xs:enumeration value="cm" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="currency_TYPE">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="PLN" />
+			<xs:enumeration value="EUR" />
+			<xs:enumeration value="USD" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="price_restrictions_TYPE">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2" />
+			<xs:minInclusive value="1.00" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="printing_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="black_white" />
+			<xs:enumeration value="color" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="age_category_TYPE">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="19" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ISBN_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:length value="13"/>
+			<xs:pattern value="[0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="id_author_nation_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pl" />
+			<xs:enumeration value="eng" />
+			<xs:enumeration value="us" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="indeks_TYPE">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[1-9][0-9][0-9][0-9][0-9][0-9]" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
