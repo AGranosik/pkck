@@ -382,7 +382,7 @@
         <book_author_info author_id="ID1">
             <name>Kinga</name>
             <surname>Wojciechowska</surname>
-            <author_nation id_author_nation="us"/>
+            <author_nation id_author_nation="pl"/>
         </book_author_info>
         <book_author_info author_id="ID2">
             <name>Mikołaj</name>
@@ -465,6 +465,11 @@
             <author_nation id_author_nation="us"/>
         </book_author_info>
         <book_author_info author_id="ID18">
+            <name>Victoria</name>
+            <surname>Monroe</surname>
+            <author_nation id_author_nation="us"/>
+        </book_author_info>
+        <book_author_info author_id="ID98">
             <name>Victoria</name>
             <surname>Monroe</surname>
             <author_nation id_author_nation="us"/>

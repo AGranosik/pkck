@@ -77,6 +77,6 @@ public class BookAuthorInfo {
 //
     @Override
     public String toString() {
-        return (name + ' ' + surname + ", " + authorNation);
+        return (id + " " + name + ' ' + surname + ", " + authorNation);
     }
 }

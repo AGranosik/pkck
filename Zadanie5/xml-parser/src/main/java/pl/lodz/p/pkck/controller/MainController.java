@@ -277,6 +277,7 @@ public class MainController extends Controller {
             Book newBook = new Book();
             newBook.setTitle(BookTitleTextField.getText());
 
+
             newBook.setBookAuthor(new BookAuthor());
             newBook.getBookAuthor().setBookAuthorInfo((BookAuthorInfo) bookAuthorChoiceBox.getValue());
 
@@ -413,7 +414,9 @@ public class MainController extends Controller {
             showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać autora książki");
         } else {
             BookAuthorInfo newBookAuthorInfo = new BookAuthorInfo();
-
+            Integer IDNumberLength  = document.getBookAuthorsList().get(document.getBookAuthorsList().size()-1).getId().toString().length();
+            Integer newIDNumber = Integer.parseInt(document.getBookAuthorsList().get(document.getBookAuthorsList().size()-1).getId().substring(2,IDNumberLength)) +1;
+            newBookAuthorInfo.setId("ID" + newIDNumber );
             newBookAuthorInfo.setName(nameBookAuthorTextField.getText());
             newBookAuthorInfo.setSurname(surnameBookAuthorTextField.getText());
             newBookAuthorInfo.setAuthorNation(new AuthorNation());
@@ -548,6 +551,9 @@ public class MainController extends Controller {
         try {
             updateDocumentWithGuiData();
             dao.write(document, outputXmlFileName);
+            showAlert("informacja.", "Zapisano.");
+
+
         } catch (DaoException e) {
             log.error(e.getMessage(), e);
             showErrorAlert("Wystąpił błąd podczas zapisu do XML.", e.getMessage());
@@ -608,6 +614,15 @@ public class MainController extends Controller {
     private void showErrorAlert(String header, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Błąd!");
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        FxUtils.setStageIcon((Stage) alert.getDialogPane().getScene().getWindow());
+        alert.showAndWait();
+    }
+
+    private void showAlert(String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Info");
         alert.setHeaderText(header);
         alert.setContentText(content);
         FxUtils.setStageIcon((Stage) alert.getDialogPane().getScene().getWindow());
