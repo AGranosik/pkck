@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500">
+   <script type="text/ecmascript"> 
+				
+                    function onClickBar(evt, source) 
+                    {
+                        var round = Math.round, rand = Math.random, n = 255;
+                        var color = 'rgba(' + round(rand()*n) + ',' + round(rand()*n) + ',' + round(rand()*n) + ',' + rand().toFixed(1) + ')';
+                        source.setAttribute("fill", color);
+                    }
+					function onMouseOverText(evt) 
+                    {
+                        var text = document.getElementsByClassName("informationAuthors")[0];
+						var informations = document.getElementsByClassName("details")[0];
+                        text.setAttribute("visibility", "visible");
+						informations.setAttribute("fill", "blue");
+                    }
+					function onMouseOutText(evt) 
+                    {
+                        var text = document.getElementsByClassName("informationAuthors")[0];
+						var informations = document.getElementsByClassName("details")[0];
+                        text.setAttribute("visibility", "hidden");
+						informations.setAttribute("fill", "black");
+                    }
+            
+			</script>
+   <rect x="0"
+         y="0"
+         width="700"
+         height="400"
+         fill="rgb(122, 125, 128)"/>
+   <text x="250"
+         y="30"
+         font-size="24"
+         fill="white"
+         font-weight="bold"
+         font-family="sans-serif">
+                Books amount
+			</text>
+   <g id="poleWykresu">
+      <rect x="50"
+            y="50"
+            width="600"
+            height="300"
+            fill="rgb(228, 254, 255)"
+            stroke="DimGrey"/>
+      <text x="150"
+            y="300"
+            font-size="16"
+            fill="black"
+            font-weight="bold"
+            font-family="sans-serif">
+            Position count
+		</text>
+      <text visibility="visible"
+            x="170"
+            y="150"
+            font-size="16"
+            fill="black"
+            font-weight="bold"
+            font-family="sans-serif">24</text>
+      <rect x="150"
+            width="100"
+            fill="black"
+            stroke="black"
+            onclick="onClickBar(evt, this)">
+         <animate attributeName="height"
+                  from="0"
+                  to="120"
+                  dur="1s"
+                  fill="freeze"/>
+         <animate attributeName="y"
+                  from="280"
+                  to="160"
+                  dur="1s"
+                  fill="freeze"/>
+      </rect>
+      <text x="300"
+            y="300"
+            font-size="16"
+            fill="black"
+            font-weight="bold"
+            font-family="sans-serif">
+            Polish positions
+		</text>
+      <text visibility="visible"
+            x="320"
+            y="210"
+            font-size="16"
+            fill="black"
+            font-weight="bold"
+            font-family="sans-serif">12</text>
+      <rect x="300"
+            width="100"
+            fill="black"
+            stroke="black"
+            onclick="onClickBar(evt, this)">
+         <animate attributeName="height"
+                  from="0"
+                  to="60"
+                  dur="1s"
+                  fill="freeze"/>
+         <animate attributeName="y"
+                  from="280"
+                  to="220"
+                  dur="1s"
+                  fill="freeze"/>
+      </rect>
+      <text x="450"
+            y="300"
+            font-size="16"
+            fill="black"
+            font-weight="bold"
+            font-family="sans-serif">
+            English positions
+		</text>
+      <text visibility="visible"
+            x="470"
+            y="190"
+            font-size="16"
+            fill="black"
+            font-weight="bold"
+            font-family="sans-serif">16</text>
+      <rect x="450"
+            width="100"
+            fill="black"
+            stroke="black"
+            onclick="onClickBar(evt, this)">
+         <animate attributeName="height"
+                  from="0"
+                  to="80"
+                  dur="1s"
+                  fill="freeze"/>
+         <animate attributeName="y"
+                  from="280"
+                  to="200"
+                  dur="1s"
+                  fill="freeze"/>
+      </rect>
+      <text class="details"
+            x="800"
+            y="50"
+            font-size="16"
+            fill="black"
+            font-weight="bold"
+            font-family="sans-serif"
+            onmouseover="onMouseOverText(evt)"
+            onmouseout="onMouseOutText(evt)">
+			Show details
+		</text>
+      <text class="informationAuthors"
+            x="800"
+            y="100"
+            visibility="hidden"
+            font-size="16"
+            fill="black"
+            font-weight="bold"
+            font-family="sans-serif">
+			Authors:
+			<tspan x="800" dy="1.4em">Adrian Granosik, Indeks: 210194</tspan>
+         <tspan x="800" dy="1.4em">Izabela Sobczyk, Indeks: 210319</tspan>
+      </text>
+   </g>
+</svg>
