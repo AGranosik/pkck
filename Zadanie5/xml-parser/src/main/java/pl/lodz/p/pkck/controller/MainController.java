@@ -27,8 +27,8 @@ public class MainController extends Controller {
 
     private static final String TMP1_XML_FILE_NAME = "tmp_1.xml";
     private static final String TMP2_XML_FILE_NAME = "tmp_2.xml";
-    private static final String XML_XSLT_FILE_NAME = "lista_dysków_raport.xslt";
-    private static final String PDF_XSLT_FILE_NAME = "lista_dysków_raport_pdf.xslt";
+    private static final String XML_XSLT_FILE_NAME = "bookshelf_raport.xslt";
+    private static final String PDF_XSLT_FILE_NAME = "bookshelf_raport_pdf.xslt";
 
     //region FXML FIELDS
     @FXML

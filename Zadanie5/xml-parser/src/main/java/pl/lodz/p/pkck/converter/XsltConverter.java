@@ -1,5 +1,6 @@
 package pl.lodz.p.pkck.converter;
 
+import net.sf.saxon.TransformerFactoryImpl;
 import org.apache.fop.apps.FOUserAgent;
 import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
@@ -26,7 +27,7 @@ public class XsltConverter {
             FopFactory fopFactory = FopFactory.newInstance(new File(".").toURI());
             FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
             Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, out);
-            TransformerFactory factory = TransformerFactory.newInstance();
+            TransformerFactory factory = new TransformerFactoryImpl();
             Transformer transformer = factory.newTransformer(new StreamSource(xsltFile));
             Result res = new SAXResult(fop.getDefaultHandler());
             transformer.transform(xmlSource, res);
@@ -38,7 +39,7 @@ public class XsltConverter {
 
     public void convertXmlToXml(String xmlPath, String xsltPath, String outputXmlPath) throws XmlConversionException {
         try {
-            TransformerFactory factory = TransformerFactory.newInstance();
+            TransformerFactory factory = new TransformerFactoryImpl();
             Templates template = factory.newTemplates(new StreamSource(new FileInputStream("xml/" + xsltPath)));
             Transformer xformer = template.newTransformer();
             Source source = new StreamSource(new FileInputStream("xml/" + xmlPath));
