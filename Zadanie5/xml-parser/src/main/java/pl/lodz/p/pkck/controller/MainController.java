@@ -548,7 +548,7 @@ public class MainController extends Controller {
         try {
             updateDocumentWithGuiData();
             dao.write(document, outputXmlFileName);
-            showAlert("informacja.", "Zapisano.");
+            showAlert("Informacja.", "Zapisano.");
 
 
         } catch (DaoException e) {
@@ -569,7 +569,7 @@ public class MainController extends Controller {
 
     private void populateGuiWithDocumentData() {
         try {
-            headerDateTextField.setText(document.getInformation().getGenerationTime().toString());
+            headerDateTextField.setText(document.getInformation().getGenerationTime());
             updateAuthorListView();
             updateBookAuthorsListView();
             updateBookListView();
@@ -590,6 +590,7 @@ public class MainController extends Controller {
             dao.write(document, TMP1_XML_FILE_NAME);
             converter.convertXmlToXml(TMP1_XML_FILE_NAME, XML_XSLT_FILE_NAME, TMP2_XML_FILE_NAME);
             converter.convertXmlToPdf(TMP2_XML_FILE_NAME, PDF_XSLT_FILE_NAME, outputPdfFilePath);
+            showAlert("Informacja.", "Zapisano.");
         } catch (DaoException e) {
             log.error(e.getMessage(), e);
             showErrorAlert("Wystąpił błąd podczas zapisu do XML.", e.getMessage());

@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="701.0" prefWidth="1324.0" style="-fx-background-color: #e3ecf9;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lodz.p.pkck.controller.MainController">
+<AnchorPane prefHeight="701.0" prefWidth="1324.0" style="-fx-background-color: #e2fcf9;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.lodz.p.pkck.controller.MainController">
     <Label layoutX="1011.0" layoutY="433.0" prefWidth="85.0" text="Data" />
     <TextField fx:id="headerDateTextField" layoutX="978.0" layoutY="455.0" prefWidth="150.0" />
 
