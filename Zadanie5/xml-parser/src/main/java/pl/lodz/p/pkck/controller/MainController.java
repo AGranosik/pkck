@@ -259,7 +259,7 @@ public class MainController extends Controller {
                     }
 
                 } catch (Exception e) {
-                    showErrorAlert("Wystąpił błąd", "ISBN musi być liczbą");
+                    showErrorAlert("Wystąpił błąd", e.getMessage());
                 }
             }
         } catch (Exception e) {
