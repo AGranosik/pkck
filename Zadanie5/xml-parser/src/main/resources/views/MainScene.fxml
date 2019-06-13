@@ -40,9 +40,9 @@
     <Label layoutX="18.0" layoutY="344.0" prefWidth="85.0" text="Autor" />
     <Label layoutX="18.0" layoutY="317.0" prefHeight="17.0" prefWidth="85.0" text="Tytuł" />
     <TextField fx:id="BookTitleTextField" layoutX="103.0" layoutY="311.0" prefWidth="150.0" />
-    <Button fx:id="addDriveButton" layoutX="586.0" layoutY="405.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Dodaj autora książki" />
-    <Button fx:id="editDriveButton" layoutX="586.0" layoutY="436.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Edytuj autora książki" />
-    <Button fx:id="removeDriveButton" layoutX="586.0" layoutY="467.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Usuń autora książki" />
+    <Button fx:id="addBookAuthorButton" layoutX="586.0" layoutY="405.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Dodaj autora książki" />
+    <Button fx:id="editBookAuthorButton" layoutX="586.0" layoutY="436.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Edytuj autora książki" />
+    <Button fx:id="removeBookAuthorButton" layoutX="586.0" layoutY="467.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Usuń autora książki" />
 
     <!-- CATEGORIES -->
     <Label layoutX="545.0" layoutY="15.0" prefWidth="250.0" text="Autorzy książek" textAlignment="CENTER">
@@ -54,9 +54,9 @@
     <Label layoutX="545.0" layoutY="317.0" prefWidth="85.0" text="Imię" />
     <Label layoutX="545.0" layoutY="344.0" prefWidth="85.0" text="Nazwisko" />
     <TextField fx:id="surnameBookAuthorTextField" layoutX="642.0" layoutY="340.0" prefWidth="150.0" />
-    <Button fx:id="addShopButton" layoutX="487.0" layoutY="585.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Dodaj autora" />
-    <Button fx:id="editShopButton" layoutX="487.0" layoutY="616.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Edytuj autora" />
-    <Button fx:id="removeShopButton" layoutX="487.0" layoutY="647.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Usuń autora" />
+    <Button fx:id="addAuthorButton" layoutX="487.0" layoutY="585.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Dodaj autora" />
+    <Button fx:id="editAuthorButton" layoutX="487.0" layoutY="616.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Edytuj autora" />
+    <Button fx:id="removeAuthorButton" layoutX="487.0" layoutY="647.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" text="Usuń autora" />
 
     <Line endX="695.0" endY="-327.0" layoutX="141.0" layoutY="327.0" startX="695.0" startY="372.5" />
 

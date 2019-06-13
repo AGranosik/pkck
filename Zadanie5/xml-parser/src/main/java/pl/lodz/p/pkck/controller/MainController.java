@@ -51,6 +51,12 @@ public class MainController extends Controller {
     private Button addAuthorButton;
 
     @FXML
+    private Button editAuthorButton;
+
+    @FXML
+    private Button removeAuthorButton;
+
+    @FXML
     private Button addBookButton;
 
     @FXML
@@ -60,22 +66,10 @@ public class MainController extends Controller {
     private Button removeBookButton;
 
     @FXML
-    private Button editAuthorButton;
-
-    @FXML
-    private Button removeAuthorButton;
-
-//    @FXML
-//    private ListView driveListView;
-
-    @FXML
     private ListView bookListView;
 
     @FXML
     private ListView bookAuthorsListView;
-//
-//    @FXML
-//    private TextField driveBrandTextField;
 
     @FXML
     private TextField realiseDayBookTextField;
@@ -113,13 +107,13 @@ public class MainController extends Controller {
 //    private TextField shopNameTextField;
 
     @FXML
-    private Button addShopButton;
+    private Button addBookAuthorButton;
 
     @FXML
-    private Button editShopButton;
+    private Button editBookAuthorButton;
 
     @FXML
-    private Button removeShopButton;
+    private Button removeBookAuthorButton;
 
     @FXML
     private TextField inputXmlFileNameTextField;
@@ -207,9 +201,9 @@ public class MainController extends Controller {
         saveXmlButton.setOnAction(event -> saveXml());
         savePdfButton.setOnAction(event -> savePdf());
 
-//        addAuthorButton.setOnAction(event -> addAuthor());
-//        editAuthorButton.setOnAction(event -> editAuthor());
-//        removeAuthorButton.setOnAction(event -> removeAuthor());
+        addAuthorButton.setOnAction(event -> addAuthor());
+        editAuthorButton.setOnAction(event -> editAuthor());
+        removeAuthorButton.setOnAction(event -> removeAuthor());
 //        addDriveButton.setOnAction(event -> addDrive());
 //        editDriveButton.setOnAction(event -> editDrive());
 //        removeDriveButton.setOnAction(event -> removeDrive());
@@ -219,22 +213,22 @@ public class MainController extends Controller {
     }
 
     //region BOOKS
-    private void removeShop() {
+    private void removeBook() {
 //        Shop selectedShop = document.getBody().getShops().get(shopListView.getSelectionModel().getSelectedIndex());
 //        document.getBody().getShops().remove(selectedShop);
 //        updateBookListView();
-//        clearShopData();
+//        clearBookData();
     }
 
-    private void editShop() {
+    private void editBook() {
 //        Shop selectedShop = document.getBody().getShops().get(shopListView.getSelectionModel().getSelectedIndex());
 //        selectedShop.setName(shopNameTextField.getText());
 //        selectedShop.setUri(shopUriTextField.getText());
 //        updateBookListView();
-//        clearShopData();
+//        clearBookData();
     }
 
-    private void addShop() {
+    private void addBook() {
 //        Shop newShop = new Shop();
 //        List<Shop> shopList = document.getBody().getShops();
 //        newShop.setId("s" + String.format("%03d", Integer.parseInt(shopList.get(shopList.size() - 1).getId().substring(1)) + 1));
@@ -242,53 +236,60 @@ public class MainController extends Controller {
 //        newShop.setUri(shopUriTextField.getText());
 //        document.getBody().getShops().add(newShop);
 //        updateBookListView();
-//        clearShopData();
+//        clearBookData();
     }
 
     private void updateBookListView() {
-//        ObservableList<Shop> shopsObservableList = FXCollections.observableArrayList(document.getBody().getShops());
-//        shopListView.setItems(shopsObservableList);
-//        shopListView.refresh();
-        //driveShopChoiceBox.setItems(shopsObservableList);
-        ObservableList<Book> shopsObservableList = FXCollections.observableArrayList(document.getBooks());
-        bookListView.setItems(shopsObservableList);
+        ObservableList<Book> booksObservableList = FXCollections.observableArrayList(document.getBooks());
+        bookListView.setItems(booksObservableList);
         bookListView.refresh();
-        //driveShopChoiceBox.setItems(shopsObservableList);
     }
 
     private void initializeBookListView() {
         bookListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.intValue() >= 0) {
 
-                Book selectedShop = document.getBooks().get(newValue.intValue());
-                BookTitleTextField.setText(selectedShop.getTitle());
-                bookAuthorChoiceBox.setValue(selectedShop.getBookAuthor().getBookAuthorInfo());
-                languageBookChoiceBox.setValue(selectedShop.getLanguages().getIdLanguage());
-                bindingBookChoiceBox.setValue(selectedShop.getBinding().getBindingName());
-                pageNumberBookTextField1.setText(selectedShop.getNumberOfPages().toString());
+                Book selectedBook = document.getBooks().get(newValue.intValue());
+                BookTitleTextField.setText(selectedBook.getTitle());
+                bookAuthorChoiceBox.setValue(selectedBook.getBookAuthor().getBookAuthorInfo());
+                languageBookChoiceBox.setValue(selectedBook.getLanguages().getIdLanguage());
+                bindingBookChoiceBox.setValue(selectedBook.getBinding().getBindingName());
+                pageNumberBookTextField1.setText(selectedBook.getNumberOfPages().toString());
+                heightTextField.setText(selectedBook.getDimensions().getHeight().toString());
+                widthTextField.setText(selectedBook.getDimensions().getWidth().toString());
+                dimTypeChoiceBox1.setValue(selectedBook.getDimensions().getDimensionType());
+                ageCatBookChoiceBox.setValue(selectedBook.getAgeCategory().getMinAge());
+                realiseDayBookTextField.setText(selectedBook.getRealiseDay());
             } else {
-                clearShopData();
+                clearBookData();
             }
         });
     }
 
-    private void clearShopData() {
-//        shopNameTextField.clear();
-//        shopUriTextField.clear();
-//
-//        shopListView.getSelectionModel().clearSelection();
+    private void clearBookData() {
+        BookTitleTextField.clear();
+        bookAuthorChoiceBox.getSelectionModel().clearSelection();
+        languageBookChoiceBox.getSelectionModel().clearSelection();
+        bindingBookChoiceBox.getSelectionModel().clearSelection();
+        pageNumberBookTextField1.clear();
+        heightTextField.clear();
+        widthTextField.clear();
+        dimTypeChoiceBox1.getSelectionModel().clearSelection();
+        ageCatBookChoiceBox.getSelectionModel().clearSelection();
+        realiseDayBookTextField.clear();
+        bookListView.getSelectionModel().clearSelection();
     }
     //endregion
 
     //region Book authors
-    private void removeDrive() {
+    private void removeBookAuthor() {
 //        Drive selectedDrive = document.getBody().getDrives().get(driveListView.getSelectionModel().getSelectedIndex());
 //        document.getBody().getDrives().remove(selectedDrive);
 //        updateBookAuthorsListView();
-//        clearDriveData();
+//        clearBookAuthorsData();
     }
 
-    private void editDrive() {
+    private void editBookAuthor() {
 //        Drive selectedDrive = document.getBody().getDrives().get(driveListView.getSelectionModel().getSelectedIndex());
 //        selectedDrive.setShop((Shop) driveShopChoiceBox.getValue());
 //        selectedDrive.setType((String) driveTypeChoiceBox.getValue());
@@ -298,10 +299,10 @@ public class MainController extends Controller {
 //        selectedDrive.setPrice(new Price(drivePriceTextField.getText()));
 //        selectedDrive.setRating((double) driveRatingChoiceBox.getValue());
 //        updateBookAuthorsListView();
-//        clearDriveData();
+//        clearBookAuthorsData();
     }
 
-    private void addDrive() {
+    private void addBookAuthor() {
 //        Drive newDrive = new Drive();
 //        List<Drive> driveList = document.getBody().getDrives();
 //        newDrive.setId("d" + String.format("%03d", Integer.parseInt(driveList.get(driveList.size() - 1).getId().substring(1)) + 1));
@@ -314,7 +315,7 @@ public class MainController extends Controller {
 //        newDrive.setRating((double) driveRatingChoiceBox.getValue());
 //        document.getBody().getDrives().add(newDrive);
 //        updateBookAuthorsListView();
-//        clearDriveData();
+//        clearBookAuthorsData();
     }
 
     private void updateBookAuthorsListView() {
@@ -327,62 +328,49 @@ public class MainController extends Controller {
     private void initializeBookAuthorsListView() {
         bookAuthorsListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.intValue() >= 0) {
-                BookAuthorInfo selectedDrive = document.getBookAuthorsList().get(newValue.intValue());
-                nameBookAuthorTextField.setText(selectedDrive.getName());
-                surnameBookAuthorTextField.setText(selectedDrive.getSurname());
-                bookAuthorNationChoiceBox11.setValue(selectedDrive.getAuthorNation().getAuthorNation());
-//                driveShopChoiceBox.setValue(selectedDrive.getShop());
-//                driveTypeChoiceBox.setValue(selectedDrive.getType());
-//                driveBrandTextField.setText(selectedDrive.getBrand());
-//
-//                driveCapacityTextField.setText(selectedDrive.getCapacity().toString());
-//                drivePriceTextField.setText(selectedDrive.getPrice().toString());
-
+                BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(newValue.intValue());
+                nameBookAuthorTextField.setText(selectedBookAuthor.getName());
+                surnameBookAuthorTextField.setText(selectedBookAuthor.getSurname());
+                bookAuthorNationChoiceBox11.setValue(selectedBookAuthor.getAuthorNation().getAuthorNation());
             } else {
-                clearDriveData();
-
+                clearBookAuthorsData();
             }
         });
     }
 
-    private void clearDriveData() {
-//        driveShopChoiceBox.getSelectionModel().clearSelection();
-//        driveTypeChoiceBox.getSelectionModel().clearSelection();
-//        driveBrandTextField.clear();
-//        driveModelTextField.clear();
-//        driveCapacityTextField.clear();
-//        drivePriceTextField.clear();
-//        driveRatingChoiceBox.getSelectionModel().clearSelection();
-//
-//        driveListView.getSelectionModel().clearSelection();
+    private void clearBookAuthorsData() {
+        nameBookAuthorTextField.clear();
+        surnameBookAuthorTextField.clear();
+        bookAuthorNationChoiceBox11.getSelectionModel().clearSelection();
+        bookAuthorsListView.getSelectionModel().clearSelection();
     }
     //endregion
 
     //region AUTHOR
     private void removeAuthor() {
-//        Author selectedAuthor = document.getHeader().getAuthors().get(authorListView.getSelectionModel().getSelectedIndex());
-//        document.getHeader().getAuthors().remove(selectedAuthor);
-//        updateAuthorListView();
-//        clearAuthorData();
+        Author selectedAuthor = document.getInformation().getAuthors().get(authorListView.getSelectionModel().getSelectedIndex());
+        document.getInformation().getAuthors().remove(selectedAuthor);
+        updateAuthorListView();
+        clearAuthorData();
     }
 
     private void editAuthor() {
-//        Author selectedAuthor = document.getHeader().getAuthors().get(authorListView.getSelectionModel().getSelectedIndex());
-//        selectedAuthor.setName(authorNameTextField.getText());
-//        selectedAuthor.setSurname(authorSurnameTextField.getText());
-//        selectedAuthor.setIndexNumber(authorIndexNumberTextField.getText());
-//        updateAuthorListView();
-//        clearAuthorData();
+        Author selectedAuthor = document.getInformation().getAuthors().get(authorListView.getSelectionModel().getSelectedIndex());
+        selectedAuthor.setName(authorNameTextField.getText());
+        selectedAuthor.setSurname(authorSurnameTextField.getText());
+        selectedAuthor.setIndexNumber(authorIndexNumberTextField.getText());
+        updateAuthorListView();
+        clearAuthorData();
     }
 
     private void addAuthor() {
-//        Author newAuthor = new Author();
-//        newAuthor.setName(authorNameTextField.getText());
-//        newAuthor.setSurname(authorSurnameTextField.getText());
-//        newAuthor.setIndexNumber(authorIndexNumberTextField.getText());
-//        document.getHeader().getAuthors().add(newAuthor);
-//        updateAuthorListView();
-//        clearAuthorData();
+        Author newAuthor = new Author();
+        newAuthor.setName(authorNameTextField.getText());
+        newAuthor.setSurname(authorSurnameTextField.getText());
+        newAuthor.setIndexNumber(authorIndexNumberTextField.getText());
+        document.getInformation().getAuthors().add(newAuthor);
+        updateAuthorListView();
+        clearAuthorData();
     }
 
     private void updateAuthorListView() {
@@ -407,7 +395,6 @@ public class MainController extends Controller {
         authorNameTextField.clear();
         authorSurnameTextField.clear();
         authorIndexNumberTextField.clear();
-
         authorListView.getSelectionModel().clearSelection();
     }
     //endregion
@@ -421,8 +408,8 @@ public class MainController extends Controller {
             document = dao.read(inputXmlFileName);
             populateGuiWithDocumentData();
             clearAuthorData();
-            clearDriveData();
-            clearShopData();
+            clearBookAuthorsData();
+            clearBookData();
         } catch (DaoException e) {
             log.error(e.getMessage(), e);
             showErrorAlert("Wystąpił błąd podczas wczytywania z XML.", e.getMessage());
