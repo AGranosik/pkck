@@ -19,7 +19,6 @@ import java.io.File;
 import java.net.URL;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainController extends Controller {
@@ -79,6 +78,7 @@ public class MainController extends Controller {
 
     @FXML
     private TextField heightTextField;
+
     @FXML
     private TextField nameBookAuthorTextField;
 
@@ -90,21 +90,6 @@ public class MainController extends Controller {
 
     @FXML
     private TextField BookTitleTextField;
-
-    @FXML
-    private Button addDriveButton;
-
-    @FXML
-    private Button editDriveButton;
-
-    @FXML
-    private Button removeDriveButton;
-
-//    @FXML
-//    private ListView shopListView;
-
-//    @FXML
-//    private TextField shopNameTextField;
 
     @FXML
     private Button addBookAuthorButton;
@@ -136,24 +121,6 @@ public class MainController extends Controller {
     @FXML
     private Button savePdfButton;
 
-//    @FXML
-//    private TextField driveModelTextField;
-
-//    @FXML
-//    private TextField driveCapacityTextField;
-//
-//    @FXML
-//    private TextField drivePriceTextField;
-//
-//    @FXML
-//    private ChoiceBox driveRatingChoiceBox;
-//
-//    @FXML
-//    private ChoiceBox driveTypeChoiceBox;
-//
-//    @FXML
-//    private ChoiceBox driveShopChoiceBox;
-
     @FXML
     private ChoiceBox ageCatBookChoiceBox;
 
@@ -171,10 +138,6 @@ public class MainController extends Controller {
 
     @FXML
     private ChoiceBox bookAuthorNationChoiceBox11;
-
-//    @FXML
-//    private TextField shopUriTextField;
-    //endregion
 
     private Bookshelf document = new Bookshelf();
 
@@ -207,36 +170,104 @@ public class MainController extends Controller {
         addBookAuthorButton.setOnAction(event -> addBookAuthor());
         editBookAuthorButton.setOnAction(event -> editBookAuthor());
         removeBookAuthorButton.setOnAction(event -> removeBookAuthor());
-//        addShopButton.setOnAction(event -> addShop());
-//        editShopButton.setOnAction(event -> editShop());
-//        removeShopButton.setOnAction(event -> removeShop());
+        addBookButton.setOnAction(event -> addBook());
+        editBookButton.setOnAction(event -> editBook());
+        removeBookButton.setOnAction(event -> removeBook());
     }
 
     //region BOOKS
     private void removeBook() {
-//        Shop selectedShop = document.getBody().getShops().get(shopListView.getSelectionModel().getSelectedIndex());
-//        document.getBody().getShops().remove(selectedShop);
-//        updateBookListView();
-//        clearBookData();
+        Book selectedBook = document.getBooks().get(bookListView.getSelectionModel().getSelectedIndex());
+        document.getBooks().remove(selectedBook);
+
+        updateBookListView();
+        clearBookData();
+    }
+
+    private boolean ifBookFieldsEmpty() {
+        return
+                BookTitleTextField.getText().isEmpty() ||
+                        bookAuthorChoiceBox.getValue() == null ||
+                        languageBookChoiceBox.getValue() == null ||
+                        realiseDayBookTextField.getText().isEmpty() ||
+                        pageNumberBookTextField1.getText().isEmpty() ||
+                        bindingBookChoiceBox.getValue() == null ||
+                        heightTextField.getText().isEmpty() ||
+                        widthTextField.getText().isEmpty() ||
+                        dimTypeChoiceBox1.getValue() == null ||
+                        ageCatBookChoiceBox.getValue() == null;
     }
 
     private void editBook() {
-//        Shop selectedShop = document.getBody().getShops().get(shopListView.getSelectionModel().getSelectedIndex());
-//        selectedShop.setName(shopNameTextField.getText());
-//        selectedShop.setUri(shopUriTextField.getText());
-//        updateBookListView();
-//        clearBookData();
+        try {
+            Book selectedBook = document.getBooks().get(bookListView.getSelectionModel().getSelectedIndex());
+
+            if (
+                    ifBookFieldsEmpty()
+            ) {
+                showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola by edytować książkę");
+            } else {
+
+                selectedBook.setTitle(BookTitleTextField.getText());
+
+                selectedBook.getBookAuthor().setBookAuthorInfo((BookAuthorInfo) bookAuthorChoiceBox.getValue());
+
+                selectedBook.getLanguages().setIdLanguage((String) languageBookChoiceBox.getValue());
+
+                selectedBook.setRealiseDay(realiseDayBookTextField.getText());
+                selectedBook.setNumberOfPages(Long.parseLong(pageNumberBookTextField1.getText()));
+
+                selectedBook.getBinding().setBindingName((String) bindingBookChoiceBox.getValue());
+
+                selectedBook.getDimensions().setHeight(Integer.parseInt(heightTextField.getText()));
+                selectedBook.getDimensions().setWidth(Integer.parseInt(widthTextField.getText()));
+                selectedBook.getDimensions().setDimensionType((String) dimTypeChoiceBox1.getValue());
+
+                selectedBook.getAgeCategory().setMinAge(Integer.parseInt(ageCatBookChoiceBox.getValue().toString()));
+
+                updateBookListView();
+                clearBookData();
+            }
+        } catch (Exception e) {
+            showErrorAlert("Wystąpił błąd", "Wybierz książkę do edycji");
+
+        }
+
+
     }
 
     private void addBook() {
-//        Shop newShop = new Shop();
-//        List<Shop> shopList = document.getBody().getShops();
-//        newShop.setId("s" + String.format("%03d", Integer.parseInt(shopList.get(shopList.size() - 1).getId().substring(1)) + 1));
-//        newShop.setName(shopNameTextField.getText());
-//        newShop.setUri(shopUriTextField.getText());
-//        document.getBody().getShops().add(newShop);
-//        updateBookListView();
-//        clearBookData();
+        if (ifBookFieldsEmpty()) {
+            showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać książkę");
+        } else {
+            Book newBook = new Book();
+            newBook.setTitle(BookTitleTextField.getText());
+
+            newBook.setBookAuthor(new BookAuthor());
+            newBook.getBookAuthor().setBookAuthorInfo((BookAuthorInfo) bookAuthorChoiceBox.getValue());
+
+            newBook.setLanguages(new Language());
+            newBook.getLanguages().setIdLanguage((String) languageBookChoiceBox.getValue());
+
+            newBook.setRealiseDay(realiseDayBookTextField.getText());
+            newBook.setNumberOfPages(Long.parseLong(pageNumberBookTextField1.getText()));
+
+            newBook.setBinding(new Binding());
+            newBook.getBinding().setBindingName((String) bindingBookChoiceBox.getValue());
+
+            newBook.setDimensions(new Dimensions());
+            newBook.getDimensions().setHeight(Integer.parseInt(heightTextField.getText()));
+            newBook.getDimensions().setWidth(Integer.parseInt(widthTextField.getText()));
+            newBook.getDimensions().setDimensionType((String) dimTypeChoiceBox1.getValue());
+
+            newBook.setAgeCategory(new AgeCategory());
+            newBook.getAgeCategory().setMinAge(Integer.parseInt(ageCatBookChoiceBox.getValue().toString()));
+
+            document.getBooks().add(newBook);
+            updateBookListView();
+            clearBookData();
+        }
+
     }
 
     private void updateBookListView() {
@@ -300,60 +331,67 @@ public class MainController extends Controller {
             clearBookAuthorsData();
         }
         else {
-            log.info("Nie mozna usunąć autora, ponieważ jest on przypisany do co najmniej 1 książki");
+            showErrorAlert("Wystąpił błąd", "Nie mozna usunąć autora, ponieważ jest on przypisany do co najmniej 1 książki");
         }
 
 
     }
 
+    private boolean ifBookAuthorFieldsEmpty() {
+        return nameBookAuthorTextField.getText().isEmpty() ||
+                surnameBookAuthorTextField.getText().isEmpty() ||
+                bookAuthorNationChoiceBox11.getValue() == null;
+    }
+
     private void editBookAuthor() {
-        BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(bookAuthorsListView.getSelectionModel().getSelectedIndex());
 
-        int i = bookAuthorChoiceBox.getItems().indexOf(selectedBookAuthor);
-        log.info("i" + i);
-        //bookAuthorChoiceBox.getItems().remove(selectedBookAuthor);
+        try {
+            BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(bookAuthorsListView.getSelectionModel().getSelectedIndex());
 
-        selectedBookAuthor.setName(nameBookAuthorTextField.getText());
-        selectedBookAuthor.setSurname(surnameBookAuthorTextField.getText());
-        selectedBookAuthor.getAuthorNation().setAuthorNation((String) bookAuthorNationChoiceBox11.getValue());
+            if (ifBookAuthorFieldsEmpty()) {
+                showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola by edytować autora książki");
 
-        bookAuthorChoiceBox.getItems().add(i, selectedBookAuthor);
-        bookAuthorChoiceBox.setValue(selectedBookAuthor);
+            } else {
+                int i = bookAuthorChoiceBox.getItems().indexOf(selectedBookAuthor);
+                log.info("i" + i);
 
-        updateBookAuthorsListView();
-        updateAuthorListView();
+                selectedBookAuthor.setName(nameBookAuthorTextField.getText());
+                selectedBookAuthor.setSurname(surnameBookAuthorTextField.getText());
+                selectedBookAuthor.getAuthorNation().setAuthorNation((String) bookAuthorNationChoiceBox11.getValue());
 
-        clearBookAuthorsData();
+                bookAuthorChoiceBox.getItems().add(i, selectedBookAuthor);
+                bookAuthorChoiceBox.setValue(selectedBookAuthor);
+
+                updateBookAuthorsListView();
+                updateAuthorListView();
+
+                clearBookAuthorsData();
+            }
+
+        } catch (Exception e) {
+            showErrorAlert("Wystąpił błąd", "Wybierz autora książki do edycji");
+        }
     }
 
     private void addBookAuthor() {
-        BookAuthorInfo newBookAuthorInfo = new BookAuthorInfo();
+        if (ifBookAuthorFieldsEmpty()) {
+            showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać autora książki");
+        } else {
+            BookAuthorInfo newBookAuthorInfo = new BookAuthorInfo();
 
-        newBookAuthorInfo.setName(nameBookAuthorTextField.getText());
-        newBookAuthorInfo.setSurname(surnameBookAuthorTextField.getText());
-        newBookAuthorInfo.setAuthorNation(new AuthorNation());
-        //bookAuthorNationChoiceBox11.getValue();
-        newBookAuthorInfo.getAuthorNation().setAuthorNation((String) bookAuthorNationChoiceBox11.getValue());
-//        Drive newDrive = new Drive();
-//        List<Drive> driveList = document.getBody().getDrives();
-//        newDrive.setId("d" + String.format("%03d", Integer.parseInt(driveList.get(driveList.size() - 1).getId().substring(1)) + 1));
-//        newDrive.setShop((Shop) driveShopChoiceBox.getValue());
-//        newDrive.setType((String) driveTypeChoiceBox.getValue());
-//        newDrive.setBrand(driveBrandTextField.getText());
-//        newDrive.setModel(driveModelTextField.getText());
-//        newDrive.setCapacity(new Capacity(driveCapacityTextField.getText()));
-//        newDrive.setPrice(new Price(drivePriceTextField.getText()));
-//        newDrive.setRating((double) driveRatingChoiceBox.getValue());
-        document.getBookAuthorsList().add(newBookAuthorInfo);
+            newBookAuthorInfo.setName(nameBookAuthorTextField.getText());
+            newBookAuthorInfo.setSurname(surnameBookAuthorTextField.getText());
+            newBookAuthorInfo.setAuthorNation(new AuthorNation());
+            newBookAuthorInfo.getAuthorNation().setAuthorNation((String) bookAuthorNationChoiceBox11.getValue());
 
-//        document.getBody().getDrives().add(newDrive);
-       updateBookAuthorsListView();
-        clearBookAuthorsData();
+            document.getBookAuthorsList().add(newBookAuthorInfo);
+            updateBookAuthorsListView();
+            clearBookAuthorsData();
+        }
     }
 
     private void updateBookAuthorsListView() {
         ObservableList<BookAuthorInfo> bookAuthorsObservableList = FXCollections.observableArrayList(document.getBookAuthorsList());
-        //bookAuthorChoiceBox.getItems().removeAll();
         bookAuthorChoiceBox.setItems(bookAuthorsObservableList);
         bookAuthorsListView.setItems(bookAuthorsObservableList);
         bookAuthorsListView.refresh();
@@ -362,6 +400,7 @@ public class MainController extends Controller {
     private void initializeBookAuthorsListView() {
         bookAuthorsListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.intValue() >= 0) {
+
                 BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(newValue.intValue());
                 nameBookAuthorTextField.setText(selectedBookAuthor.getName());
                 surnameBookAuthorTextField.setText(selectedBookAuthor.getSurname());
@@ -381,6 +420,11 @@ public class MainController extends Controller {
     //endregion
 
     //region AUTHOR
+    private boolean ifAuthorFieldsEmpty() {
+        return authorNameTextField.getText().isEmpty() ||
+                authorSurnameTextField.getText().isEmpty() ||
+                authorIndexNumberTextField.getText().isEmpty();
+    }
     private void removeAuthor() {
         Author selectedAuthor = document.getInformation().getAuthors().get(authorListView.getSelectionModel().getSelectedIndex());
         document.getInformation().getAuthors().remove(selectedAuthor);
@@ -389,22 +433,36 @@ public class MainController extends Controller {
     }
 
     private void editAuthor() {
-        Author selectedAuthor = document.getInformation().getAuthors().get(authorListView.getSelectionModel().getSelectedIndex());
-        selectedAuthor.setName(authorNameTextField.getText());
-        selectedAuthor.setSurname(authorSurnameTextField.getText());
-        selectedAuthor.setIndexNumber(authorIndexNumberTextField.getText());
-        updateAuthorListView();
-        clearAuthorData();
+        try {
+            Author selectedAuthor = document.getInformation().getAuthors().get(authorListView.getSelectionModel().getSelectedIndex());
+            if (ifAuthorFieldsEmpty()) {
+                showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola by edytować autora");
+            } else {
+                selectedAuthor.setName(authorNameTextField.getText());
+                selectedAuthor.setSurname(authorSurnameTextField.getText());
+                selectedAuthor.setIndexNumber(authorIndexNumberTextField.getText());
+                updateAuthorListView();
+                clearAuthorData();
+            }
+        } catch (Exception e) {
+            showErrorAlert("Wystąpił błąd", "Wybierz autora do edycji");
+        }
+
+
     }
 
     private void addAuthor() {
-        Author newAuthor = new Author();
-        newAuthor.setName(authorNameTextField.getText());
-        newAuthor.setSurname(authorSurnameTextField.getText());
-        newAuthor.setIndexNumber(authorIndexNumberTextField.getText());
-        document.getInformation().getAuthors().add(newAuthor);
-        updateAuthorListView();
-        clearAuthorData();
+        if (ifAuthorFieldsEmpty()) {
+            showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać autora");
+        } else {
+            Author newAuthor = new Author();
+            newAuthor.setName(authorNameTextField.getText());
+            newAuthor.setSurname(authorSurnameTextField.getText());
+            newAuthor.setIndexNumber(authorIndexNumberTextField.getText());
+            document.getInformation().getAuthors().add(newAuthor);
+            updateAuthorListView();
+            clearAuthorData();
+        }
     }
 
     private void updateAuthorListView() {
