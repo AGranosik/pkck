@@ -13,7 +13,6 @@ public class XmlConversionException extends Exception {
     public XmlConversionException(String message, Throwable cause) {
 
         super(message == null ? cause.getCause().getMessage() : message, cause);
-        System.out.println("tutaj");
     }
 
 }

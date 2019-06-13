@@ -1,18 +1,12 @@
 package pl.lodz.p.pkck.model;
 
 import javax.xml.bind.annotation.*;
-import java.util.List;
-import java.util.Objects;
 
 @XmlRootElement(name = "book")
 @XmlAccessorType(XmlAccessType.NONE)
 public class Book {
     @XmlAttribute(name = "ISBN", required = true)
     private Long ISBN;
-
-//    @XmlIDREF
-//    @XmlAttribute(name = "sklep", required = true)
-//    private Shop shop;
 
     @XmlElement(name = "title", required = true)
     private String title;
@@ -150,21 +144,6 @@ public class Book {
     public void setAgeCategory(AgeCategory ageCategory) {
         this.ageCategory = ageCategory;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return Objects.equals(ISBN, book.ISBN);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(ISBN);
-    }
-
-
 
     @Override
     public String toString() {

@@ -25,16 +25,5 @@ public class BookAuthor {
         this.bookAuthorInfo = bookAuthorInfo;
     }
 
-    //    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Drive drive = (Drive) o;
-//        return Objects.equals(id, drive.id);
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return brand + ' ' + model + ' ' + capacity;
-//    }
+
 }

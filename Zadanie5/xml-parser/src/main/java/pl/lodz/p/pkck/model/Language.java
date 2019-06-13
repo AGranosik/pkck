@@ -27,5 +27,4 @@ public class Language {
         this.idLanguage = idLanguage;
     }
 
-
 }

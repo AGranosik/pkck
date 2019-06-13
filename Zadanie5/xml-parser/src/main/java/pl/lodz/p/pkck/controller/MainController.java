@@ -188,16 +188,8 @@ public class MainController extends Controller {
         }
         return false;
     }
-    private void removeBook() {
-        Book selectedBook = document.getBooks().get(bookListView.getSelectionModel().getSelectedIndex());
-        document.getBooks().remove(selectedBook);
-
-        updateBookListView();
-        clearBookData();
-    }
 
     private boolean ifBookFieldsEmpty() {
-
         return
                 BookTitleTextField.getText().isEmpty() ||
                         bookAuthorChoiceBox.getValue() == null ||
@@ -210,6 +202,65 @@ public class MainController extends Controller {
                         dimTypeChoiceBox1.getValue() == null ||
                         ageCatBookChoiceBox.getValue() == null ||
                         BookISBNTextField1.getText().isEmpty();
+    }
+
+    private void initializeBookListView() {
+        bookListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.intValue() >= 0) {
+                Book selectedBook = document.getBooks().get(newValue.intValue());
+                BookISBNTextField1.setText(selectedBook.getISBN().toString());
+                BookTitleTextField.setText(selectedBook.getTitle());
+                bookAuthorChoiceBox.setValue(selectedBook.getBookAuthor().getBookAuthorInfo());
+                languageBookChoiceBox.setValue(selectedBook.getLanguages().getIdLanguage());
+                bindingBookChoiceBox.setValue(selectedBook.getBinding().getBindingName());
+                pageNumberBookTextField1.setText(selectedBook.getNumberOfPages().toString());
+                heightTextField.setText(selectedBook.getDimensions().getHeight().toString());
+                widthTextField.setText(selectedBook.getDimensions().getWidth().toString());
+                dimTypeChoiceBox1.setValue(selectedBook.getDimensions().getDimensionType());
+                ageCatBookChoiceBox.setValue(selectedBook.getAgeCategory().getMinAge());
+                realiseDayBookTextField.setText(selectedBook.getRealiseDay());
+            } else {
+                clearBookData();
+            }
+        });
+    }
+
+    private void addBook() {
+        if (ifBookFieldsEmpty()) {
+            showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać książkę");
+        } else {
+            if (!ISBNexists() && (BookISBNTextField1.getText().length() == 13)) {
+                Book newBook = new Book();
+                newBook.setISBN(Long.parseLong(BookISBNTextField1.getText()));
+                newBook.setTitle(BookTitleTextField.getText());
+
+                newBook.setBookAuthor(new BookAuthor());
+                newBook.getBookAuthor().setBookAuthorInfo((BookAuthorInfo) bookAuthorChoiceBox.getValue());
+
+                newBook.setLanguages(new Language());
+                newBook.getLanguages().setIdLanguage((String) languageBookChoiceBox.getValue());
+
+                newBook.setRealiseDay(realiseDayBookTextField.getText());
+                newBook.setNumberOfPages(Long.parseLong(pageNumberBookTextField1.getText()));
+
+                newBook.setBinding(new Binding());
+                newBook.getBinding().setBindingName((String) bindingBookChoiceBox.getValue());
+
+                newBook.setDimensions(new Dimensions());
+                newBook.getDimensions().setHeight(Integer.parseInt(heightTextField.getText()));
+                newBook.getDimensions().setWidth(Integer.parseInt(widthTextField.getText()));
+                newBook.getDimensions().setDimensionType((String) dimTypeChoiceBox1.getValue());
+
+                newBook.setAgeCategory(new AgeCategory());
+                newBook.getAgeCategory().setMinAge(Integer.parseInt(ageCatBookChoiceBox.getValue().toString()));
+
+                document.getBooks().add(newBook);
+                updateBookListView();
+                clearBookData();
+            } else {
+                showErrorAlert("Błąd!", "ISBN musi być wartością unikalną i mieć długość 13.");
+            }
+        }
     }
 
     private void editBook() {
@@ -264,77 +315,21 @@ public class MainController extends Controller {
             }
         } catch (Exception e) {
             showErrorAlert("Wystąpił błąd", "Wybierz książkę do edycji");
-
         }
-
-
     }
 
-    private void addBook() {
-        if (ifBookFieldsEmpty()) {
-            showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać książkę");
-        } else {
-            if (!ISBNexists() && (BookISBNTextField1.getText().length() == 13)) {
-                Book newBook = new Book();
-                newBook.setISBN(Long.parseLong(BookISBNTextField1.getText()));
-                newBook.setTitle(BookTitleTextField.getText());
+    private void removeBook() {
+        Book selectedBook = document.getBooks().get(bookListView.getSelectionModel().getSelectedIndex());
+        document.getBooks().remove(selectedBook);
 
-                newBook.setBookAuthor(new BookAuthor());
-                newBook.getBookAuthor().setBookAuthorInfo((BookAuthorInfo) bookAuthorChoiceBox.getValue());
-
-                newBook.setLanguages(new Language());
-                newBook.getLanguages().setIdLanguage((String) languageBookChoiceBox.getValue());
-
-                newBook.setRealiseDay(realiseDayBookTextField.getText());
-                newBook.setNumberOfPages(Long.parseLong(pageNumberBookTextField1.getText()));
-
-                newBook.setBinding(new Binding());
-                newBook.getBinding().setBindingName((String) bindingBookChoiceBox.getValue());
-
-                newBook.setDimensions(new Dimensions());
-                newBook.getDimensions().setHeight(Integer.parseInt(heightTextField.getText()));
-                newBook.getDimensions().setWidth(Integer.parseInt(widthTextField.getText()));
-                newBook.getDimensions().setDimensionType((String) dimTypeChoiceBox1.getValue());
-
-                newBook.setAgeCategory(new AgeCategory());
-                newBook.getAgeCategory().setMinAge(Integer.parseInt(ageCatBookChoiceBox.getValue().toString()));
-
-                document.getBooks().add(newBook);
-                updateBookListView();
-                clearBookData();
-            } else {
-                showErrorAlert("Błąd!", "ISBN musi być wartością unikalną i mieć długość 13.");
-            }
-        }
-
+        updateBookListView();
+        clearBookData();
     }
 
     private void updateBookListView() {
         ObservableList<Book> booksObservableList = FXCollections.observableArrayList(document.getBooks());
         bookListView.setItems(booksObservableList);
         bookListView.refresh();
-    }
-
-    private void initializeBookListView() {
-        bookListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue.intValue() >= 0) {
-                Book selectedBook = document.getBooks().get(newValue.intValue());
-                BookISBNTextField1.setText(selectedBook.getISBN().toString());
-                BookTitleTextField.setText(selectedBook.getTitle());
-                bookAuthorChoiceBox.setValue(selectedBook.getBookAuthor().getBookAuthorInfo());
-                languageBookChoiceBox.setValue(selectedBook.getLanguages().getIdLanguage());
-                bindingBookChoiceBox.setValue(selectedBook.getBinding().getBindingName());
-                pageNumberBookTextField1.setText(selectedBook.getNumberOfPages().toString());
-                heightTextField.setText(selectedBook.getDimensions().getHeight().toString());
-                widthTextField.setText(selectedBook.getDimensions().getWidth().toString());
-                dimTypeChoiceBox1.setValue(selectedBook.getDimensions().getDimensionType());
-                ageCatBookChoiceBox.setValue(selectedBook.getAgeCategory().getMinAge());
-                realiseDayBookTextField.setText(selectedBook.getRealiseDay());
-
-            } else {
-                clearBookData();
-            }
-        });
     }
 
     private void clearBookData() {
@@ -354,38 +349,45 @@ public class MainController extends Controller {
     //endregion
 
     //region Book authors
-    private void removeBookAuthor() {
-        boolean canDelete = true;
-        BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(bookAuthorsListView.getSelectionModel().getSelectedIndex());
-        for(Book book : document.getBooks()){
-            if(book.getBookAuthor().getBookAuthorInfo().getId() == selectedBookAuthor.getId()){
-                canDelete = false;
-                break;
-            }
-        }
-
-        if(canDelete){
-            document.getBookAuthorsList().remove(selectedBookAuthor);
-            updateBookAuthorsListView();
-
-            updateAuthorListView();
-            clearBookAuthorsData();
-        }
-        else {
-            showErrorAlert("Wystąpił błąd", "Nie mozna usunąć autora, ponieważ jest on przypisany do co najmniej 1 książki");
-        }
-
-
-    }
-
     private boolean ifBookAuthorFieldsEmpty() {
         return nameBookAuthorTextField.getText().isEmpty() ||
                 surnameBookAuthorTextField.getText().isEmpty() ||
                 bookAuthorNationChoiceBox11.getValue() == null;
     }
 
-    private void editBookAuthor() {
+    private void initializeBookAuthorsListView() {
+        bookAuthorsListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.intValue() >= 0) {
+                BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(newValue.intValue());
+                nameBookAuthorTextField.setText(selectedBookAuthor.getName());
+                surnameBookAuthorTextField.setText(selectedBookAuthor.getSurname());
+                bookAuthorNationChoiceBox11.setValue(selectedBookAuthor.getAuthorNation().getAuthorNation());
+            } else {
+                clearBookAuthorsData();
+            }
+        });
+    }
 
+    private void addBookAuthor() {
+        if (ifBookAuthorFieldsEmpty()) {
+            showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać autora książki");
+        } else {
+            BookAuthorInfo newBookAuthorInfo = new BookAuthorInfo();
+            Integer IDNumberLength  = document.getBookAuthorsList().get(document.getBookAuthorsList().size()-1).getId().toString().length();
+            Integer newIDNumber = Integer.parseInt(document.getBookAuthorsList().get(document.getBookAuthorsList().size()-1).getId().substring(2,IDNumberLength)) +1;
+            newBookAuthorInfo.setId("ID" + newIDNumber );
+            newBookAuthorInfo.setName(nameBookAuthorTextField.getText());
+            newBookAuthorInfo.setSurname(surnameBookAuthorTextField.getText());
+            newBookAuthorInfo.setAuthorNation(new AuthorNation());
+            newBookAuthorInfo.getAuthorNation().setAuthorNation((String) bookAuthorNationChoiceBox11.getValue());
+
+            document.getBookAuthorsList().add(newBookAuthorInfo);
+            updateBookAuthorsListView();
+            clearBookAuthorsData();
+        }
+    }
+
+    private void editBookAuthor() {
         try {
             BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(bookAuthorsListView.getSelectionModel().getSelectedIndex());
 
@@ -413,22 +415,25 @@ public class MainController extends Controller {
         }
     }
 
-    private void addBookAuthor() {
-        if (ifBookAuthorFieldsEmpty()) {
-            showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać autora książki");
-        } else {
-            BookAuthorInfo newBookAuthorInfo = new BookAuthorInfo();
-            Integer IDNumberLength  = document.getBookAuthorsList().get(document.getBookAuthorsList().size()-1).getId().toString().length();
-            Integer newIDNumber = Integer.parseInt(document.getBookAuthorsList().get(document.getBookAuthorsList().size()-1).getId().substring(2,IDNumberLength)) +1;
-            newBookAuthorInfo.setId("ID" + newIDNumber );
-            newBookAuthorInfo.setName(nameBookAuthorTextField.getText());
-            newBookAuthorInfo.setSurname(surnameBookAuthorTextField.getText());
-            newBookAuthorInfo.setAuthorNation(new AuthorNation());
-            newBookAuthorInfo.getAuthorNation().setAuthorNation((String) bookAuthorNationChoiceBox11.getValue());
+    private void removeBookAuthor() {
+        boolean canDelete = true;
+        BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(bookAuthorsListView.getSelectionModel().getSelectedIndex());
 
-            document.getBookAuthorsList().add(newBookAuthorInfo);
+        for(Book book : document.getBooks()){
+            if(book.getBookAuthor().getBookAuthorInfo().getId() == selectedBookAuthor.getId()){
+                canDelete = false;
+                break;
+            }
+        }
+
+        if(canDelete){
+            document.getBookAuthorsList().remove(selectedBookAuthor);
             updateBookAuthorsListView();
+
+            updateAuthorListView();
             clearBookAuthorsData();
+        } else {
+            showErrorAlert("Wystąpił błąd", "Nie mozna usunąć autora, ponieważ jest on przypisany do co najmniej 1 książki");
         }
     }
 
@@ -439,19 +444,6 @@ public class MainController extends Controller {
         bookAuthorsListView.refresh();
     }
 
-    private void initializeBookAuthorsListView() {
-        bookAuthorsListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue.intValue() >= 0) {
-
-                BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(newValue.intValue());
-                nameBookAuthorTextField.setText(selectedBookAuthor.getName());
-                surnameBookAuthorTextField.setText(selectedBookAuthor.getSurname());
-                bookAuthorNationChoiceBox11.setValue(selectedBookAuthor.getAuthorNation().getAuthorNation());
-            } else {
-                clearBookAuthorsData();
-            }
-        });
-    }
 
     private void clearBookAuthorsData() {
         nameBookAuthorTextField.clear();
@@ -467,11 +459,32 @@ public class MainController extends Controller {
                 authorSurnameTextField.getText().isEmpty() ||
                 authorIndexNumberTextField.getText().isEmpty();
     }
-    private void removeAuthor() {
-        Author selectedAuthor = document.getInformation().getAuthors().get(authorListView.getSelectionModel().getSelectedIndex());
-        document.getInformation().getAuthors().remove(selectedAuthor);
-        updateAuthorListView();
-        clearAuthorData();
+
+    private void initializeAuthorListView() {
+        authorListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.intValue() >= 0) {
+                Author selectedAuthor = document.getInformation().getAuthors().get(newValue.intValue());
+                authorNameTextField.setText(selectedAuthor.getName());
+                authorSurnameTextField.setText(selectedAuthor.getSurname());
+                authorIndexNumberTextField.setText(selectedAuthor.getIndexNumber());
+            } else {
+                clearAuthorData();
+            }
+        });
+    }
+
+    private void addAuthor() {
+        if (ifAuthorFieldsEmpty()) {
+            showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać autora");
+        } else {
+            Author newAuthor = new Author();
+            newAuthor.setName(authorNameTextField.getText());
+            newAuthor.setSurname(authorSurnameTextField.getText());
+            newAuthor.setIndexNumber(authorIndexNumberTextField.getText());
+            document.getInformation().getAuthors().add(newAuthor);
+            updateAuthorListView();
+            clearAuthorData();
+        }
     }
 
     private void editAuthor() {
@@ -491,36 +504,16 @@ public class MainController extends Controller {
         }
     }
 
-    private void addAuthor() {
-        if (ifAuthorFieldsEmpty()) {
-            showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać autora");
-        } else {
-            Author newAuthor = new Author();
-            newAuthor.setName(authorNameTextField.getText());
-            newAuthor.setSurname(authorSurnameTextField.getText());
-            newAuthor.setIndexNumber(authorIndexNumberTextField.getText());
-            document.getInformation().getAuthors().add(newAuthor);
-            updateAuthorListView();
-            clearAuthorData();
-        }
+    private void removeAuthor() {
+        Author selectedAuthor = document.getInformation().getAuthors().get(authorListView.getSelectionModel().getSelectedIndex());
+        document.getInformation().getAuthors().remove(selectedAuthor);
+        updateAuthorListView();
+        clearAuthorData();
     }
 
     private void updateAuthorListView() {
         authorListView.setItems(FXCollections.observableArrayList(document.getInformation().getAuthors()));
         authorListView.refresh();
-    }
-
-    private void initializeAuthorListView() {
-        authorListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue.intValue() >= 0) {
-                Author selectedAuthor = document.getInformation().getAuthors().get(newValue.intValue());
-                authorNameTextField.setText(selectedAuthor.getName());
-                authorSurnameTextField.setText(selectedAuthor.getSurname());
-                authorIndexNumberTextField.setText(selectedAuthor.getIndexNumber());
-            } else {
-                clearAuthorData();
-            }
-        });
     }
 
     private void clearAuthorData() {
@@ -568,7 +561,6 @@ public class MainController extends Controller {
     private void updateDocumentWithGuiData() {
         try {
             document.getInformation().setGenerationTime(headerDateTextField.getText());
-            //document.getHeader().setGenerationTime(ZonedDateTime.parse(headerDateTextField.getText()));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             showErrorAlert("Wystąpił błąd podczas parsowania danych z UI.", e.getMessage());

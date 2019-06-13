@@ -1,10 +1,6 @@
 package pl.lodz.p.pkck.model;
 
-import pl.lodz.p.pkck.utils.ZonedDateTimeAdapter;
-
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import java.time.ZonedDateTime;
 import java.util.List;
 
 @XmlRootElement(name = "information")
@@ -18,7 +14,6 @@ public class Information {
     @XmlElement(name = "author", required = true)
     private List<Author> authors;
 
-    //@XmlJavaTypeAdapter(value = ZonedDateTimeAdapter.class)
     @XmlElement(name = "modification_date", required = true)
     private String generationTime;
 
