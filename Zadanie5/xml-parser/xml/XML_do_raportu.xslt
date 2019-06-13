@@ -46,10 +46,10 @@
 			<xsl:value-of select="concat((format-number($avg_value,'#.00')),' PLN')"/>
 		</avg_bookshelf_value>
 		<number_polish_items>
-			<xsl:value-of select="count(//book/languages/language[@id_language='pl'])"/>
+			<xsl:value-of select="count(//book/language[@id_language='pl'])"/>
 		</number_polish_items>
 		<number_eng_items>
-			<xsl:value-of select="count(//book/languages/language[@id_language='eng'])"/>
+			<xsl:value-of select="count(//book/language[@id_language='eng'])"/>
 		</number_eng_items>	
 		<number_book_for_adult>
 			<xsl:value-of select="count(//book/age_category[@id_age_category='18'])"/> 
