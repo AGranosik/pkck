@@ -204,9 +204,9 @@ public class MainController extends Controller {
         addAuthorButton.setOnAction(event -> addAuthor());
         editAuthorButton.setOnAction(event -> editAuthor());
         removeAuthorButton.setOnAction(event -> removeAuthor());
-//        addDriveButton.setOnAction(event -> addDrive());
-//        editDriveButton.setOnAction(event -> editDrive());
-//        removeDriveButton.setOnAction(event -> removeDrive());
+        addBookAuthorButton.setOnAction(event -> addBookAuthor());
+        editBookAuthorButton.setOnAction(event -> editBookAuthor());
+        removeBookAuthorButton.setOnAction(event -> removeBookAuthor());
 //        addShopButton.setOnAction(event -> addShop());
 //        editShopButton.setOnAction(event -> editShop());
 //        removeShopButton.setOnAction(event -> removeShop());
@@ -283,26 +283,57 @@ public class MainController extends Controller {
 
     //region Book authors
     private void removeBookAuthor() {
-//        Drive selectedDrive = document.getBody().getDrives().get(driveListView.getSelectionModel().getSelectedIndex());
-//        document.getBody().getDrives().remove(selectedDrive);
-//        updateBookAuthorsListView();
-//        clearBookAuthorsData();
+        boolean canDelete = true;
+        BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(bookAuthorsListView.getSelectionModel().getSelectedIndex());
+        for(Book book : document.getBooks()){
+            if(book.getBookAuthor().getBookAuthorInfo().getId() == selectedBookAuthor.getId()){
+                canDelete = false;
+                break;
+            }
+        }
+
+        if(canDelete){
+            document.getBookAuthorsList().remove(selectedBookAuthor);
+            updateBookAuthorsListView();
+
+            updateAuthorListView();
+            clearBookAuthorsData();
+        }
+        else {
+            log.info("Nie mozna usunąć autora, ponieważ jest on przypisany do co najmniej 1 książki");
+        }
+
+
     }
 
     private void editBookAuthor() {
-//        Drive selectedDrive = document.getBody().getDrives().get(driveListView.getSelectionModel().getSelectedIndex());
-//        selectedDrive.setShop((Shop) driveShopChoiceBox.getValue());
-//        selectedDrive.setType((String) driveTypeChoiceBox.getValue());
-//        selectedDrive.setBrand(driveBrandTextField.getText());
-//        selectedDrive.setModel(driveModelTextField.getText());
-//        selectedDrive.setCapacity(new Capacity(driveCapacityTextField.getText()));
-//        selectedDrive.setPrice(new Price(drivePriceTextField.getText()));
-//        selectedDrive.setRating((double) driveRatingChoiceBox.getValue());
-//        updateBookAuthorsListView();
-//        clearBookAuthorsData();
+        BookAuthorInfo selectedBookAuthor = document.getBookAuthorsList().get(bookAuthorsListView.getSelectionModel().getSelectedIndex());
+
+        int i = bookAuthorChoiceBox.getItems().indexOf(selectedBookAuthor);
+        log.info("i" + i);
+        //bookAuthorChoiceBox.getItems().remove(selectedBookAuthor);
+
+        selectedBookAuthor.setName(nameBookAuthorTextField.getText());
+        selectedBookAuthor.setSurname(surnameBookAuthorTextField.getText());
+        selectedBookAuthor.getAuthorNation().setAuthorNation((String) bookAuthorNationChoiceBox11.getValue());
+
+        bookAuthorChoiceBox.getItems().add(i, selectedBookAuthor);
+        bookAuthorChoiceBox.setValue(selectedBookAuthor);
+
+        updateBookAuthorsListView();
+        updateAuthorListView();
+
+        clearBookAuthorsData();
     }
 
     private void addBookAuthor() {
+        BookAuthorInfo newBookAuthorInfo = new BookAuthorInfo();
+
+        newBookAuthorInfo.setName(nameBookAuthorTextField.getText());
+        newBookAuthorInfo.setSurname(surnameBookAuthorTextField.getText());
+        newBookAuthorInfo.setAuthorNation(new AuthorNation());
+        //bookAuthorNationChoiceBox11.getValue();
+        newBookAuthorInfo.getAuthorNation().setAuthorNation((String) bookAuthorNationChoiceBox11.getValue());
 //        Drive newDrive = new Drive();
 //        List<Drive> driveList = document.getBody().getDrives();
 //        newDrive.setId("d" + String.format("%03d", Integer.parseInt(driveList.get(driveList.size() - 1).getId().substring(1)) + 1));
@@ -313,13 +344,16 @@ public class MainController extends Controller {
 //        newDrive.setCapacity(new Capacity(driveCapacityTextField.getText()));
 //        newDrive.setPrice(new Price(drivePriceTextField.getText()));
 //        newDrive.setRating((double) driveRatingChoiceBox.getValue());
+        document.getBookAuthorsList().add(newBookAuthorInfo);
+
 //        document.getBody().getDrives().add(newDrive);
-//        updateBookAuthorsListView();
-//        clearBookAuthorsData();
+       updateBookAuthorsListView();
+        clearBookAuthorsData();
     }
 
     private void updateBookAuthorsListView() {
         ObservableList<BookAuthorInfo> bookAuthorsObservableList = FXCollections.observableArrayList(document.getBookAuthorsList());
+        //bookAuthorChoiceBox.getItems().removeAll();
         bookAuthorChoiceBox.setItems(bookAuthorsObservableList);
         bookAuthorsListView.setItems(bookAuthorsObservableList);
         bookAuthorsListView.refresh();

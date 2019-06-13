@@ -29,6 +29,6 @@ public class AuthorNation {
 
     @Override
     public String toString() {
-        return authorNation;
+        return authorNation + ' ';
     }
 }
