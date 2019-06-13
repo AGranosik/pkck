@@ -168,6 +168,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return title;
+        return title + ", Autor: " + bookAuthor.getBookAuthorInfo().getName()
+                + " " + bookAuthor.getBookAuthorInfo().getSurname() + ", ISBN: " + ISBN;
     }
 }

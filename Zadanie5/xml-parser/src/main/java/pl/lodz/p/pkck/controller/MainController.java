@@ -35,6 +35,9 @@ public class MainController extends Controller {
     private TextField headerDateTextField;
 
     @FXML
+    private TextField BookISBNTextField1;
+
+    @FXML
     private ListView authorListView;
 
     @FXML
@@ -176,6 +179,15 @@ public class MainController extends Controller {
     }
 
     //region BOOKS
+
+    private boolean ISBNexists() {
+        for(Book book : document.getBooks()){
+            if(book.getISBN().toString().equals( BookISBNTextField1.getText())){
+                return true;
+            }
+        }
+        return false;
+    }
     private void removeBook() {
         Book selectedBook = document.getBooks().get(bookListView.getSelectionModel().getSelectedIndex());
         document.getBooks().remove(selectedBook);
@@ -185,6 +197,7 @@ public class MainController extends Controller {
     }
 
     private boolean ifBookFieldsEmpty() {
+
         return
                 BookTitleTextField.getText().isEmpty() ||
                         bookAuthorChoiceBox.getValue() == null ||
@@ -195,7 +208,8 @@ public class MainController extends Controller {
                         heightTextField.getText().isEmpty() ||
                         widthTextField.getText().isEmpty() ||
                         dimTypeChoiceBox1.getValue() == null ||
-                        ageCatBookChoiceBox.getValue() == null;
+                        ageCatBookChoiceBox.getValue() == null ||
+                        BookISBNTextField1.getText().isEmpty();
     }
 
     private void editBook() {
@@ -208,25 +222,45 @@ public class MainController extends Controller {
                 showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola by edytować książkę");
             } else {
 
-                selectedBook.setTitle(BookTitleTextField.getText());
+                try {
+                    if (BookISBNTextField1.getText().length() == 13) {
+                        if(!ISBNexists() || selectedBook.getISBN().toString().equals(BookISBNTextField1.getText()) ){
+                            selectedBook.setISBN(Long.parseLong(BookISBNTextField1.getText()));
 
-                selectedBook.getBookAuthor().setBookAuthorInfo((BookAuthorInfo) bookAuthorChoiceBox.getValue());
+                            selectedBook.setTitle(BookTitleTextField.getText());
 
-                selectedBook.getLanguages().setIdLanguage((String) languageBookChoiceBox.getValue());
+                            selectedBook.getBookAuthor().setBookAuthorInfo((BookAuthorInfo) bookAuthorChoiceBox.getValue());
 
-                selectedBook.setRealiseDay(realiseDayBookTextField.getText());
-                selectedBook.setNumberOfPages(Long.parseLong(pageNumberBookTextField1.getText()));
+                            selectedBook.getLanguages().setIdLanguage((String) languageBookChoiceBox.getValue());
 
-                selectedBook.getBinding().setBindingName((String) bindingBookChoiceBox.getValue());
+                            selectedBook.setRealiseDay(realiseDayBookTextField.getText());
+                            selectedBook.setNumberOfPages(Long.parseLong(pageNumberBookTextField1.getText()));
 
-                selectedBook.getDimensions().setHeight(Integer.parseInt(heightTextField.getText()));
-                selectedBook.getDimensions().setWidth(Integer.parseInt(widthTextField.getText()));
-                selectedBook.getDimensions().setDimensionType((String) dimTypeChoiceBox1.getValue());
+                            selectedBook.getBinding().setBindingName((String) bindingBookChoiceBox.getValue());
 
-                selectedBook.getAgeCategory().setMinAge(Integer.parseInt(ageCatBookChoiceBox.getValue().toString()));
+                            selectedBook.getDimensions().setHeight(Integer.parseInt(heightTextField.getText()));
+                            selectedBook.getDimensions().setWidth(Integer.parseInt(widthTextField.getText()));
+                            selectedBook.getDimensions().setDimensionType((String) dimTypeChoiceBox1.getValue());
 
-                updateBookListView();
-                clearBookData();
+                            selectedBook.getAgeCategory().setMinAge(Integer.parseInt(ageCatBookChoiceBox.getValue().toString()));
+
+                            updateBookListView();
+                            clearBookData();
+                        }
+                        else {
+                            showErrorAlert("Wystąpił błąd", "ISBN musi być wartością unikalną");
+
+                        }
+
+                    }
+                    else
+                    {
+                        showErrorAlert("Wystąpił błąd", "ISBN musi mieć 13 cyfr");
+                    }
+
+                } catch (Exception e) {
+                    showErrorAlert("Wystąpił błąd", "ISBN musi być liczbą");
+                }
             }
         } catch (Exception e) {
             showErrorAlert("Wystąpił błąd", "Wybierz książkę do edycji");
@@ -281,6 +315,7 @@ public class MainController extends Controller {
             if (newValue.intValue() >= 0) {
 
                 Book selectedBook = document.getBooks().get(newValue.intValue());
+                BookISBNTextField1.setText(selectedBook.getISBN().toString());
                 BookTitleTextField.setText(selectedBook.getTitle());
                 bookAuthorChoiceBox.setValue(selectedBook.getBookAuthor().getBookAuthorInfo());
                 languageBookChoiceBox.setValue(selectedBook.getLanguages().getIdLanguage());
@@ -298,6 +333,7 @@ public class MainController extends Controller {
     }
 
     private void clearBookData() {
+        BookISBNTextField1.clear();
         BookTitleTextField.clear();
         bookAuthorChoiceBox.getSelectionModel().clearSelection();
         languageBookChoiceBox.getSelectionModel().clearSelection();
@@ -353,7 +389,6 @@ public class MainController extends Controller {
 
             } else {
                 int i = bookAuthorChoiceBox.getItems().indexOf(selectedBookAuthor);
-                log.info("i" + i);
 
                 selectedBookAuthor.setName(nameBookAuthorTextField.getText());
                 selectedBookAuthor.setSurname(surnameBookAuthorTextField.getText());
@@ -447,8 +482,6 @@ public class MainController extends Controller {
         } catch (Exception e) {
             showErrorAlert("Wystąpił błąd", "Wybierz autora do edycji");
         }
-
-
     }
 
     private void addAuthor() {
@@ -523,17 +556,18 @@ public class MainController extends Controller {
     //endregion
 
     private void updateDocumentWithGuiData() {
-//        try {
-//            document.getHeader().setGenerationTime(ZonedDateTime.parse(headerDateTextField.getText()));
-//        } catch (Exception e) {
-//            log.error(e.getMessage(), e);
-//            showErrorAlert("Wystąpił błąd podczas parsowania danych z UI.", e.getMessage());
-//        }
+        try {
+            document.getInformation().setGenerationTime(headerDateTextField.getText());
+            //document.getHeader().setGenerationTime(ZonedDateTime.parse(headerDateTextField.getText()));
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            showErrorAlert("Wystąpił błąd podczas parsowania danych z UI.", e.getMessage());
+        }
     }
 
     private void populateGuiWithDocumentData() {
         try {
-            //headerDateTextField.setText(document.getHeader().getGenerationTime().toString());
+            headerDateTextField.setText(document.getInformation().getGenerationTime().toString());
             updateAuthorListView();
             updateBookAuthorsListView();
             updateBookListView();

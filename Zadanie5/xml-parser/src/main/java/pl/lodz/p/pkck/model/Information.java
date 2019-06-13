@@ -18,14 +18,14 @@ public class Information {
     @XmlElement(name = "author", required = true)
     private List<Author> authors;
 
-    @XmlJavaTypeAdapter(value = ZonedDateTimeAdapter.class)
+    //@XmlJavaTypeAdapter(value = ZonedDateTimeAdapter.class)
     @XmlElement(name = "modification_date", required = true)
-    private ZonedDateTime generationTime;
+    private String generationTime;
 
     public Information() {
     }
 
-    public Information(String description, List<Author> authors, ZonedDateTime generationTime) {
+    public Information(String description, List<Author> authors, String generationTime) {
         this.description = description;
         this.authors = authors;
         this.generationTime = generationTime;
@@ -43,11 +43,11 @@ public class Information {
         this.authors = authors;
     }
 
-    public ZonedDateTime getGenerationTime() {
+    public String getGenerationTime() {
         return generationTime;
     }
 
-    public void setGenerationTime(ZonedDateTime generationTime) {
+    public void setGenerationTime(String generationTime) {
         this.generationTime = generationTime;
     }
 }
