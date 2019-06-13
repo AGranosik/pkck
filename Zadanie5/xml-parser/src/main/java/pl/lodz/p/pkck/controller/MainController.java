@@ -274,33 +274,37 @@ public class MainController extends Controller {
         if (ifBookFieldsEmpty()) {
             showErrorAlert("Wystąpił błąd", "Wypełnij wszystkie pola aby dodać książkę");
         } else {
-            Book newBook = new Book();
-            newBook.setTitle(BookTitleTextField.getText());
+            if (!ISBNexists() && (BookISBNTextField1.getText().length() == 13)) {
+                Book newBook = new Book();
+                newBook.setISBN(Long.parseLong(BookISBNTextField1.getText()));
+                newBook.setTitle(BookTitleTextField.getText());
 
+                newBook.setBookAuthor(new BookAuthor());
+                newBook.getBookAuthor().setBookAuthorInfo((BookAuthorInfo) bookAuthorChoiceBox.getValue());
 
-            newBook.setBookAuthor(new BookAuthor());
-            newBook.getBookAuthor().setBookAuthorInfo((BookAuthorInfo) bookAuthorChoiceBox.getValue());
+                newBook.setLanguages(new Language());
+                newBook.getLanguages().setIdLanguage((String) languageBookChoiceBox.getValue());
 
-            newBook.setLanguages(new Language());
-            newBook.getLanguages().setIdLanguage((String) languageBookChoiceBox.getValue());
+                newBook.setRealiseDay(realiseDayBookTextField.getText());
+                newBook.setNumberOfPages(Long.parseLong(pageNumberBookTextField1.getText()));
 
-            newBook.setRealiseDay(realiseDayBookTextField.getText());
-            newBook.setNumberOfPages(Long.parseLong(pageNumberBookTextField1.getText()));
+                newBook.setBinding(new Binding());
+                newBook.getBinding().setBindingName((String) bindingBookChoiceBox.getValue());
 
-            newBook.setBinding(new Binding());
-            newBook.getBinding().setBindingName((String) bindingBookChoiceBox.getValue());
+                newBook.setDimensions(new Dimensions());
+                newBook.getDimensions().setHeight(Integer.parseInt(heightTextField.getText()));
+                newBook.getDimensions().setWidth(Integer.parseInt(widthTextField.getText()));
+                newBook.getDimensions().setDimensionType((String) dimTypeChoiceBox1.getValue());
 
-            newBook.setDimensions(new Dimensions());
-            newBook.getDimensions().setHeight(Integer.parseInt(heightTextField.getText()));
-            newBook.getDimensions().setWidth(Integer.parseInt(widthTextField.getText()));
-            newBook.getDimensions().setDimensionType((String) dimTypeChoiceBox1.getValue());
+                newBook.setAgeCategory(new AgeCategory());
+                newBook.getAgeCategory().setMinAge(Integer.parseInt(ageCatBookChoiceBox.getValue().toString()));
 
-            newBook.setAgeCategory(new AgeCategory());
-            newBook.getAgeCategory().setMinAge(Integer.parseInt(ageCatBookChoiceBox.getValue().toString()));
-
-            document.getBooks().add(newBook);
-            updateBookListView();
-            clearBookData();
+                document.getBooks().add(newBook);
+                updateBookListView();
+                clearBookData();
+            } else {
+                showErrorAlert("Błąd!", "ISBN musi być wartością unikalną i mieć długość 13.");
+            }
         }
 
     }
@@ -314,7 +318,6 @@ public class MainController extends Controller {
     private void initializeBookListView() {
         bookListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.intValue() >= 0) {
-
                 Book selectedBook = document.getBooks().get(newValue.intValue());
                 BookISBNTextField1.setText(selectedBook.getISBN().toString());
                 BookTitleTextField.setText(selectedBook.getTitle());
@@ -327,6 +330,7 @@ public class MainController extends Controller {
                 dimTypeChoiceBox1.setValue(selectedBook.getDimensions().getDimensionType());
                 ageCatBookChoiceBox.setValue(selectedBook.getAgeCategory().getMinAge());
                 realiseDayBookTextField.setText(selectedBook.getRealiseDay());
+
             } else {
                 clearBookData();
             }
